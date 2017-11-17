@@ -1,0 +1,18 @@
+body {
+    background-image: url("greyson-joralemon-332028.jpg");
+    background-position: center;
+    /* Set the background image to no repeat */
+    background-repeat: no-repeat;
+    /* Scale the background image to be as large as possible */
+    background-size: cover;
+}
+
+p {
+    color: red;
+    font-size: 70;
+    
+}
+
+div#immagini {
+    margin: 0 100px;
+}
