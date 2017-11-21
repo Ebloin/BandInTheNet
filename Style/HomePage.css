@@ -1,10 +1,22 @@
 H1 {
     text-align: center;
-    font-size: 50px;
-    font-family: 'Beatles';
+    font-size: 80px;
+    font-family: 'Guns';
+    margin: 10px;
+}
+
+img {
+    position: absolute;
+    margin: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 
 @font-face {
-    font-family: 'Beatles';
-    src: '../Font/BOOTLE.TTF';
+    font-family: 'Guns';
+    src: url('../Font/guns.TTF');
 }
