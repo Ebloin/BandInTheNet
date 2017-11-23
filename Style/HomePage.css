@@ -1,15 +1,20 @@
-H1 {
+H1.logo{
     text-align: center;
-    font-size: 80px;
+    font-size: 60px;
     font-family: 'Guns';
     margin: 10px;
     color: #8c8b8b;
+    margin-right: 1300px;
+    height: 22px;
+    margin-bottom: 0px;
+    margin-top: 0px;
 }
 
 hr.lower {
     height: 10px;
 	border: 0;
-	box-shadow: 0 10px 10px -10px #8c8b8b inset;
+    box-shadow: 0 10px 10px -10px #8c8b8b inset;
+    margin-top: 0px;
 }
 
 ul#menu {
@@ -31,7 +36,9 @@ ul#menu li {
     margin: 2px;
     float: left; /* elementi su singola riga */
 }
- 
+ul#menu li a:hover{
+    opacity: 0.75;
+}
 ul#menu li a {
     color: #8c8b8b;
     display: block;
