@@ -1,10 +1,10 @@
 
-html,body{height: 100%} /*fullscreen del body*/
-
+html{height: 100%} /*fullscreen del body*/
+body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 0px;margin-bottom: 0px;}
 
 .header__logo{ /*classe che modifica il logo a sinistra dell'header*/
     text-align: center;
-    font-size: 35px;
+    font-size: 40px;
     font-family: 'Guns';
     margin: 0px;
     color: #8c8b8b;
@@ -16,7 +16,7 @@ html,body{height: 100%} /*fullscreen del body*/
 .header__hr { /*classe che modifica HorizontalRow dell'header*/
     height: 10px;
 	border: 0;
-    box-shadow: 0 10px 10px -10px #8c8b8b inset;
+    box-shadow: 0 5px 5px -5px #8c8b8b inset;
     margin-top: 0px;
     margin-bottom: 0px;
 }
@@ -44,16 +44,41 @@ html,body{height: 100%} /*fullscreen del body*/
     opacity: 0.75;
 }
 
+.header__menu__logo {
+    list-style-type: none;
+}
+
 .cover{
-    height: 25%;
+    height: 90%;
     /*border: 1px solid red;/* visualizza grandezza della cover*/
     background-image: url("https://source.unsplash.com/1600x900/?music,sound");
     background-size: cover;
-    background-position: center;
+    background-position: center center;
     
 }
-
-
+.cover__text{
+    display: table;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    z-index: 1; /*testo sopra allo sfodo opaco*/
+}
+.cover__text__aux{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    font-family: 'Guns';
+    font-size: 30;
+    color: white;
+}
+.cover__opacity{ /*filtro di opacità sull'imagine */
+    background: black;
+    width: 100%;
+    height: 90%;
+    position: absolute;
+    z-index: 0; /*voglio lo sfondo sotto al testo*/
+    opacity: 0.25;
+}
 @font-face {
     font-family: 'Guns';
     src: url('../Font/guns.TTF');
