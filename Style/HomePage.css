@@ -1,10 +1,10 @@
-.animate{ /*classe base per le animazioni*/
-    -webkit-transition: all 0.3s ease-out;
-    transition: all 0.3s ease-out;
-}
+
+html,body{height: 100%} /*fullscreen del body*/
+
+
 .header__logo{ /*classe che modifica il logo a sinistra dell'header*/
     text-align: center;
-    font-size: 45px;
+    font-size: 35px;
     font-family: 'Guns';
     margin: 0px;
     color: #8c8b8b;
@@ -44,10 +44,25 @@
     opacity: 0.75;
 }
 
+.cover{
+    height: 25%;
+    /*border: 1px solid red;/* visualizza grandezza della cover*/
+    background-image: url("https://source.unsplash.com/1600x900/?music,sound");
+    background-size: cover;
+    background-position: center;
+    
+}
+
 
 @font-face {
     font-family: 'Guns';
     src: url('../Font/guns.TTF');
+}
+
+
+.animate{ /*classe base per le animazioni*/
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
 }
 
 .clearfix:after { /*classe che regola le dimensioni*/
