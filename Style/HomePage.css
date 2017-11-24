@@ -1,3 +1,7 @@
+.animate{ /*classe base per le animazioni*/
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
 .header__logo{ /*classe che modifica il logo a sinistra dell'header*/
     text-align: center;
     font-size: 45px;
