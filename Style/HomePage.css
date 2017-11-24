@@ -15,6 +15,7 @@ hr.lower {
 	border: 0;
     box-shadow: 0 10px 10px -10px #8c8b8b inset;
     margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 ul#menu {
@@ -48,6 +49,10 @@ ul#menu li a {
     width: 150px;
     height: 30px;
     text-align: center;
+}
+
+#centralGif{
+    margin-left: 400px;
 }
  
 @font-face {
