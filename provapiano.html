@@ -1,0 +1,33 @@
+<html>
+
+<head>
+
+    <script src="https://code.createjs.com/soundjs-0.6.2.min.js"></script>
+    <script>
+        function init() {    
+            var audioPath = "Audio/note/";
+            createjs.Sound.registerSound("Audio/do.wav", 'do');
+
+            var aree = document.getElementsByTagName('area');
+            for (i = 0; i < aree.length; i++) {
+                aree[i].addEventListener('click', suona);
+            }
+
+            var suona = function (e) {
+                createjs.Sound.play("do");
+            }
+        }
+    </script>
+</head>
+
+<body onload="init();">
+    <img src="Immagini/piano.jpg" alt="" usemap="#Map" />
+    <map name="Map" id="Map">
+        <area onclick='suona();' alt="" title="" href="#" shape="poly" coords="58,206,5,207,4,333,59,332" />
+        <area alt="" title="" href="#" shape="poly" coords="116,206,62,206,62,333,117,334" />
+        <area alt="" title="" href="#" shape="poly" coords="118,205,172,208,174,333,119,332" />
+        <area alt="" title="" href="#" shape="poly" coords="176,207,231,206,231,332,176,332" /> [...]
+    </map>
+</body>
+
+</html>
