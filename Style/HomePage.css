@@ -48,8 +48,9 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 0px;margin-bot
     list-style-type: none;
 }
 
+/*definizione della classe di cover(homepage in pratica)*/
 .cover{
-    height: 90%;
+    height: 95%;
     /*border: 1px solid red;/* visualizza grandezza della cover*/
     background-image: url("https://source.unsplash.com/1600x900/?music,sound");
     background-size: cover;
@@ -74,7 +75,7 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 0px;margin-bot
 .cover__opacity{ /*filtro di opacità sull'imagine */
     background: black;
     width: 100%;
-    height: 90%;
+    height: 95%;
     position: absolute;
     z-index: 0; /*voglio lo sfondo sotto al testo*/
     opacity: 0.25;
@@ -85,12 +86,50 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 0px;margin-bot
 }
 
 
-.animate{ /*classe base per le animazioni*/
-    -webkit-transition: all 0.3s ease-out;
-    transition: all 0.3s ease-out;
-}
+/*codice del bottone "entra"*/
+.button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: white;
+    border: none;
+    color:#8c8b8b;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    width: 150px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+  }
+  
+  .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .button:hover span {
+    padding-right: 25px;
+  }
+  
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
 
-.clearfix:after { /*classe che regola le dimensioni*/
+
+/*fix delle dimensioni si può ignorare tranquilli*/
+.clearfix:after {
     visibility: hidden;
     display: block;
     font-size: 0;
