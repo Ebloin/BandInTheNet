@@ -11,7 +11,7 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 0px;margin-bot
     color: #8c8b8b;
     float: left; 
     height: 0px;
-    margin-top: 0px;
+    margin-top: -10px;
 }
 .header__hr { /*classe che modifica HorizontalRow dell'header*/
     height: 10px;
@@ -51,7 +51,8 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 0px;margin-bot
 /*--------------COVER-------------*/
 /*definizione della classe di cover(homepage in pratica)*/
 .cover{
-    height: 95%;
+    height: 91%;
+    margin-top: -5px;
     /*border: 1px solid red;/* visualizza grandezza della cover*/
     background-image: url("https://source.unsplash.com/1600x900/?music,sound");
     background-size: cover;
@@ -75,7 +76,7 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 0px;margin-bot
 .cover__opacity{ /*filtro di opacità sull'imagine */
     background: black;
     width: 100%;
-    height: 95%;
+    height: 91%;
     position: absolute;
     z-index: 0; /*voglio lo sfondo sotto al testo*/
     opacity: 0.25;
@@ -85,7 +86,7 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 0px;margin-bot
 /*------------WHOAMI------------*/
 .whoami{
     height: 95%;
-    border: 1px solid red;/* visualizza grandezza della cover*/
+    /* visualizza grandezza della cover*/
 }
 .whoami__text{
     display: table;
