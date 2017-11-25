@@ -2,7 +2,8 @@
 html{height: 100%} /*fullscreen del body*/
 body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 0px;margin-bottom: 0px;}
 
-/*--------------HEADER-------------*/
+
+/*-------------HEADER------------*/
 .header__logo{ /*classe che modifica il logo a sinistra dell'header*/
     text-align: center;
     font-size: 40px;
@@ -13,6 +14,7 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 0px;margin-bot
     height: 0px;
     margin-top: -10px;
 }
+
 .header__hr { /*classe che modifica HorizontalRow dell'header*/
     height: 10px;
 	border: 0;
@@ -20,6 +22,7 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 0px;margin-bot
     margin-top: 0px;
     margin-bottom: 0px;
 }
+
 .header__menu{
     font-family: Verdana, sans-serif;
     font-size: 11px;
@@ -42,13 +45,14 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 0px;margin-bot
 .header__menu__item a:hover{ /*classe che modifica l'elemento di menu quando ci si passa sopra con il mouse*/
     opacity: 0.75;
 }
+
 .header__menu__logo {
     list-style-type: none;
 }
 /*--------------END-------------*/
 
 
-/*--------------COVER-------------*/
+/*-------------COVER------------*/
 /*definizione della classe di cover(homepage in pratica)*/
 .cover{
     height: 91%;
@@ -57,6 +61,7 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 0px;margin-bot
     background-image: url("https://source.unsplash.com/1600x900/?music,sound");
     background-size: cover;
     background-position: center center;
+    
 }
 .cover__text{
     display: table;
@@ -122,7 +127,8 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 0px;margin-bot
 }
 /*--------------END-------------*/
 
-/*--------------Buttons---------*/
+/*------------BUTTON------------*/
+
 /*codice del bottone "entra"*/
 .button {
     display: inline-block;
@@ -165,9 +171,8 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 0px;margin-bot
   }
 /*--------------END-------------*/
 
-
-
 /*--------------FIX-------------*/
+
 /*fix delle dimensioni si può ignorare tranquilli*/
 .clearfix:after {
     visibility: hidden;
