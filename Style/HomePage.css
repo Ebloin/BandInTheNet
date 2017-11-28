@@ -8,7 +8,7 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 60px;margin-bo
     position: fixed; /* Set the navbar to fixed position */
     top: 0; /* Position the navbar at the top of the page */
     width: 100%;
-    height: 8%;
+    height: 50 px;
     background-color: white;
     z-index: 999;
 }
