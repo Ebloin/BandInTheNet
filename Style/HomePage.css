@@ -1,6 +1,6 @@
 
 html{height: 100%} /*fullscreen del body*/
-body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 1%;margin-bottom: 0px;}
+body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 60px;margin-bottom: 0px;}
 
 
 /*-------------HEADER------------*/
@@ -24,7 +24,7 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 1%;margin-bott
 }
 
 .header__hr { /*classe che modifica HorizontalRow dell'header*/
-    height: 10%;
+    height: 10px;
 	border: 0;
     box-shadow: 0 5px 5px -5px #8c8b8b inset;
     margin-top: -6px;
@@ -64,6 +64,7 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 1%;margin-bott
 /*definizione della classe di cover(homepage in pratica)*/
 .cover{
     height: 100%;
+    margin-top: -8px;
     /*border: 1px solid red;/* visualizza grandezza della cover*/
     background-color: black;
     background-image: url("https://source.unsplash.com/1600x900/?music,sound");
@@ -89,7 +90,7 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 1%;margin-bott
 .cover__opacity{ /*filtro di opacità sull'imagine */
     background: black;
     width: 100%;
-    height: 100%;
+    height: 100 %;
     position: absolute;
     z-index: 0; /*voglio lo sfondo sotto al testo*/
     opacity: 0.25;
