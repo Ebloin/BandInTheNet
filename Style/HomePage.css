@@ -1,6 +1,6 @@
 
 html{height: 100%} /*fullscreen del body*/
-body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 60px;margin-bottom: 0px;}
+body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 1%;margin-bottom: 0px;}
 
 
 /*-------------HEADER------------*/
@@ -8,7 +8,7 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 60px;margin-bo
     position: fixed; /* Set the navbar to fixed position */
     top: 0; /* Position the navbar at the top of the page */
     width: 100%;
-    height: 50 px;
+    height: 8%;
     background-color: white;
     z-index: 999;
 }
@@ -24,7 +24,7 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 60px;margin-bo
 }
 
 .header__hr { /*classe che modifica HorizontalRow dell'header*/
-    height: 10px;
+    height: 10%;
 	border: 0;
     box-shadow: 0 5px 5px -5px #8c8b8b inset;
     margin-top: -6px;
@@ -64,7 +64,6 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 60px;margin-bo
 /*definizione della classe di cover(homepage in pratica)*/
 .cover{
     height: 100%;
-    margin-top: -8px;
     /*border: 1px solid red;/* visualizza grandezza della cover*/
     background-color: black;
     background-image: url("https://source.unsplash.com/1600x900/?music,sound");
@@ -90,7 +89,7 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 60px;margin-bo
 .cover__opacity{ /*filtro di opacità sull'imagine */
     background: black;
     width: 100%;
-    height: 100 %;
+    height: 100%;
     position: absolute;
     z-index: 0; /*voglio lo sfondo sotto al testo*/
     opacity: 0.25;
