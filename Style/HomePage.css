@@ -8,6 +8,7 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 60px;margin-bo
     position: fixed; /* Set the navbar to fixed position */
     top: 0; /* Position the navbar at the top of the page */
     width: 100%;
+    height: 8%;
     background-color: white;
     z-index: 999;
 }
@@ -63,8 +64,13 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 60px;margin-bo
 /*definizione della classe di cover(homepage in pratica)*/
 .cover{
     height: 100%;
+<<<<<<< HEAD
     margin-top: -2px;
+=======
+    margin-top: -8px;
+>>>>>>> cdf79e67cbfeb0f4db0514018022dfd725246feb
     /*border: 1px solid red;/* visualizza grandezza della cover*/
+    background-color: black;
     background-image: url("https://source.unsplash.com/1600x900/?music,sound");
     background-size: cover;
     background-position: center center;
@@ -131,6 +137,37 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 60px;margin-bo
 @font-face {
     font-family: 'Guns';
     src: url('../Font/guns.TTF');
+}
+/*--------------END-------------*/
+
+/*-----------CONTACTS-----------*/
+.contacts{
+    height: 95%;
+    /* visualizza grandezza della cover*/
+}
+.contacts__text{
+    display: table;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    z-index: 1; /*testo sopra allo sfodo opaco*/
+}
+.contacts__text__aux{
+    display: table-cell;
+    vertical-align: top;
+}
+.contacts__text__aux h1{
+    text-align: center;
+    font-family: 'Guns';
+    font-size: 60;
+    color:#8c8b8b;
+}
+.contacts__text__aux p{
+    text-align: center;
+    font-family: Verdana, sans-serif;
+    font-size: 15px;
+    list-style-type: none;
+    color:#8c8b8b;
 }
 /*--------------END-------------*/
 
