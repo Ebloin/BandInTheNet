@@ -62,7 +62,7 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 60px;margin-bo
 /*-------------COVER------------*/
 /*definizione della classe di cover(homepage in pratica)*/
 .cover{
-    height: 91%;
+    height: 100%;
     margin-top: -2px;
     /*border: 1px solid red;/* visualizza grandezza della cover*/
     background-image: url("https://source.unsplash.com/1600x900/?music,sound");
@@ -88,7 +88,7 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 60px;margin-bo
 .cover__opacity{ /*filtro di opacità sull'imagine */
     background: black;
     width: 100%;
-    height: 91%;
+    height: 100%;
     position: absolute;
     z-index: 0; /*voglio lo sfondo sotto al testo*/
     opacity: 0.25;
