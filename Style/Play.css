@@ -120,20 +120,20 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 1%;margin-bott
     text-align: center;
     font-family: 'Guns';
     font-size: 30;
-    margin-bottom: 0px;
+    margin: 5px auto;
 }
 .instruments__choose__text p{
     font-family: Verdana, sans-serif;
     font-size: 15px;   
     margin-bottom: 0px;
-    text-align: center;
-    margin: 10px;
+
 }
 /*--------------END-------------*/
 
 /*------------BUTTON------------*/
 /*codice del bottone "gioca"*/
 .button {
+
     display: inline-block;
     border-radius: 4px;
     background-color: white;
@@ -146,6 +146,7 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 1%;margin-bott
     transition: all 0.5s;
     cursor: pointer;
     margin: 5px;
+    margin-left: 150px;
     
   }
   
