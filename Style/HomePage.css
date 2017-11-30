@@ -38,6 +38,7 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 1%;margin-bott
     margin: 0;
     padding: 0;
     overflow: hidden;
+    background-color: white;
 }
 .header__menu__item{
     float: left; /* elementi su singola riga */
