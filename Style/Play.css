@@ -1,6 +1,6 @@
 
 html{height: 100%} /*fullscreen del body*/
-body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 1%;margin-bottom: 0px;}
+body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 1%;margin-bottom: 0px; background-color: #eee}
 
 
 /*-------------HEADER------------*/
@@ -64,7 +64,7 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 1%;margin-bott
 /*-------------COVER------------*/
 /*definizione della classe di cover(homepage in pratica)*/
 .cover{
-    height: 100%;
+    height: 60%;
     /*border: 1px solid red;/* visualizza grandezza della cover*/
     background-color: black;
     background-image: url("https://source.unsplash.com/1600x900/?music,sound");
@@ -90,86 +90,48 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 1%;margin-bott
 .cover__opacity{ /*filtro di opacità sull'imagine */
     background: black;
     width: 100%;
-    height: 100%;
+    height: 60%;
     position: absolute;
     z-index: 0; /*voglio lo sfondo sotto al testo*/
     opacity: 0.25;
 }
 /*--------------END-------------*/
 
-/*------------WHOAMI------------*/
-.whoami{
-    height: 95%;
-    /* visualizza grandezza della cover*/
+/*----------INSTRUMENTS---------*/
+
+.instruments{
+    max-width: 1300px;
+    margin: 30px auto;
+    margin-left: auto;
+    margin-right: auto;
+    
 }
-.whoami__text{
-    display: table;
-    height: 100%;
+.instruments__choose{
+    max-width: 400px;
+    margin: 0 1%;
+    background-color: white;
+    float: left;
+}
+.instruments__choose__img{
     width: 100%;
-    position: relative;
-    z-index: 1; /*testo sopra allo sfodo opaco*/
+    height: auto;
 }
-.whoami__text__aux{
-    display: table-cell;
-    vertical-align: top;
-}
-.whoami__text__aux h1{
+.instruments__choose__text h3{
     text-align: center;
     font-family: 'Guns';
-    font-size: 60;
-    color:#8c8b8b;
+    font-size: 30;
+    margin-bottom: 0px;
 }
-.whoami__text__aux p{
-    text-align: center;
+.instruments__choose__text p{
     font-family: Verdana, sans-serif;
-    font-size: 15px;
-    list-style-type: none;
-    color:#8c8b8b;
-}
-/*--------------END-------------*/
+    font-size: 15px;   
+    margin-bottom: 0px;
 
-
-/*--------------Fonts-----------*/
-@font-face {
-    font-family: 'Guns';
-    src: url('../Font/guns.TTF');
-}
-/*--------------END-------------*/
-
-/*-----------CONTACTS-----------*/
-.contacts{
-    height: 95%;
-    /* visualizza grandezza della cover*/
-}
-.contacts__text{
-    display: table;
-    height: 100%;
-    width: 100%;
-    position: relative;
-    z-index: 1; /*testo sopra allo sfodo opaco*/
-}
-.contacts__text__aux{
-    display: table-cell;
-    vertical-align: top;
-}
-.contacts__text__aux h1{
-    text-align: center;
-    font-family: 'Guns';
-    font-size: 60;
-    color:#8c8b8b;
-}
-.contacts__text__aux p{
-    text-align: center;
-    font-family: Verdana, sans-serif;
-    font-size: 15px;
-    list-style-type: none;
-    color:#8c8b8b;
 }
 /*--------------END-------------*/
 
 /*------------BUTTON------------*/
-
-/*codice del bottone "entra"*/
+/*codice del bottone "gioca"*/
 .button {
     display: inline-block;
     border-radius: 4px;
@@ -212,8 +174,14 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 1%;margin-bott
   }
 /*--------------END-------------*/
 
-/*--------------FIX-------------*/
+/*--------------Fonts-----------*/
+@font-face {
+    font-family: 'Guns';
+    src: url('../Font/guns.TTF');
+}
+/*--------------END-------------*/
 
+/*--------------FIX-------------*/
 /*fix del float si può ignorare tranquilli*/
 .clearfix:after {
     visibility: hidden;
