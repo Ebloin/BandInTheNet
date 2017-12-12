@@ -29,20 +29,36 @@ function init() {
     createjs.Sound.registerSound("Audio/note/a1s.mp3", 'la#');
     createjs.Sound.registerSound("Audio/note/b1.mp3", 'si');
     createjs.Sound.registerSound("Audio/note/c1.mp3", 'do_');
-    
-    document.body.addEventListener('keydown', function(e) {createjs.Sound.play(KEYMAP[e.keyCode]);});
-    
+
+    document.addEventListener('keydown', premotasto);
+    document.addEventListener('keyup', lasciotasto);
+
     var aree = document.getElementsByTagName('area');
     for (i = 0; i < aree.length; i++) {
         aree[i].addEventListener('click', suona);
     }
 
-    /*var aree = document.getElementsByTagName('area');
-    for (i = 0; i < aree.length; i++) {
-        aree[i].addEventListener('click', suona);
-    }*/
+    var prove = document.getElementsByClassName('key');
+    for (i = 0; i < prove.length; i++) {
+        prove[i].addEventListener('click', suona);
+    }
 }
 
-var suona = function (e) {
+var premotasto = function(e) {
+    //Premo un tasto per suonare
+    var nota = KEYMAP[e.keyCode];
+    if (!nota) return; //Se il tasto non è mappato
+    document.getElementById(nota).classList.add('active');
+    createjs.Sound.play(nota);
+}
+
+var lasciotasto = function(e) {
+    //Lascio tasto per smettere di suonare
+    var nota = KEYMAP[e.keyCode];
+    if (!nota) return; //Se il tasto non è mappato
+    document.getElementById(nota).classList.remove('active');
+}
+
+var suona = function(e) {
     createjs.Sound.play(e.target.id);
 }
