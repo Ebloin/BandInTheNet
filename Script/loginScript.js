@@ -11,16 +11,16 @@ function stampaStorage() {
     var storage = JSON.parse(localStorage.utenti);
     var l = storage.length;
     var s = new String("<h1>localStorage:</h1>");
-    s += "<table id = localstorage><tr><th>Cognome</th><th>Nome</th><th>Matricola</th></tr>";
+    s += "<table id = localstorage><tr><th>Cognome</th><th>Nome</th><th>Username</th></tr>";
     for (i = 0; i < l; i++)
-        s += "<tr><td>" + storage[i].Cognome + "</td><td>" + storage[i].Nome + "</td><td>" + storage[i].Matricola + "</td>";
+        s += "<tr><td>" + storage[i].Cognome + "</td><td>" + storage[i].Nome + "</td><td>" + storage[i].Username + "</td>";
     s += "</table>";
     document.getElementById("Storage").innerHTML = s;
     return true;
 }
 
 function uguali(u1, u2) {
-    if (u1.matricola == u2.matricola) return true;
+    if (u1.Username == u2.Username) return true;
     return false;
 }
 
@@ -30,7 +30,7 @@ function inserisciUtente() {
     var o = {
         Cognome: document.miaform.Cognome.value,
         Nome: document.miaform.Nome.value,
-        Matricola: document.miaform.Matricola.value
+        Username: document.miaform.Username.value
     };
     storage[next] = o;
     alert("Dati inseriti");

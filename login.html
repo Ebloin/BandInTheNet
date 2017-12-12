@@ -1,45 +1,47 @@
-<HTML>
+<html>
 
-<HEAD>
+<head>
 	<script src="./Script/loginScript.js"></script>
 	<link href="./Style/login.css" rel="stylesheet" type="text/css">
-</HEAD>
+</head>
 
-<BODY onload="inizializzaStorage();">
+<body onload="inizializzaStorage();">
 	<div>
 
-		<FORM ACTION="" METHOD="POST" NAME="miaform" onSubmit="return inserisciUtente();">
-			<TABLE cellpadding=4 ID="Elenco">
-
-				<TR></TR>
-				<TD>
-					<B>Cognome</B>
-				</TD>
-				<TD>
-					<INPUT NAME="Cognome" type="text" size="40">
-				</TD>
-				<TR></TR>
-				<TD>
-					<B>Nome</B>
-				</TD>
-				<TD>
-					<INPUT NAME="Nome" type="text" size="30">
-				</TD>
-				<TR></TR>
-				<TD>
-					<B>Matricola</B>
-				</TD>
-				<TD>
-					<INPUT NAME="Matricola" type="text" size="12">
-				</TD>
-			</TABLE>
-			<INPUT TYPE="SUBMIT" Value="INVIA">
-			<INPUT TYPE="RESET" Value="RESET">
-			<INPUT TYPE="BUTTON" Value="STAMP LOCAL" onclick="stampaStorage();">
-			<INPUT TYPE="BUTTON" Value="RESET LOCAL" onclick="resetStorage();">
-		</FORM>
+		<form action="" method="POST" name="miaform" onSubmit="return inserisciUtente();">
+			<div class="insert">
+				<table cellpadding=4 ID="Elenco">
+					<tr>
+						<td>
+							<input name="Cognome" type="text" size="20" placeholder="Cognome">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input name="Nome" type="text" size="20" placeholder="Nome">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input name="Username" type="text" size="24" placeholder="Username">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input name="Password" type="Password" size="24" placeholder="Password">
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="buttons">
+				<input TYPE="SUBMIT" Value="INVIA">
+				<input TYPE="RESET" Value="RESET">
+				<input TYPE="BUTTON" Value="STAMP LOCAL" onclick="stampaStorage();">
+				<input TYPE="BUTTON" Value="RESET LOCAL" onclick="resetStorage();">
+			</div>
+		</form>
 	</div>
 	<div id="Storage"></div>
-</BODY>
+</body>
 
-</HTML>
+</html>

@@ -8,8 +8,18 @@ input[type=text], select {
   box-sizing: border-box;
 }
 
+input[type=password], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
 input[type=reset] {
-  width: 20%;
+  width: 15%;
   background-color: #4CAF50;
   color: white;
   padding: 14px 20px;
@@ -19,8 +29,9 @@ input[type=reset] {
   cursor: pointer;
 }
 
+
 input[type=submit] {
-  width: 20%;
+  width: 15%;
   background-color: #4CAF50;
   color: white;
   padding: 14px 20px;
@@ -30,7 +41,7 @@ input[type=submit] {
   cursor: pointer;
 }
 input[type=button] {
-  width: 25%;
+  width: 15%;
   background-color: #4CAF50;
   color: white;
   padding: 14px 20px;
@@ -50,6 +61,12 @@ input[type=button]:hover {
   background-color: #45a049;
 }
 
+div.insert{
+  margin-left:36%;
+}
+div.buttons{
+  margin-left: 20%;
+}
 div {	
   background-color: #ddd;
   margin-left:auto;
@@ -58,7 +75,7 @@ div {
 }
 
 body {
-  width:80%;
+  width:1024px;
   margin-left:auto;
   margin-right:auto;
   margin-bottom:auto;
