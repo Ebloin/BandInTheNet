@@ -30,7 +30,8 @@ function inserisciUtente() {
     var o = {
         Cognome: document.miaform.Cognome.value,
         Nome: document.miaform.Nome.value,
-        Username: document.miaform.Username.value
+        Username: document.miaform.Username.value,
+        Password: document.miaform.Password.value
     };
     storage[next] = o;
     alert("Dati inseriti");

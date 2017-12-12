@@ -167,6 +167,26 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 1%;margin-bott
 }
 /*--------------END-------------*/
 
+/*-------------FORM-------------*/
+.valutation{
+    height: 95%;
+}
+.valutation__form{
+    display: table;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    z-index: 1; /*testo sopra allo sfodo opaco*/
+}
+.valutation__form__aux{
+    display: table-cell;
+    vertical-align: top;
+}
+
+
+/*--------------END-------------*/
+
+
 /*------------BUTTON------------*/
 
 /*codice del bottone "entra"*/

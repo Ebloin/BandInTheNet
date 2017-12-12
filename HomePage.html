@@ -8,11 +8,11 @@
 
 <body>
     <header class="header clearfix">
-        
+
         <nav id="header__menu">
             <ul id="Menu" style="background-color:white;">
                 <li class="header__menu__logo clearfix">
-                    <h1 class = "header__logo">BandInTheNet</h1>
+                    <h1 class="header__logo">BandInTheNet</h1>
                 </li>
                 <li class="header__menu__item" style="float:right">
                     <a href="Play.html">Let's Play</a>
@@ -26,24 +26,29 @@
                 <li class="header__menu__item" style="float:right">
                     <a href="HomePage.html">HomePage</a>
                 </li>
-            </ul><br><br>
+            </ul>
+            <br>
+            <br>
         </nav>
-    <hr class = "header__hr">
-        
+        <hr class="header__hr">
+
     </header>
-    <section class = "cover">
+    <section class="cover">
         <!-- utilizzo 2 div per centrare il testo
              vedi codepen  -->
-        <div class = "cover__opacity"></div>
+        <div class="cover__opacity"></div>
         <div class="cover__text">
-            <div class="cover__text__aux"> 
+            <div class="cover__text__aux">
                 <h1>Benvenuto su BandInTheNet</h1>
-                <button class="button" style="vertical-align:middle"><span>Login</span></button>
+                <button class="button" style="vertical-align:middle">
+                    <span>Login</span>
+                </button>
             </div>
         </div>
     </section>
 
-    <section id="Chi Siamo" class="whoami"> <!-- stessa cosa di prima per centrare il testo -->
+    <section id="Chi Siamo" class="whoami">
+        <!-- stessa cosa di prima per centrare il testo -->
         <div class="whoami__text">
             <div class="whoami__text__aux">
                 <h1>Chi Siamo</h1>
@@ -65,7 +70,8 @@
                 <p> bla bla bla bla bla bla bla bla bla bla bla</p>
             </div>
         </div>
-        <section id="contatti" class="contacts"> <!-- stessa cosa di prima per centrare il testo -->
+        <section id="contatti" class="contacts">
+            <!-- stessa cosa di prima per centrare il testo -->
             <div class="contacts__text">
                 <div class="contacts__text__aux">
                     <h1>Contatti</h1>
@@ -87,8 +93,46 @@
                     <p> bla bla bla bla bla bla bla bla bla bla bla</p>
                 </div>
             </div>
-    </section>
-
+        </section>
+        <section id="valutation" class="valutation">
+            <!-- stessa cosa di prima per centrare il testo -->
+            <div class="valutation__form">
+                <div class="valutation__form__aux">
+                    <form action="" method="POST" name="miaform" onSubmit="return inserisciUtente();">
+                        <div class="insert">
+                            <table cellpadding=4 ID="Elenco">
+                                <tr>
+                                    <td>
+                                        <input name="Cognome" type="text" size="20" placeholder="Cognome">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input name="Nome" type="text" size="20" placeholder="Nome">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input name="Username" type="text" size="24" placeholder="Username">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input name="Password" type="Password" size="24" placeholder="Password">
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="buttons">
+                            <input TYPE="SUBMIT" Value="INVIA">
+                            <input TYPE="RESET" Value="RESET">
+                            <input TYPE="BUTTON" Value="STAMP LOCAL" onclick="stampaStorage();">
+                            <input TYPE="BUTTON" Value="RESET LOCAL" onclick="resetStorage();">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <section>
 
 </body>
 
