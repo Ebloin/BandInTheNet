@@ -33,14 +33,10 @@ function init() {
     document.addEventListener('keydown', premotasto);
     document.addEventListener('keyup', lasciotasto);
 
-    var aree = document.getElementsByTagName('area');
-    for (i = 0; i < aree.length; i++) {
-        aree[i].addEventListener('click', suona);
-    }
-
     var prove = document.getElementsByClassName('key');
     for (i = 0; i < prove.length; i++) {
-        prove[i].addEventListener('click', suona);
+        prove[i].addEventListener('mousedown', mousedown);
+        prove[i].addEventListener('mouseup', mouseup);
     }
 }
 
@@ -57,6 +53,16 @@ var lasciotasto = function(e) {
     var nota = KEYMAP[e.keyCode];
     if (!nota) return; //Se il tasto non è mappato
     document.getElementById(nota).classList.remove('active');
+}
+
+var mousedown= function(e) {
+    var nota= e.target.id;
+    e.target.classList.add('active');
+    createjs.Sound.play(nota);
+}
+
+var mouseup= function(e) {
+    e.target.classList.remove('active');
 }
 
 var suona = function(e) {
