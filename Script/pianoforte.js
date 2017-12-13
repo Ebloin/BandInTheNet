@@ -64,7 +64,3 @@ var mousedown= function(e) {
 var mouseup= function(e) {
     e.target.classList.remove('active');
 }
-
-var suona = function(e) {
-    createjs.Sound.play(e.target.id);
-}
