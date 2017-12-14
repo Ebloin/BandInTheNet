@@ -44,6 +44,19 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 1%;margin-bott
     float: left; /* elementi su singola riga */
     list-style-type: none;
 }
+.header__menu__item button{
+    border: none;
+    background: none;
+    color:#8c8b8b;
+    font-family: "Times New Roman";  
+    text-align: center;
+    font-size: 16px;
+    size: auto;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+.header__menu__item button:hover{opacity: 0.75;}/*classe che modifica l'elemento di menu quando ci si passa sopra con il mouse*/
+    
 .header__menu__item a{
     color: #8c8b8b;
     display: block;
@@ -51,9 +64,7 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 1%;margin-bott
     padding: 0px 16px;
     text-decoration: none;
 }
-.header__menu__item a:hover{ /*classe che modifica l'elemento di menu quando ci si passa sopra con il mouse*/
-    opacity: 0.75;
-}
+.header__menu__item a:hover{opacity: 0.75;}
 
 .header__menu__logo {
     list-style-type: none;
@@ -199,17 +210,14 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 1%;margin-bott
     height: 40px;
     transition: all 0.5s;
     cursor: pointer;
-    margin: 5px;
-    
+    margin: 5px; 
   }
-  
   .button span {
     cursor: pointer;
     display: inline-block;
     position: relative;
     transition: 0.5s;
   }
-  
   .button span:after {
     content: '\00bb';
     position: absolute;
@@ -218,11 +226,9 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 1%;margin-bott
     right: -20px;
     transition: 0.5s;
   }
-  
   .button:hover span {
     padding-right: 25px;
   }
-  
   .button:hover span:after {
     opacity: 1;
     right: 0;

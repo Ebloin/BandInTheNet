@@ -7,37 +7,19 @@
 
 <body onload="inizializzaStorage();">
 	<div>
-
-		<form action="" method="POST" name="miaform" onSubmit="return inserisciUtente();">
+		<form action="" method="POST" name="miaform" onsubmit="return inserisciUtente();">
 			<div class="insert">
-				<table cellpadding=4 ID="Elenco">
-					<tr>
-						<td>
-							<input name="Cognome" type="text" size="20" placeholder="Cognome">
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<input name="Nome" type="text" size="20" placeholder="Nome">
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<input name="Username" type="text" size="24" placeholder="Username">
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<input name="Password" type="Password" size="24" placeholder="Password">
-						</td>
-					</tr>
-				</table>
+				<label><b>Username</b></label>
+				<input type="text" placeholder="Inserisci Username" name="username" required>
+				<label><b>Password</b></label>
+				<input type="password" placeholder="Inserisci Password" name="password" required>
+				<button type="submit">Login</button>
+				<input type="checkbox" checked="checked"> Remember me
 			</div>
-			<div class="buttons">
-				<input TYPE="SUBMIT" Value="INVIA">
-				<input TYPE="RESET" Value="RESET">
-				<input TYPE="BUTTON" Value="STAMP LOCAL" onclick="stampaStorage();">
-				<input TYPE="BUTTON" Value="RESET LOCAL" onclick="resetStorage();">
+			<div class="insert storage">
+				<input type="reset" value="Reset">
+				<input type="button" value="Stamp" onclick="stampaStorage();">
+				<input type="button" value="Pown" onclick="resetStorage();">
 			</div>
 		</form>
 	</div>
