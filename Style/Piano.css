@@ -1,3 +1,5 @@
+body{width: 1024px;}
+
 .keys {
   position: relative;
   display: inline-flex;

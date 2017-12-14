@@ -2,14 +2,16 @@
 
 <head>
     <title>BandInTheNet</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
     <link href="./Style/HomePage.css" rel="stylesheet" type="text/css">
+    <link href="./Style/bootstrap.css" rel="stylesheet" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
 <body>
     <header class="header clearfix">
 
-        <nav id="header__menu">
+        <nav id="header__menu" class="navbar navbar-default navbar-fixed-top">
             <ul id="Menu" style="background-color:white;">
                 <li class="header__menu__logo clearfix">
                     <h1 class="header__logo">BandInTheNet</h1>
@@ -40,8 +42,9 @@
         <div class="cover__text">
             <div class="cover__text__aux">
                 <h1>Benvenuto su BandInTheNet</h1>
+                <a href="Play.html"></a>
                 <button class="button" style="vertical-align:middle">
-                    <span>Login</span>
+                    <span>Play</span>
                 </button>
             </div>
         </div>
@@ -53,21 +56,7 @@
             <div class="whoami__text__aux">
                 <h1>Chi Siamo</h1>
                 <p> Siamo un gruppo di studenti di ingegneria</p>
-                <p> bla bla bla bla bla bla bla bla bla bla bla</p>
-                <p> bla bla bla bla bla bla bla bla bla bla bla</p>
-                <p> bla bla bla bla bla bla bla bla bla bla bla</p>
-                <p> bla bla bla bla bla bla bla bla bla bla bla</p>
-                <p> bla bla bla bla bla bla bla bla bla bla bla</p>
-                <p> bla bla bla bla bla bla bla bla bla bla bla</p>
-                <p> bla bla bla bla bla bla bla bla bla bla bla</p>
-                <p> bla bla bla bla bla bla bla bla bla bla bla</p>
-                <p> bla bla bla bla bla bla bla bla bla bla bla</p>
-                <p> bla bla bla bla bla bla bla bla bla bla bla</p>
-                <p> bla bla bla bla bla bla bla bla bla bla bla</p>
-                <p> bla bla bla bla bla bla bla bla bla bla bla</p>
-                <p> bla bla bla bla bla bla bla bla bla bla bla</p>
-                <p> bla bla bla bla bla bla bla bla bla bla bla</p>
-                <p> bla bla bla bla bla bla bla bla bla bla bla</p>
+                <p> testo riempitivo </p>
             </div>
         </div>
         <section id="contatti" class="contacts">
@@ -76,62 +65,22 @@
                 <div class="contacts__text__aux">
                     <h1>Contatti</h1>
                     <p> Ci potete trovare su: </p>
-                    <p> bla bla bla bla bla bla bla bla bla bla bla</p>
-                    <p> bla bla bla bla bla bla bla bla bla bla bla</p>
-                    <p> bla bla bla bla bla bla bla bla bla bla bla</p>
-                    <p> bla bla bla bla bla bla bla bla bla bla bla</p>
-                    <p> bla bla bla bla bla bla bla bla bla bla bla</p>
-                    <p> bla bla bla bla bla bla bla bla bla bla bla</p>
-                    <p> bla bla bla bla bla bla bla bla bla bla bla</p>
-                    <p> bla bla bla bla bla bla bla bla bla bla bla</p>
-                    <p> bla bla bla bla bla bla bla bla bla bla bla</p>
-                    <p> bla bla bla bla bla bla bla bla bla bla bla</p>
-                    <p> bla bla bla bla bla bla bla bla bla bla bla</p>
-                    <p> bla bla bla bla bla bla bla bla bla bla bla</p>
-                    <p> bla bla bla bla bla bla bla bla bla bla bla</p>
-                    <p> bla bla bla bla bla bla bla bla bla bla bla</p>
-                    <p> bla bla bla bla bla bla bla bla bla bla bla</p>
+                    <p> Testo Riempitivo</p>
                 </div>
             </div>
         </section>
         <section id="valutation" class="valutation">
-            <!-- stessa cosa di prima per centrare il testo -->
             <div class="valutation__form">
-                <div class="valutation__form__aux">
-                    <form action="" method="POST" name="miaform" onSubmit="return inserisciUtente();">
-                        <div class="insert">
-                            <table cellpadding=4 ID="Elenco">
-                                <tr>
-                                    <td>
-                                        <input name="Cognome" type="text" size="20" placeholder="Cognome">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input name="Nome" type="text" size="20" placeholder="Nome">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input name="Username" type="text" size="24" placeholder="Username">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input name="Password" type="Password" size="24" placeholder="Password">
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                        <div class="buttons">
-                            <input TYPE="SUBMIT" Value="INVIA">
-                            <input TYPE="RESET" Value="RESET">
-                            <input TYPE="BUTTON" Value="STAMP LOCAL" onclick="stampaStorage();">
-                            <input TYPE="BUTTON" Value="RESET LOCAL" onclick="resetStorage();">
-                        </div>
-                    </form>
-                </div>
+
             </div>
+            <!--
+            <div class="buttons">
+                <input TYPE="SUBMIT" Value="INVIA">
+                <input TYPE="RESET" Value="RESET">
+                <input TYPE="BUTTON" Value="STAMP LOCAL" onclick="stampaStorage();">
+                <input TYPE="BUTTON" Value="RESET LOCAL" onclick="resetStorage();">
+            </div>
+            -->
             <section>
 
 </body>

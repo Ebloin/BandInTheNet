@@ -7,6 +7,7 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 1%;margin-bott
 .header{
     position: fixed; /* Set the navbar to fixed position */
     top: 0; /* Position the navbar at the top of the page */
+    border: 1px solid blue;/* visualizza grandezza della cover*/
     width: 100%;
     height: 8%;
     background-color: white;
@@ -65,12 +66,11 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 1%;margin-bott
 /*definizione della classe di cover(homepage in pratica)*/
 .cover{
     height: 100%;
-    /*border: 1px solid red;/* visualizza grandezza della cover*/
+    border: 1px solid yellow;/* visualizza grandezza della cover*/
     background-color: black;
     background-image: url("https://source.unsplash.com/1600x900/?music,sound");
     background-size: cover;
     background-position: center center;
-    
 }
 .cover__text{
     display: table;
@@ -100,6 +100,7 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 1%;margin-bott
 /*------------WHOAMI------------*/
 .whoami{
     height: 95%;
+    border: 1px solid rgb(255, 0, 234);/* visualizza grandezza della cover*/    
     /* visualizza grandezza della cover*/
 }
 .whoami__text{
@@ -140,6 +141,8 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 1%;margin-bott
 .contacts{
     height: 95%;
     /* visualizza grandezza della cover*/
+    border: 1px solid rgb(0, 255, 255);/* visualizza grandezza della cover*/
+    
 }
 .contacts__text{
     display: table;
@@ -168,19 +171,14 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 1%;margin-bott
 /*--------------END-------------*/
 
 /*-------------FORM-------------*/
-.valutation{
-    height: 95%;
-}
-.valutation__form{
-    display: table;
-    height: 100%;
-    width: 100%;
+
+.valutation__form{    
+    height: 20%;
     position: relative;
-    z-index: 1; /*testo sopra allo sfodo opaco*/
-}
-.valutation__form__aux{
-    display: table-cell;
-    vertical-align: top;
+    border: 1px solid red;/* visualizza grandezza della cover*/
+    /*background-image: url("https://source.unsplash.com/1600x300/?music,sound");*/
+    background-size: cover;
+    background-position: center center;
 }
 
 
