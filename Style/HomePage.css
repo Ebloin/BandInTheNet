@@ -7,9 +7,8 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 1%;margin-bott
 .header{
     position: fixed; /* Set the navbar to fixed position */
     top: 0; /* Position the navbar at the top of the page */
-    border: 1px solid blue;/* visualizza grandezza della cover*/
+    /*border: 1px solid blue;/* visualizza grandezza della cover*/
     width: 100%;
-    height: 8%;
     background-color: white;
     z-index: 999;
 }
@@ -25,11 +24,11 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 1%;margin-bott
 }
 
 .header__hr { /*classe che modifica HorizontalRow dell'header*/
-    height: 10%;
 	border: 0;
     box-shadow: 0 5px 5px -5px #8c8b8b inset;
     margin-top: -6px;
-    margin-bottom: 0px;
+    margin-bottom: -5px;
+    height: 5px;
 }
 
 .header__menu{
@@ -66,7 +65,7 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 1%;margin-bott
 /*definizione della classe di cover(homepage in pratica)*/
 .cover{
     height: 100%;
-    border: 1px solid yellow;/* visualizza grandezza della cover*/
+    /*border: 1px solid yellow;/* visualizza grandezza della cover*/
     background-color: black;
     background-image: url("https://source.unsplash.com/1600x900/?music,sound");
     background-size: cover;
@@ -100,8 +99,8 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 1%;margin-bott
 /*------------WHOAMI------------*/
 .whoami{
     height: 95%;
-    border: 1px solid rgb(255, 0, 234);/* visualizza grandezza della cover*/    
     /* visualizza grandezza della cover*/
+    /*border: 1px solid rgb(255, 0, 234);/* visualizza grandezza della cover*/    
 }
 .whoami__text{
     display: table;
@@ -141,7 +140,7 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 1%;margin-bott
 .contacts{
     height: 95%;
     /* visualizza grandezza della cover*/
-    border: 1px solid rgb(0, 255, 255);/* visualizza grandezza della cover*/
+    /*border: 1px solid rgb(0, 255, 255);/* visualizza grandezza della cover*/
     
 }
 .contacts__text{
@@ -173,7 +172,7 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 1%;margin-bott
 /*-------------FORM-------------*/
 
 .valutation__form{    
-    height: 20%;
+    height: 35%;
     position: relative;
     border: 1px solid red;/* visualizza grandezza della cover*/
     /*background-image: url("https://source.unsplash.com/1600x300/?music,sound");*/
