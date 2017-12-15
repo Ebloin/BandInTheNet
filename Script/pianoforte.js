@@ -97,10 +97,18 @@ var stopRegistra= function() {recording = false};
 
 var playNote= function(i) {
     for(i=0; i<noteRegistrate.length; i++) {
+        sleep(500);
         suona(noteRegistrate[i]);
     }
 }
 
 var suona= function(nota) {
     createjs.Sound.play(nota);
+}
+
+function sleep(millis) {
+    var date= new Date();
+    var curDate= null;
+    do {curDate= new Date();}
+    while(curDate-date < millis);
 }
