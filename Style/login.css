@@ -90,14 +90,29 @@ input[type=text], input[type=password] {
   box-sizing: border-box;
 }
 
-button {
+.login{
   background-color: #4CAF50;
   color: white;
   padding: 14px 20px;
-  margin: 8px 0;
   border: none;
   cursor: pointer;
-  width: 100%;
+  width: 50%;
+  /*center button method*/
+  margin: 5px auto;  
+  justify-content: center;
+  display: flex;
+}
+.register{
+  background-color: rgb(167, 0, 0);
+  color: white;
+  padding: 14px 20px;
+  border: none;
+  cursor: pointer;
+  width: 50%;
+  /*center button method*/
+  margin: 5px auto;
+  justify-content: center;
+  display: flex;
 }
 
 button:hover {
@@ -143,7 +158,7 @@ input[type=button]:hover {
 /*--------------END-------------*/
 
 /*--------------FIX-------------*/
-/*fix del float si puÃƒÆ’Ã‚Â² ignorare tranquilli*/
+/*fix del float si può ignorare tranquilli*/
 .clearfix:after {
   visibility: hidden;
   display: block;
