@@ -22,15 +22,34 @@ function uguali(u1, u2) {
     return false;
 }
 
+
 function userInStorage(user) { //true if user is in localStorge
     var storage = JSON.parse(localStorage.utenti);
     var l = storage.length;
+    if(l==0) return false;
     for (i = 0; i < 1; i++) {
-        if (user == storage[i].username) return true;
+        if (user == storage[i].Username){
+            alert("User is already registered");            
+            return true;
+        }
     }
     return false;
 }
-
+function login(){
+    var storage = JSON.parse(localStorage.utenti);
+    var l = storage.length;
+    var userName = document.miaform.username.value;
+    var userPsw = document.miaform.password.value;
+    for(i=0; i<l; i++){
+        if((storage[i].Username == userName) && (storage[i].Password == userPsw)){
+             storage[i].Online = true;
+            alert("Utente trovato!\n Bentornato!");
+            return true;
+        }
+    }
+    alert("Utente non registrato!");
+    return false;
+}
 function inserisciUtente() {
     var storage = JSON.parse(localStorage.utenti);
     var next = storage.length;
@@ -40,16 +59,14 @@ function inserisciUtente() {
         Detail: username,
         Songs: "[]"
     };
-    /*
-    if (userInStorage(username)) {
-        alert("Utente già registrato!!");
-        return false;
-    }*/
+    
+    if (userInStorage(username)) return false;
 
     var o = {
         Username: document.miaform.username.value,
         Password: document.miaform.password.value,
-        Profile: profile
+        Profile: profile,
+        Online: false
     };
     storage[next] = o;
     alert("Dati inseriti");

@@ -40,13 +40,13 @@
 				<label>
 					<b>Username</b>
 				</label>
-				<input type="text" placeholder="Inserisci Username" name="username" required>
+				<input id = "UserName" type="text" placeholder="Inserisci Username" name="username" required>
 				<label>
 					<b>Password</b>
 				</label>
-				<input type="password" placeholder="Inserisci Password" name="password" required>
+				<input id = "UserPsw" type="password" placeholder="Inserisci Password" name="password" required>
 				<input type="checkbox" checked="checked"> Remember me
-				<button class="Login">Login</button>
+				<button class="Login" onclick="return login();">Login</button>
 				<button type="submit" class="Register" onclick="return inserisciUtente();">Registrati</button>				
 			</div>
 			<hr style="color:#f1f1f1;">
