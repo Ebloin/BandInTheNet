@@ -35,7 +35,7 @@
 		<hr class="header__hr">
 	</header>
 	<div class="LoginBox">
-		<form action="" method="POST" name="miaform" onsubmit="return inserisciUtente();">
+		<form action="" method="POST" name="miaform">
 			<div class="insert">
 				<label>
 					<b>Username</b>
@@ -46,17 +46,19 @@
 				</label>
 				<input type="password" placeholder="Inserisci Password" name="password" required>
 				<input type="checkbox" checked="checked"> Remember me
-				<button type="submit" class="Login">Login</button>
-				<button class="Register">Registrati</button>				
+				<button class="Login">Login</button>
+				<button type="submit" class="Register" onclick="return inserisciUtente();">Registrati</button>				
 			</div>
+			<hr style="color:#f1f1f1;">
 			<div class="insert storage">
 				<input type="reset" value="Reset">
 				<input type="button" value="Stamp" onclick="stampaStorage();">
 				<input type="button" value="Pown" onclick="resetStorage();">
+				<div id="Storage"></div>
 			</div>
 		</form>
 	</div>
-	<div id="Storage"></div>
+
 </body>
 
 </html>

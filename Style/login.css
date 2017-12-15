@@ -150,6 +150,30 @@ input[type=button]:hover {
 }
 /*--------------END-------------*/
 
+/*------------STORAGE-----------*/
+
+#localstorage td, #localstorage th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  border-radius: 4px;
+}
+#localstorage tr:hover {
+  background-color: #ddd;
+}
+
+#localstorage th {
+  text-align: center;
+  background-color: #4CAF50;
+  color: white;
+}
+
+h1{
+  color: #4CAF50;
+  text-shadow: 1px 1px #45a049;
+}
+/*---------------END------------*/
+
+
 /*--------------Fonts-----------*/
 @font-face {
   font-family: 'Guns';
