@@ -116,7 +116,7 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 1%;margin-bott
     float: left;
     height: 100%;
     background-color: black;
-    background-image: url("https://source.unsplash.com/400x260/?human");
+    background-image: url("https://source.unsplash.com/400x260/?sound");
     background-size: cover;
     background-position: center center;
 }
@@ -148,7 +148,7 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 1%;margin-bott
     height: 100%;
     border-radius:4px;
     background-color: black;
-    background-image: url("https://source.unsplash.com/400x260/?media");
+    background-image: url("https://source.unsplash.com/400x260/?video");
     background-size: cover;
     background-position: center center;
 }
