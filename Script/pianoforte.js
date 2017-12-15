@@ -12,8 +12,19 @@ var KEYMAP = {
     72: 'la',
     85: 'la#',
     74: 'si',
-    75: 'do_'
+    75: 'do_',
+    79: 'C#4',
+    76: 'D4',
+    80: 'D#4',
+    59: 'E4',
+    186: 'E4',
+    222: 'F4',
+    221: 'F#4',
+    220: 'G4'
 };
+
+var recording = false;
+var noteRegistrate= [];
 
 function init() {
     createjs.Sound.registerSound("Audio/note/c1.mp3", 'do');
@@ -38,6 +49,10 @@ function init() {
         prove[i].addEventListener('mousedown', mousedown);
         prove[i].addEventListener('mouseup', mouseup);
     }
+
+    document.getElementById('registra').addEventListener('click', registra);
+    document.getElementById('stop').addEventListener('click', stopRegistra);
+    document.getElementById('play').addEventListener('click', playNote);
 }
 
 var premotasto = function(e) {
@@ -45,6 +60,10 @@ var premotasto = function(e) {
     var nota = KEYMAP[e.keyCode];
     if (!nota) return; //Se il tasto non è mappato
     document.getElementById(nota).classList.add('active');
+    if (recording) {
+        noteRegistrate.push(nota);
+        document.getElementById('noteregistrate').innerHTML = noteRegistrate;
+    }
     createjs.Sound.play(nota);
 }
 
@@ -58,9 +77,38 @@ var lasciotasto = function(e) {
 var mousedown= function(e) {
     var nota= e.target.id;
     e.target.classList.add('active');
+    if (recording) {
+        noteRegistrate.push(nota);
+    }
     createjs.Sound.play(nota);
 }
 
 var mouseup= function(e) {
     e.target.classList.remove('active');
+}
+
+var registra= function() {
+    recording = true
+    //INSERIRE CONTROLLO SE VERAMENTE UOLE CANCELLARE
+    noteRegistrate = []
+};
+
+var stopRegistra= function() {recording = false};
+
+var playNote= function(i) {
+    for(i=0; i<noteRegistrate.length; i++) {
+        sleep(500);
+        suona(noteRegistrate[i]);
+    }
+}
+
+var suona= function(nota) {
+    createjs.Sound.play(nota);
+}
+
+function sleep(millis) {
+    var date= new Date();
+    var curDate= null;
+    do {curDate= new Date();}
+    while(curDate-date < millis);
 }

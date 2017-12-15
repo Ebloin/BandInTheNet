@@ -150,3 +150,6 @@ body{width: 1024px; background-color: black;}
 .keys .white.center .top:before, .keys .white.center .top:after {
   content: '';
 }
+#noteregistrate {
+  color: white;
+}
