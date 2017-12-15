@@ -13,6 +13,31 @@
 </head>
 
 <body onload="init()">
+    <header class="header clearfix">
+
+        <nav id="header__menu">
+            <ul id="Menu" style="background-color:white;">
+                <li class="header__menu__logo" style="float:left">
+                    <h1 class="header__logo">BandInTheNet</h1>
+                </li>
+                <li class="header__menu__item" style="float:right">
+                    <a href="Login.html">Accedi</a>
+                </li>
+                <li class="header__menu__item" style="float:right">
+                    <a href="Play.html">Let's Play</a>
+                </li>
+                <li class="header__menu__item" style="float:right">
+                    <a href="HomePage.html #Info">Info</a>
+                </li>
+                <li class="header__menu__item" style="float:right">
+                    <a href="HomePage.html">HomePage</a>
+                </li>
+            </ul>
+            <br>
+            <br>
+        </nav>
+        <hr class="header__hr">
+    </header>
 
     <div class="keys">
         <div id='do' class="key left white" data-note="C3">
@@ -88,12 +113,14 @@
             <div class="top"></div>
         </div>
     </div>
-    <div>
+    <div class = "console">
         <button id='registra'>rec</button>
         <button id='stop'>stop</button>
         <button id='play'>play</button>
     </div>
-    <div><p id='noteregistrate'></p></div>
+    <div>
+        <p id='noteregistrate'></p>
+    </div>
 </body>
 
 </html>
