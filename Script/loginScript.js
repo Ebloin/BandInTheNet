@@ -62,6 +62,7 @@ function inserisciUtente() {
     
     if (userInStorage(username)) return false;
 
+
     var o = {
         Username: document.miaform.username.value,
         Password: document.miaform.password.value,
