@@ -139,14 +139,6 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 1%;margin-bott
 }
 /*--------------END-------------*/
 
-
-/*--------------Fonts-----------*/
-@font-face {
-    font-family: 'Guns';
-    src: url('../Font/guns.TTF');
-}
-/*--------------END-------------*/
-
 /*-----------CONTACTS-----------*/
 .contacts{
     height: 95%;
@@ -179,21 +171,6 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 1%;margin-bott
     color:#8c8b8b;
 }
 /*--------------END-------------*/
-
-/*-------------FORM-------------*/
-
-.valutation__form{    
-    height: 35%;
-    position: relative;
-    border: 1px solid red;/* visualizza grandezza della cover*/
-    /*background-image: url("https://source.unsplash.com/1600x300/?music,sound");*/
-    background-size: cover;
-    background-position: center center;
-}
-
-
-/*--------------END-------------*/
-
 
 /*------------BUTTON------------*/
 
@@ -233,6 +210,14 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 1%;margin-bott
     opacity: 1;
     right: 0;
   }
+/*--------------END-------------*/
+
+
+/*--------------Fonts-----------*/
+@font-face {
+    font-family: 'Guns';
+    src: url('../Font/guns.TTF');
+}
 /*--------------END-------------*/
 
 /*--------------FIX-------------*/

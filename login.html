@@ -6,12 +6,45 @@
 </head>
 
 <body onload="inizializzaStorage();">
-	<div>
+	<header class="header clearfix">
+
+		<nav id="header__menu">
+			<ul id="Menu" style="background-color:white;">
+				<li class="header__menu__logo clearfix">
+					<h1 class="header__logo">BandInTheNet</h1>
+				</li>
+				<li class="header__menu__item" style="float:right">
+					<a href="Login.html">Accedi</a>
+				</li>
+				<li class="header__menu__item" style="float:right">
+					<a href="Play.html">Let's Play</a>
+				</li>
+				<li class="header__menu__item" style="float:right">
+					<a href="#contatti">Contatti</a>
+				</li>
+				<li class="header__menu__item" style="float:right">
+					<a href="#Chi Siamo">Chi Siamo</a>
+				</li>
+				<li class="header__menu__item" style="float:right">
+					<a href="HomePage.html">HomePage</a>
+				</li>
+			</ul>
+			<br>
+			<br>
+		</nav>
+		<hr class="header__hr">
+
+	</header>
+	<div class="LoginBox">
 		<form action="" method="POST" name="miaform" onsubmit="return inserisciUtente();">
 			<div class="insert">
-				<label><b>Username</b></label>
+				<label>
+					<b>Username</b>
+				</label>
 				<input type="text" placeholder="Inserisci Username" name="username" required>
-				<label><b>Password</b></label>
+				<label>
+					<b>Password</b>
+				</label>
 				<input type="password" placeholder="Inserisci Password" name="password" required>
 				<button type="submit">Login</button>
 				<input type="checkbox" checked="checked"> Remember me
