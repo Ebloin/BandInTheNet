@@ -125,6 +125,8 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 1%;margin-bott
     vertical-align: top;
 }
 .whoami__text__aux h1{
+    margin: 60px auto;
+    margin-bottom: 0px;
     text-align: center;
     font-family: 'Guns';
     font-size: 60;
@@ -162,6 +164,7 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 1%;margin-bott
     font-family: 'Guns';
     font-size: 60;
     color:#8c8b8b;
+    margin: 0 auto;
 }
 .contacts__text__aux p{
     text-align: center;
