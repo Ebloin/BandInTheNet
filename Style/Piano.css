@@ -1,6 +1,7 @@
-body{width: 1024px;}
+body{width: 1024px; background-color: black;}
 
 .keys {
+  margin: 0 auto;
   position: relative;
   display: inline-flex;
   overflow: hidden;
