@@ -25,6 +25,7 @@ var KEYMAP = {
 
 var recording = false;
 var noteRegistrate= [];
+var indiceLoop=0;
 
 function init() {
     createjs.Sound.registerSound("Audio/note/c1.mp3", 'do');
@@ -53,6 +54,7 @@ function init() {
     document.getElementById('registra').addEventListener('click', registra);
     document.getElementById('stop').addEventListener('click', stopRegistra);
     document.getElementById('play').addEventListener('click', playNote);
+    document.getElementById('recButton').addEventListener('click', recHandler);
 }
 
 var premotasto = function(e) {
@@ -88,27 +90,45 @@ var mouseup= function(e) {
 }
 
 var registra= function() {
-    recording = true
+    recording = true;
     //INSERIRE CONTROLLO SE VERAMENTE UOLE CANCELLARE
-    noteRegistrate = []
+    noteRegistrate = [];
+    $('#noteregistrate').text('');
 };
 
 var stopRegistra= function() {recording = false};
 
-var playNote= function(i) {
-    for(i=0; i<noteRegistrate.length; i++) {
-        sleep(500);
-        suona(noteRegistrate[i]);
-    }
+var playNote= function() {
+    let i=0;
+    var loop = setInterval(function() {
+        nota= noteRegistrate[indiceLoop];
+        indiceLoop++;    
+        suona(nota);
+        if (indiceLoop == noteRegistrate.length) {
+            indiceLoop=0;
+            clearInterval(loop);
+        }
+    }, 500);
 }
 
 var suona= function(nota) {
     createjs.Sound.play(nota);
 }
 
-function sleep(millis) {
-    var date= new Date();
-    var curDate= null;
-    do {curDate= new Date();}
-    while(curDate-date < millis);
+var recHandler= function(e) {
+    var button= e.target;
+    //non sto registrando, inizia a registrare
+    if (button.classList.contains('notRec')){
+        button.classList.replace('notRec', 'Rec');
+        recording = true;
+        //INSERIRE CONTROLLO SE VERAMENTE UOLE CANCELLARE
+        noteRegistrate = [];
+        $('#noteregistrate').text('');
+    }
+
+    //Sto registrando, stop alla registrazione
+    else if (button.classList.contains('Rec')){
+        button.classList.replace('Rec', 'notRec');
+        recording = false;
+    }
 }
