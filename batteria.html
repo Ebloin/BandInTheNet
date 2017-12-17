@@ -4,14 +4,42 @@
     <script src="https://code.createjs.com/soundjs-0.6.2.min.js"></script>
     <script src="http://code.jquery.com/jquery-1.6.4.min.js" type="text/javascript"></script>
     <script src="Script/batteria.js" type="text/javascript"></script>
-    <script src="batteria.css" type="text/css"></script>
+    <link rel="stylesheet" href="./Style/Batteria.css">
 </head>
 
 <body onload="init()">
-    <img src="Immagini/batteriaMd.jpg" usemap="#Map" />
+    <header class="header clearfix">
+
+        <nav id="header__menu">
+            <ul id="Menu" style="background-color:white;">
+                <li class="header__menu__logo clearfix">
+                    <h1 class="header__logo">BandInTheNet</h1>
+                </li>
+                <li class="header__menu__item" style="float:right">
+                    <a href="Login.html">Accedi</a>
+                </li>
+                <li class="header__menu__item" style="float:right">
+                    <a href="Play.html">Let's Play</a>
+                </li>
+                <li class="header__menu__item" style="float:right">
+                    <a href="HomePage.html #Info">Info</a>
+                </li>
+                <li class="header__menu__item" style="float:right">
+                    <a href="HomePage.html">HomePage</a>
+                </li>
+            </ul>
+            <br>
+            <br>
+        </nav>
+        <hr class="header__hr">
+    </header>
+
+    <img class="drum" src="Immagini/batteriaMd.jpg" usemap="#Map" width="70%" height="100%">
     <div id="hi-hat">A</div>
     <div id="tom-tom">G</div>
-    <div><button id="tom-tom">H</button></div>
+    <div>
+        <button id="tom-tom">H</button>
+    </div>
     <button id="bass-drum">V</button>
     <button id="bass-drum">B</button>
     <button id="bacchette">Z</button>

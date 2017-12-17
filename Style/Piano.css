@@ -1,4 +1,4 @@
-body{width: 1024px; background-color: black;}
+body{width:auto;margin:0 auto; background-color: black;}
 /*-------------HEADER------------*/
 .header{
   position: fixed; /* Set the navbar to fixed position */
@@ -69,8 +69,8 @@ border: 0;
 
 .keys {
   margin: 0 auto;
-  margin-top: 42px;
-  margin-left: 38%;
+  margin-top: 49px;
+  margin-left: 20%;
   position: relative;
   display: inline-flex;
   overflow: hidden;
@@ -229,6 +229,13 @@ border: 0;
   justify-content: center;
   display: flex;
 }
+
+/*--------------Fonts-----------*/
+@font-face {
+  font-family: 'Guns';
+  src: url('../Font/guns.TTF');
+}
+/*--------------END-------------*/
 
 /*--------------FIX-------------*/
 
