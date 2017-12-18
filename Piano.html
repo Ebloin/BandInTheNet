@@ -8,6 +8,7 @@
     <script src="Script/soundjs-0.6.2.min.js"></script>
     <script src="Script/jquery-1.11.3.min.js" type="text/javascript"></script>
     <script src="Script/pianoforte.js" type="text/javascript"></script>
+    <script src="Script/jquery-ui.min.js" type="text/javascript"></script>
     <script>
     </script>
 </head>
@@ -40,89 +41,87 @@
     </header>
     <div id="recordingBar">
         <p>Clicca sul cerchio per iniziare a registrare, poi su play per riascoltare la tua composizione</p>
-        <button id="recButton" class="Rbutton notRec"></button>
-    </div>
-    <div class="keys">
-        <div id='do' class="key left white" data-note="C3">
-            <div class="top"></div>
-        </div>
-        <div id='do#' class="key black" data-note="C#3">
-            <div class="top"></div>
-        </div>
-        <div id='re' class="key center white" data-note="D3">
-            <div class="top"></div>
-        </div>
-        <div id='re#' class="key black" data-note="D#3">
-            <div class="top"></div>
-        </div>
-        <div id='mi' class="key right white" data-note="E3">
-            <div class="top"></div>
-        </div>
-        <div id='fa' class="key left white" data-note="F3">
-            <div class="top"></div>
-        </div>
-        <div id='fa#' class="key black" data-note="F#3">
-            <div class="top"></div>
-        </div>
-        <div id='sol' class="key center white" data-note="G3">
-            <div class="top"></div>
-        </div>
-        <div id='sol#' class="key black" data-note="G#3">
-            <div class="top"></div>
-        </div>
-        <div id='la' class="key center white" data-note="A3">
-            <div class="top"></div>
-        </div>
-        <div id='la#' class="key black" data-note="A#3">
-            <div class="top"></div>
-        </div>
-        <div id='si' class="key right white" data-note="B3">
-            <div class="top"></div>
-        </div>
-        <div id='do' class="key left white" data-note="C3">
-            <div class="top"></div>
-        </div>
-        <div id='do#' class="key black" data-note="C#3">
-            <div class="top"></div>
-        </div>
-        <div id='re' class="key center white" data-note="D3">
-            <div class="top"></div>
-        </div>
-        <div id='re#' class="key black" data-note="D#3">
-            <div class="top"></div>
-        </div>
-        <div id='mi' class="key right white" data-note="E3">
-            <div class="top"></div>
-        </div>
-        <div id='fa' class="key left white" data-note="F3">
-            <div class="top"></div>
-        </div>
-        <div id='fa#' class="key black" data-note="F#3">
-            <div class="top"></div>
-        </div>
-        <div id='sol' class="key center white" data-note="G3">
-            <div class="top"></div>
-        </div>
-        <div id='sol#' class="key black" data-note="G#3">
-            <div class="top"></div>
-        </div>
-        <div id='la' class="key center white" data-note="A3">
-            <div class="top"></div>
-        </div>
-        <div id='la#' class="key black" data-note="A#3">
-            <div class="top"></div>
-        </div>
-        <div id='si' class="key right white" data-note="B3">
-            <div class="top"></div>
-        </div>
-    </div>
-    <div class = "console">
-        <button id='registra'>rec</button>
-        <button id='stop'>stop</button>
+        <button id="recButton" class="Rbutton notRec"></button>     
         <button id='play'>play</button>
     </div>
-    <div>
+    <div class="keys">
+        <div id='do4' class="key left white" data-note="C3">
+            <div class="top"></div>
+        </div>
+        <div id='do#4' class="key black" data-note="C#3">
+            <div class="top"></div>
+        </div>
+        <div id='re4' class="key center white" data-note="D3">
+            <div class="top"></div>
+        </div>
+        <div id='re#4' class="key black" data-note="D#3">
+            <div class="top"></div>
+        </div>
+        <div id='mi4' class="key right white" data-note="E3">
+            <div class="top"></div>
+        </div>
+        <div id='fa4' class="key left white" data-note="F3">
+            <div class="top"></div>
+        </div>
+        <div id='fa#4' class="key black" data-note="F#3">
+            <div class="top"></div>
+        </div>
+        <div id='sol4' class="key center white" data-note="G3">
+            <div class="top"></div>
+        </div>
+        <div id='sol#4' class="key black" data-note="G#3">
+            <div class="top"></div>
+        </div>
+        <div id='la4' class="key center white" data-note="A3">
+            <div class="top"></div>
+        </div>
+        <div id='la#4' class="key black" data-note="A#3">
+            <div class="top"></div>
+        </div>
+        <div id='si4' class="key right white" data-note="B3">
+            <div class="top"></div>
+        </div>
+        <div id='do5' class="key left white" data-note="C3">
+            <div class="top"></div>
+        </div>
+        <div id='do#5' class="key black" data-note="C#3">
+            <div class="top"></div>
+        </div>
+        <div id='re5' class="key center white" data-note="D3">
+            <div class="top"></div>
+        </div>
+        <div id='re#5' class="key black" data-note="D#3">
+            <div class="top"></div>
+        </div>
+        <div id='mi5' class="key right white" data-note="E3">
+            <div class="top"></div>
+        </div>
+        <div id='fa5' class="key left white" data-note="F3">
+            <div class="top"></div>
+        </div>
+        <div id='fa#5' class="key black" data-note="F#3">
+            <div class="top"></div>
+        </div>
+        <div id='sol5' class="key center white" data-note="G3">
+            <div class="top"></div>
+        </div>
+        <div id='sol#5' class="key black" data-note="G#3">
+            <div class="top"></div>
+        </div>
+        <div id='la5' class="key center white" data-note="A3">
+            <div class="top"></div>
+        </div>
+        <div id='la#5' class="key black" data-note="A#3">
+            <div class="top"></div>
+        </div>
+        <div id='si5' class="key right white" data-note="B3">
+            <div class="top"></div>
+        </div>
+    </div>
+    <div id='registrata' class='nonVisibile'>
         <p id='noteregistrate'></p>
+        <button id='salvaCanzone' class="visibile">Salva</button>
+        <button id='reset' class="visibile">Reset</button>
     </div>
 </body>
 

@@ -291,3 +291,11 @@ p {
 #recordingBar {
   margin-top: 3.4%;
 }
+
+.nonVisibile {
+  display: none;
+}
+
+.visibile {
+  display: inherit;
+}
