@@ -1,11 +1,15 @@
 function inizializzaStorage() {
     if (typeof (localStorage.utenti) == "undefined") localStorage.utenti = "[]";
+    if (typeof (localStorage.utenteCorrente) == "undefined") localStorage.utenteCorrente = "";
 }
 
 function resetStorage() {
     localStorage.utenti = "[]";
 }
 
+function back() {
+    history.back();
+}
 function stampaStorage() {
     var storage = JSON.parse(localStorage.utenti);
     var l = storage.length;
@@ -17,17 +21,13 @@ function stampaStorage() {
     document.getElementById("Storage").innerHTML = s;
     return true;
 }
-function uguali(u1, u2) {
-    if (u1.username == u2.username) return true;
-    return false;
-}
 
 
 function userInStorage(user) { //true if user is in localStorge
     var storage = JSON.parse(localStorage.utenti);
     var l = storage.length;
     if(l==0) return false;
-    for (i = 0; i < 1; i++) {
+    for (i = 0; i < l; i++) {
         if (user == storage[i].Username){
             alert("User is already registered");            
             return true;
@@ -35,39 +35,40 @@ function userInStorage(user) { //true if user is in localStorge
     }
     return false;
 }
+
+function logout(){
+    localStorage.utenteCorrente.setItem("utenteCorrente","");
+}
 function login(){
     var storage = JSON.parse(localStorage.utenti);
+    var utente = JSON.parse(localStorage.getItem(localStorage.utenteCorrente));  //il parse non è necessario qui
     var l = storage.length;
     var userName = document.miaform.username.value;
     var userPsw = document.miaform.password.value;
     for(i=0; i<l; i++){
         if((storage[i].Username == userName) && (storage[i].Password == userPsw)){
-             storage[i].Online = true;
-            alert("Utente trovato!\n Bentornato!");
-            return true;
+            //storage[i].Online = true;
+            utente = storage[i].Username;
+            localStorage.setItem("utenteCorrente", utente);
+            alert("Utente trovato!\nBentornato "+ utente +"!");
+            return;         
         }
     }
     alert("Utente non registrato!");
-    return false;
+    return;
 }
 function inserisciUtente() {
     var storage = JSON.parse(localStorage.utenti);
     var next = storage.length;
     var username = document.miaform.username.value;
-
-    var profile = {
-        Detail: username,
-        Songs: "[]"
-    };
+    var songs = []; //va stringhificato?
     
     if (userInStorage(username)) return false;
 
-
     var o = {
-        Username: document.miaform.username.value,
+        Username: username,
         Password: document.miaform.password.value,
-        Profile: profile,
-        Online: false
+        Songs: songs
     };
     storage[next] = o;
     alert("Dati inseriti");

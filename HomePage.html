@@ -4,9 +4,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
     <link href="./Style/HomePage.css" rel="stylesheet" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        var checkUser= function() {
+            if (localStorage.utenteCorrente != '') {
+                document.getElementById("Profile").innerHTML = localStorage.utenteCorrente;
+                //$('Profile').html(localStorage.utenteCorrente);
+            }
+            else return;
+        }
+    </script>
 </head>
 
-<body>
+<body onload="checkUser();">
     <header class="header clearfix">
 
         <nav id="header__menu">
@@ -15,7 +24,7 @@
                     <h1 class="header__logo">BandInTheNet</h1>
                 </li>
                 <li class="header__menu__item" style="float:right">
-                    <a href="Login.html">Accedi</a>                        
+                    <a href="Login.html" > <span id = "Profile">Accedi</span></a>                        
                 </li>
                 <li class="header__menu__item" style="float:right">
                     <a href="Play.html">Let's Play</a>
