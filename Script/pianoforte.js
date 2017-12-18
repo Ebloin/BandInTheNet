@@ -64,6 +64,8 @@ function init() {
     document.getElementById('play').addEventListener('click', playNote);
     document.getElementById('recButton').addEventListener('click', recHandler);
     document.getElementById('reset').addEventListener('click', resetRegistrata);
+    document.getElementById('salvaCanzone').addEventListener('click', salvaCanzone);
+    document.getElementById('undo').addEventListener('click', undo);
 }
 
 var premotasto = function(e) {
@@ -160,4 +162,42 @@ var resetRegistrata= function() {
         $('#noteregistrate').html(noteRegistrate);
         alert('Le note registrate sono state resettate');
     }
+}
+
+var salvaCanzone= function() {
+    //Conrollo sul nome della canzone
+    if ($('#nomeCanzone').val() == '') {
+        return;
+    }
+    var nomeUtente= localStorage.utenteCorrente;
+    var arrayUsers= JSON.parse(localStorage.utenti);
+    alert(JSON.stringify(arrayUsers));
+    //Calcolo indice utente
+    var index;
+    for (i=0; i<arrayUsers.length; i++) {
+        if (JSON.stringify(arrayUsers[i].Username) == JSON.stringify(nomeUtente)) {
+            index= i;
+        }
+    }
+    //Creo oggetto canzone
+    var canzone = {
+        nome: $('#nomeCanzone').val(),
+        note: noteRegistrate
+    }
+    
+    arrayUsers[index].Songs.push(canzone);
+    var prova= arrayUsers[index].Songs;
+    localStorage.utenti= JSON.stringify(arrayUsers);
+    alert('Canzone aggiunta al tuo profilo');
+    $('#nomeCanzone').val('');
+    $('#registrata').switchClass('visibile', 'nonVisibile');
+    if ($('#recButton').hasClass('Rec')) {
+        $('#recButton').switchClass('Rec', 'notRec');
+        recording = false;
+    }
+}
+
+var undo= function() {
+    noteRegistrate.pop();
+    document.getElementById('noteregistrate').innerHTML = noteRegistrate;
 }
