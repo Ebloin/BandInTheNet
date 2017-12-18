@@ -51,19 +51,15 @@ function login(){
         if((storage[i].Username == userName) && (storage[i].Password == userPsw)){
             //storage[i].Online = true;
             utente = storage[i].Username;
-            //localStorage.setItem("utenteCorrente", utente);
             localStorage.utenteCorrente = utente;
             alert("Utente trovato!\nBentornato "+ utente +"!");
-            return;         
+            return true;         
         }
     }
     alert("Utente non registrato!");
-    return;
+    return false;
 }
-function reindirizzaLogin(){
-    login();
-    window.history.back();
-}
+
 function inserisciUtente() {
     var storage = JSON.parse(localStorage.utenti);
     var next = storage.length;

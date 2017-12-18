@@ -21,6 +21,7 @@ function init() {
     createjs.Sound.registerSound("Audio/AudioBatt/piatto-ride.mp3", 'piatto-ride');
     createjs.Sound.registerSound("Audio/AudioBatt/bacchette.mp3", 'bacchette');
 
+        
     document.addEventListener('keydown', premotasto);
     document.addEventListener('keyup', lasciotasto);
 

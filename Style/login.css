@@ -102,6 +102,19 @@ input[type=text], input[type=password] {
   justify-content: center;
   display: flex;
 }
+
+.logout{
+  background-color: rgb(8, 61, 8);
+  color: white;
+  padding: 14px 20px;
+  border: none;
+  cursor: pointer;
+  width: 50%;
+  /*center button method*/
+  margin: 5px auto;  
+  justify-content: center;
+  display: flex;
+}
 .register{
   background-color: rgb(167, 0, 0);
   color: white;
@@ -119,7 +132,7 @@ button:hover {
   opacity: 0.8;
 }
 .storage{
-  margin-left: 25%;
+  margin-left: 15%;
 }
 input[type=button] {
   width: 20%;
@@ -189,7 +202,7 @@ img #drum{
 /*--------------END-------------*/
 
 /*--------------FIX-------------*/
-/*fix del float si puÃƒÂ² ignorare tranquilli*/
+/*fix del float si puÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â² ignorare tranquilli*/
 .clearfix:after {
   visibility: hidden;
   display: block;

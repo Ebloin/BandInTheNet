@@ -6,8 +6,17 @@
     <link rel="stylesheet" type="text/javascript" href="Script/Play.js"></link>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
+<script>
+    var checkUser = function () {
+        if (localStorage.utenteCorrente != '') {
+            document.getElementById("Profile").innerHTML = localStorage.utenteCorrente;
+            //$('Profile').html(localStorage.utenteCorrente);
+        }
+        else return;
+    }
+</script>
 
-<body>
+<body onload = "checkUser();">
     <header class="header clearfix">
 
         <nav id="header__menu">
@@ -16,7 +25,7 @@
                     <h1 class="header__logo">BandInTheNet</h1>
                 </li>
                 <li class="header__menu__item" style="float:right">
-                    <a href="Login.html">Accedi</a>
+                    <a href="Login.html"> <span id="Profile">Accedi</span></a>
                 </li>
                 <li class="header__menu__item" style="float:right">
                     <a href="Play.html">Let's Play</a>
@@ -49,30 +58,47 @@
             <img class="instruments__choose__img" src="./Immagini/pianoforte.jpg">
             <div class="instruments__choose__text">
                 <h3>Pianoforte</h3>
-                <p>Il pianoforte &egrave; uno strumento musicale a corde percosse mediante martelletti azionati da una tastiera. La tastiera &egrave; composta da 88 tasti, 52 di colore bianco e 36 di colore nero. I tasti bianchi rappresentano le note: do,
-                    re, mi, fa, sol, la, si. I tasti neri, invece, individuano le alterazioni (note bemolli o diesis). Il pianoforte &egrave; il pi&ugrave; diffuso strumento appartenente ai cordofoni a corde percosse; altri membri sono il clavicordo,
-                    oggi ancora utilizzato per l'esecuzione di musica d'epoca, e il fortepiano.</p>
-                <a href="Piano.html"><button class="button" style="vertical-align:middle"><span>Play</span></button></a>
+                <p>Il pianoforte &egrave; uno strumento musicale a corde percosse mediante martelletti azionati da una tastiera.
+                    La tastiera &egrave; composta da 88 tasti, 52 di colore bianco e 36 di colore nero. I tasti bianchi rappresentano
+                    le note: do, re, mi, fa, sol, la, si. I tasti neri, invece, individuano le alterazioni (note bemolli
+                    o diesis). Il pianoforte &egrave; il pi&ugrave; diffuso strumento appartenente ai cordofoni a corde percosse;
+                    altri membri sono il clavicordo, oggi ancora utilizzato per l'esecuzione di musica d'epoca, e il fortepiano.</p>
+                <a href="Piano.html">
+                    <button class="button" style="vertical-align:middle">
+                        <span>Play</span>
+                    </button>
+                </a>
             </div>
         </div>
         <div class="instruments__choose clearfix">
             <img class="instruments__choose__img" src="./Immagini/drum.jpg">
             <div class="instruments__choose__text">
                 <h3>Batteria</h3>
-                <p>La batteria &egrave; uno strumento musicale composto da tamburi, piatti e altri strumenti a percussione disposti in modo tale che possano essere suonati da un solo musicista. I tamburi che compongono una batteria sono: la cassa (comandata
-                    generalmente dal piede destro), il rullante, due tom uno pi&ugrave; acuto e un altro grave, e uno o pi&ugrave; floor tom (chiamati "timpani", sebbene diversi dai timpani dell'orchestra sinfonica). I piatti che possono essere annessi
-                    a una batteria sono: ride, hi-hat (charleston), crash, splash, china.</p>
-                <a href="batteria.html"><button class="button" style="vertical-align:middle"><span>Play</span></button></a>
+                <p>La batteria &egrave; uno strumento musicale composto da tamburi, piatti e altri strumenti a percussione disposti
+                    in modo tale che possano essere suonati da un solo musicista. I tamburi che compongono una batteria sono:
+                    la cassa (comandata generalmente dal piede destro), il rullante, due tom uno pi&ugrave; acuto e un altro
+                    grave, e uno o pi&ugrave; floor tom (chiamati "timpani", sebbene diversi dai timpani dell'orchestra sinfonica).
+                    I piatti che possono essere annessi a una batteria sono: ride, hi-hat (charleston), crash, splash, china.</p>
+                <a href="batteria.html">
+                    <button class="button" style="vertical-align:middle">
+                        <span>Play</span>
+                    </button>
+                </a>
             </div>
         </div>
         <div class="instruments__choose clearfix">
             <img class="instruments__choose__img" src="./Immagini/guitar.jpg">
             <div class="instruments__choose__text">
                 <h3>Chitarra</h3>
-                <p>La chitarra &egrave; uno strumento che fa parte dei cordofoni, e pi&ugrave; precisamente dei Cordofoni a corde pizzicate, classificazione che la distingue dai cordofoni a corde percosse di cui fa parte, per esempio, il pianoforte. &Egrave;
-                    uno strumento di derivazione medio-orientale e probabilmente i primi esemplari risalgono al 13esimo secolo, infatti dall'etimologia della parola, "tar" significa corda (vedi ad esempio la parola sitar, cordofono indiano, che significa
-                    "tre corde", ed infatti &egrave; una specie di chitarra a 3 corde).</p>
-                <button class="button" style="vertical-align:middle"><span>Play</span></button>
+                <p>La chitarra &egrave; uno strumento che fa parte dei cordofoni, e pi&ugrave; precisamente dei Cordofoni a
+                    corde pizzicate, classificazione che la distingue dai cordofoni a corde percosse di cui fa parte, per
+                    esempio, il pianoforte. &Egrave; uno strumento di derivazione medio-orientale e probabilmente i primi
+                    esemplari risalgono al 13esimo secolo, infatti dall'etimologia della parola, "tar" significa corda (vedi
+                    ad esempio la parola sitar, cordofono indiano, che significa "tre corde", ed infatti &egrave; una specie
+                    di chitarra a 3 corde).</p>
+                <button class="button" style="vertical-align:middle">
+                    <span>Play</span>
+                </button>
             </div>
         </div>
     </section>
