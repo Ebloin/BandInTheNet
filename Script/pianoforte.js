@@ -169,9 +169,13 @@ var salvaCanzone= function() {
     if ($('#nomeCanzone').val() == '') {
         return;
     }
+    //Controllo utente loggato
+    if (localStorage.utenteCorrente == undefined || localStorage.utenteCorrente == '') {
+        alert('Per salvare una canzone devi prima loggarti');
+        return;
+    }
     var nomeUtente= localStorage.utenteCorrente;
     var arrayUsers= JSON.parse(localStorage.utenti);
-    alert(JSON.stringify(arrayUsers));
     //Calcolo indice utente
     var index;
     for (i=0; i<arrayUsers.length; i++) {
@@ -179,6 +183,25 @@ var salvaCanzone= function() {
             index= i;
         }
     }
+    
+    //Controllo canzone già presente
+    if (arrayUsers[index].Songs.map(function(x) {return x.nome; }).indexOf($('#nomeCanzone').val()) != -1) {
+        var sostituisci = confirm("E'già presente una canzone con questo nome, vuoi sovrascriverla?");
+        if (!sostituisci) {
+            return;
+        }
+        var indiceCanzone= arrayUsers[index].Songs.map(function(x) {return x.nome; }).indexOf($('#nomeCanzone').val());
+        arrayUsers[index].Songs[indiceCanzone].note = noteRegistrate;
+        alert('"'+ $('#nomeCanzone').val() +'" aggiornata con successo');
+        $('#nomeCanzone').val('');
+        $('#registrata').switchClass('visibile', 'nonVisibile');
+        if ($('#recButton').hasClass('Rec')) {
+            $('#recButton').switchClass('Rec', 'notRec');
+            recording = false;
+        }
+        return;
+    }
+
     //Creo oggetto canzone
     var canzone = {
         nome: $('#nomeCanzone').val(),
