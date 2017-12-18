@@ -1,6 +1,6 @@
 
 /*-----------CONTAINER-----------*/
-body{width: auto; height: auto; background-image: url("https://source.unsplash.com/1600x900/?music,sound");margin:0 auto;}
+body{width: auto; height: auto; background-image: url("https://source.unsplash.com/1600x900/?music,sound");margin:0 auto;background-size: cover;}
 .LoginBox{width: 500px; margin: 0 auto; margin-top:5%; margin-bottom: auto;}
 /*--------------END-------------*/
 
@@ -189,7 +189,7 @@ img #drum{
 /*--------------END-------------*/
 
 /*--------------FIX-------------*/
-/*fix del float si può ignorare tranquilli*/
+/*fix del float si puÃƒÂ² ignorare tranquilli*/
 .clearfix:after {
   visibility: hidden;
   display: block;
