@@ -7,9 +7,11 @@ function resetStorage() {
     localStorage.utenti = "[]";
 }
 
-function back() {
-    history.back();
+function goBack(){
+    history.back();    
+    return;
 }
+
 function stampaStorage() {
     var storage = JSON.parse(localStorage.utenti);
     var l = storage.length;
@@ -37,11 +39,11 @@ function userInStorage(user) { //true if user is in localStorge
 }
 
 function logout(){
-    localStorage.utenteCorrente.setItem("utenteCorrente","");
+    localStorage.utenteCorrente = "";
 }
 function login(){
     var storage = JSON.parse(localStorage.utenti);
-    var utente = JSON.parse(localStorage.getItem(localStorage.utenteCorrente));  //il parse non è necessario qui
+    var utente = localStorage.utenteCorrente; //il parse non è necessario qui
     var l = storage.length;
     var userName = document.miaform.username.value;
     var userPsw = document.miaform.password.value;
@@ -49,13 +51,18 @@ function login(){
         if((storage[i].Username == userName) && (storage[i].Password == userPsw)){
             //storage[i].Online = true;
             utente = storage[i].Username;
-            localStorage.setItem("utenteCorrente", utente);
+            //localStorage.setItem("utenteCorrente", utente);
+            localStorage.utenteCorrente = utente;
             alert("Utente trovato!\nBentornato "+ utente +"!");
             return;         
         }
     }
     alert("Utente non registrato!");
     return;
+}
+function reindirizzaLogin(){
+    login();
+    window.history.back();
 }
 function inserisciUtente() {
     var storage = JSON.parse(localStorage.utenti);

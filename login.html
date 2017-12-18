@@ -43,13 +43,13 @@
 				</label>
 				<input id="UserPsw" type="password" placeholder="Inserisci Password" name="password" required>
 				<input type="checkbox" checked="checked"> Remember me
-				<button class="Login" onclick="return login();">Login</button>
+				<button class="Login" onclick="reindirizzaLogin();">Login</button>
 				<button type="submit" class="Register" onclick="return inserisciUtente();">Registrati</button>
 			</div>
 			<hr style="border-top: 1px solid #f1f1f1;">
 			<div class="insert storage">
 				<input type="reset" value="Reset">
-				<input type="button" value ="Don't Do this" ondblclick="back();">
+				<input type="button" value="Logout" onclick="return logout();">				
 				<input type="button" value="Stamp" onclick="stampaStorage();">
 				<input type="button" value="Pown" onclick="resetStorage();">
 				<div id="Storage"></div>
