@@ -40,6 +40,7 @@ function userInStorage(user) { //true if user is in localStorge
 
 function logout(){
     localStorage.utenteCorrente = "";
+    alert("Arrivederci");
 }
 function login(){
     var storage = JSON.parse(localStorage.utenti);
@@ -52,7 +53,7 @@ function login(){
             //storage[i].Online = true;
             utente = storage[i].Username;
             localStorage.utenteCorrente = utente;
-            alert("Utente trovato!\nBentornato "+ utente +"!");
+            alert("Utente trovato\nBentornato "+ utente +"!");
             return true;         
         }
     }
