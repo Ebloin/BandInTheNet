@@ -278,13 +278,13 @@ p {
 
 @keyframes pulse{
 	0%{
-		box-shadow: 0px 0px 5px 0px rgba(173,0,0,.3);
+		box-shadow: 0px 0px 5px 0px rgba(255, 6, 6, 0.92);
 	}
 	65%{
-		box-shadow: 0px 0px 5px 13px rgba(173,0,0,.3);
+		box-shadow: 0px 0px 5px 13px rgba(173, 0, 0, 0.69);
 	}
 	90%{
-		box-shadow: 0px 0px 5px 13px rgba(173,0,0,0);
+		box-shadow: 0px 0px 5px 13px rgba(173, 0, 0, 0.44);
 	}
 }
 
