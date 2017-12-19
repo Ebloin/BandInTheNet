@@ -60,7 +60,6 @@ var lasciotasto = function(e) {
 
 var mousedown= function(e) {
     var nota= e.target.id;
-    alert(e.target.id);
     if (recording) {
         noteRegistrate.push(nota);
     }
