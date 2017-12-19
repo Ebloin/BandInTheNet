@@ -3,12 +3,17 @@
 <head>
 	<script src="./Script/loginScript.js"></script>
 	<link href="./Style/login.css" rel="stylesheet" type="text/css">
+	<script src="Script/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="Script/jquery-1.11.3.min.js" type="text/javascript"></script>
+	
 </head>
 <script>
 	var checkUser = function () {
         if (localStorage.utenteCorrente != '') {
             document.getElementById("Profile").innerHTML = localStorage.utenteCorrente;
-            //$('Profile').html(localStorage.utenteCorrente);
+			//$('Profile').html(localStorage.utenteCorrente);
+			alert(JSON.stringify(localStorage.utenteCorrente));
+			if(JSON.stringify(localStorage.utenteCorrente) == "admin") $('#console').switchClass('nonVisibile', 'visibile');
         }
         else return;
     }
@@ -57,11 +62,11 @@
 				<button class="Logout" onclick = "logout();">Logout</button>
 				<button type="submit" class="Register" onclick="return inserisciUtente();">Registrati</button>
 			</div>
-			<hr style="border-top: 1px solid #f1f1f1;">
-			<div class="insert storage">
-				<input type="reset" class = "console" value="Reset">
-				<input type="button" class = "console" value="Stamp" onclick="stampaStorage();">
-				<input type="button" class = "console" value="Pown" onclick="resetStorage();">
+			<div class="insert storage nonVisibile" id = "console">
+				<hr style="border-top: 1px solid #f1f1f1;">					
+				<input type="reset" class  = "console" value = "Reset">
+				<input type="button" class = "console" value = "Stamp" onclick="stampaStorage();">
+				<input type="button" class = "console" value = "Pown" onclick="resetStorage();">
 				<div id="Storage"></div>
 			</div>
 		</form>

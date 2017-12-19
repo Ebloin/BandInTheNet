@@ -214,6 +214,16 @@ img #drum{
 }
 /*--------------END-------------*/
 
+/*-------------HIDE-------------*/
+.nonVisibile {
+  display: none;
+}
+
+.visibile {
+  display: inherit;
+}
+/*--------------END-------------*/
+
 /*--------------FIX-------------*/
 /*fix del float si puÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â² ignorare tranquilli*/
 .clearfix:after {
