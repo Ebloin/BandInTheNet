@@ -29,13 +29,14 @@ var checkUser = function() {
         document.getElementById("Profile").innerHTML = localStorage.utenteCorrente;
         var log = document.getElementById("login");
         log.classList.replace("visibile", "nonVisibile");
+        document.getElementById("nomeUtente").innerHTML = localStorage.utenteCorrente;
+        document.getElementById("nomeUtente").classList.replace("nonVisibile", "visibile");
         //$('Profile').html(localStorage.utenteCorrente);
         if ((localStorage.utenteCorrente) == 'admin') {
             var hide = document.getElementById("console");
             hide.classList.replace("nonVisibile", "visibile");
         }
-    } 
-    else {
+    } else {
         $('.Logout').switchClass('visibile', 'nonVisibile');
     }
 }
