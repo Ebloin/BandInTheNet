@@ -8,15 +8,7 @@
 	
 </head>
 <script>
-	var checkUser = function () {
-        if (localStorage.utenteCorrente != '') {
-            document.getElementById("Profile").innerHTML = localStorage.utenteCorrente;
-			//$('Profile').html(localStorage.utenteCorrente);
-			alert(JSON.stringify(localStorage.utenteCorrente));
-			if(JSON.stringify(localStorage.utenteCorrente) == "admin") $('#console').switchClass('nonVisibile', 'visibile');
-        }
-        else return;
-    }
+	
 </script>
 <body onload="inizializzaStorage(); checkUser()">
 	<header class="header clearfix">
@@ -62,12 +54,13 @@
 				<button class="Logout" onclick = "logout();">Logout</button>
 				<button type="submit" class="Register" onclick="return inserisciUtente();">Registrati</button>
 			</div>
-			<div class="insert storage nonVisibile" id = "console">
-				<hr style="border-top: 1px solid #f1f1f1;">					
+			<div class="insert storage" >
+			<div class ="nonVisibile" id = "console">
 				<input type="reset" class  = "console" value = "Reset">
 				<input type="button" class = "console" value = "Stamp" onclick="stampaStorage();">
 				<input type="button" class = "console" value = "Pown" onclick="resetStorage();">
 				<div id="Storage"></div>
+			</div>
 			</div>
 		</form>
 	</div>
