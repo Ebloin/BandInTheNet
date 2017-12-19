@@ -67,12 +67,11 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 1%;margin-bott
 .header__menu__item a:hover{opacity: 0.75;}
 
 .header__menu__item__dropdown {
-    margin-top: 1%;    
+    margin-left: 5px;
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    background-color: #ffffff;
+    min-width: 80px;
     z-index: 1;
 }
 
@@ -83,7 +82,7 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 1%;margin-bott
     display: block;
     text-align: left;
 }
-.header__menu__item__dropdown a:hover {background-color: #f1f1f1}
+.header__menu__item__dropdown a:hover {color: green;}
 
 
 .header__menu__item:hover .header__menu__item__dropdown {
