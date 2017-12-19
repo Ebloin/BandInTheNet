@@ -66,6 +66,10 @@ function init() {
     document.getElementById('reset').addEventListener('click', resetRegistrata);
     document.getElementById('salvaCanzone').addEventListener('click', salvaCanzone);
     document.getElementById('undo').addEventListener('click', undo);
+
+    if (localStorage.utenteCorrente) {
+        $('#mySongs').switchClass('nonVisibile', 'visibile');
+    }
 }
 
 var premotasto = function(e) {
@@ -167,6 +171,7 @@ var resetRegistrata= function() {
 var salvaCanzone= function() {
     //Conrollo sul nome della canzone
     if ($('#nomeCanzone').val() == '') {
+        alert('Non hai suonato nessuna nota, non puoi salvare una canzone vuota');
         return;
     }
     //Controllo utente loggato
