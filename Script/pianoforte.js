@@ -28,6 +28,7 @@ var noteRegistrate= [];
 var indiceLoop=0;
 var catcha= true;
 var noteAttive= [];
+var userIndex;
 
 function init() {
     createjs.Sound.registerSound("Audio/note/2ottave/do4.wav", 'do4');
@@ -55,17 +56,19 @@ function init() {
     createjs.Sound.registerSound("Audio/note/2ottave/la5d.wav", 'la#5');
     createjs.Sound.registerSound("Audio/note/2ottave/si5.wav", 'si5');
     
+    //Se sei loggato
     if (localStorage.utenteCorrente) {
         $('#mySongs').switchClass('nonVisibile', 'visibile');
         var storage= JSON.parse(localStorage.utenti);
 
         var indice= cercaIndiceUtente(localStorage.utenteCorrente);
+        userIndex= indice;
         var canzoni= storage[indice].Songs.pianoforte;
         for (i=0; i<canzoni.length; i++) {
-            var preTab= '<tr id="'+i+'">';
+            var preTab= '<tr id=riga"'+i+'">';
             var endTab= '</tr>'
             var thNome = '<th><p>'+JSON.stringify(canzoni[i].nome)+'</p></th>';
-            var thPlay = '<th><button id="riproduci">Play</button></th>';
+            var thPlay = '<th><button name=playMiaCanzone id="'+i+'">Play</button></th>';
             var stringa= preTab+thNome+thPlay+endTab;
             $('#tabellaCanzoni').append(stringa);
         }
@@ -87,7 +90,6 @@ function init() {
     document.getElementById('noTextArea').addEventListener('click', outText);
     document.getElementById('nomeCanzone').addEventListener('click', inText);
     document.getElementById('mySongs').addEventListener('click', mostraTabella);
-
 }
 
 var premotasto = function(e) {
@@ -282,9 +284,29 @@ var mostraTabella= function() {
     if($('#leMieCanzoni').hasClass('nonVisibile')) {
         $('#leMieCanzoni').switchClass('nonVisibile', 'visibile');
         $('#mySongs').html('Hide mySongs');
+        var prove = document.getElementsByName('playMiaCanzone');
+        for (i = 0; i < prove.length; i++) {
+            prove[i].addEventListener('click', suonaCanzone);
+        }
     }
     else {
         $('#leMieCanzoni').switchClass('visibile', 'nonVisibile');
         $('#mySongs').html('Show mySongs');
     }
+}
+
+var suonaCanzone= function(e) {
+    var indice= e.target.id;
+    playArray(JSON.parse(localStorage.utenti)[userIndex].Songs.pianoforte[indice].note);
+}
+var playArray= function(array) {
+    var loop = setInterval(function() {
+        nota= array[indiceLoop];
+        indiceLoop++;    
+        suona(nota);
+        if (indiceLoop == array.length) {
+            indiceLoop=0;
+            clearInterval(loop);
+        }
+    }, 500);
 }
