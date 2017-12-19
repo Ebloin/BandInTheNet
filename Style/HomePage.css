@@ -67,12 +67,11 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 1%;margin-bott
 .header__menu__item a:hover{opacity: 0.75;}
 
 .header__menu__item__dropdown {
-    margin-top: 1%;    
+    margin-left: 5px;
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    background-color: #ffffff;
+    min-width: 80px;
     z-index: 1;
 }
 
@@ -83,7 +82,7 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 1%;margin-bott
     display: block;
     text-align: left;
 }
-.header__menu__item__dropdown a:hover {background-color: #f1f1f1}
+.header__menu__item__dropdown a:hover {color: green;}
 
 
 .header__menu__item:hover .header__menu__item__dropdown {
@@ -134,14 +133,13 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 1%;margin-bott
 
 
 /*------------WHOAMI------------*/
-.banner__whoami{border: 5px solid #f1f1f1; background-color:  rgba(245, 245, 245, 1); border-radius:4px; height: 40%; margin-top: 5%;}
+.banner__whoami{ background-color:  rgba(245, 245, 245, 1); height: 40%; margin-top: 5%;}
 .banner__whoami__img{
     width:30%; 
-    border-radius: 4px;
     float: left;
     height: 100%;
     background-color: black;
-    background-image: url("https://source.unsplash.com/400x260/?sound");
+    background-image: url(".././Immagini/ChiSiamo.jpg");
     background-size: cover;
     background-position: center center;
 }
@@ -166,14 +164,13 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 1%;margin-bott
 /*--------------END-------------*/
 
 /*-----------CONTACTS-----------*/
-.banner__contacts{border: 5px solid #f1f1f1; background-color: rgba(245, 245, 245, 0.822);border-radius:4px; height: 40%; margin-top: 5%;}
+.banner__contacts{ background-color: rgba(245, 245, 245, 0.822); height: 40%; margin-top: 5%;}
 .banner__contacts__img{
     width:30%; 
     float: left;
     height: 100%;
-    border-radius:4px;
     background-color: black;
-    background-image: url("https://source.unsplash.com/400x260/?video");
+    background-image: url(".././Immagini/Contatti.jpg");
     background-size: cover;
     background-position: center center;
 }

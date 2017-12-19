@@ -65,7 +65,7 @@ function inserisciUtente() {
     var storage = JSON.parse(localStorage.utenti);
     var next = storage.length;
     var username = document.miaform.username.value;
-    var songs = []; //va stringhificato?
+    var songs = []; 
     
     if (userInStorage(username)) return false;
 
