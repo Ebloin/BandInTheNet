@@ -190,13 +190,13 @@ var salvaCanzone= function() {
     }
     
     //Controllo canzone già presente
-    if (arrayUsers[index].Songs.map(function(x) {return x.nome; }).indexOf($('#nomeCanzone').val()) != -1) {
+    if (arrayUsers[index].Songs.pianoforte.map(function(x) {return x.nome; }).indexOf($('#nomeCanzone').val()) != -1) {
         var sostituisci = confirm("E'già presente una canzone con questo nome, vuoi sovrascriverla?");
         if (!sostituisci) {
             return;
         }
-        var indiceCanzone= arrayUsers[index].Songs.map(function(x) {return x.nome; }).indexOf($('#nomeCanzone').val());
-        arrayUsers[index].Songs[indiceCanzone].note = noteRegistrate;
+        var indiceCanzone= arrayUsers[index].Songs.pianoforte.map(function(x) {return x.nome; }).indexOf($('#nomeCanzone').val());
+        arrayUsers[index].Songs.pianoforte[indiceCanzone].note = noteRegistrate;
         alert('"'+ $('#nomeCanzone').val() +'" aggiornata con successo');
         $('#nomeCanzone').val('');
         $('#registrata').switchClass('visibile', 'nonVisibile');
@@ -213,8 +213,8 @@ var salvaCanzone= function() {
         note: noteRegistrate
     }
     
-    arrayUsers[index].Songs.push(canzone);
-    var prova= arrayUsers[index].Songs;
+    arrayUsers[index].Songs.pianoforte.push(canzone);
+    var prova= arrayUsers[index].Songs.pianoforte;
     localStorage.utenti= JSON.stringify(arrayUsers);
     alert('Canzone aggiunta al tuo profilo');
     $('#nomeCanzone').val('');
