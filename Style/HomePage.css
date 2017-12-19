@@ -133,14 +133,13 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 1%;margin-bott
 
 
 /*------------WHOAMI------------*/
-.banner__whoami{border: 5px solid #f1f1f1; background-color:  rgba(245, 245, 245, 1); border-radius:4px; height: 40%; margin-top: 5%;}
+.banner__whoami{ background-color:  rgba(245, 245, 245, 1); height: 40%; margin-top: 5%;}
 .banner__whoami__img{
     width:30%; 
-    border-radius: 4px;
     float: left;
     height: 100%;
     background-color: black;
-    background-image: url("https://source.unsplash.com/400x260/?sound");
+    background-image: url(".././Immagini/ChiSiamo.jpg");
     background-size: cover;
     background-position: center center;
 }
@@ -165,14 +164,13 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 1%;margin-bott
 /*--------------END-------------*/
 
 /*-----------CONTACTS-----------*/
-.banner__contacts{border: 5px solid #f1f1f1; background-color: rgba(245, 245, 245, 0.822);border-radius:4px; height: 40%; margin-top: 5%;}
+.banner__contacts{ background-color: rgba(245, 245, 245, 0.822); height: 40%; margin-top: 5%;}
 .banner__contacts__img{
     width:30%; 
     float: left;
     height: 100%;
-    border-radius:4px;
     background-color: black;
-    background-image: url("https://source.unsplash.com/400x260/?video");
+    background-image: url(".././Immagini/Contatti.jpg");
     background-size: cover;
     background-position: center center;
 }
