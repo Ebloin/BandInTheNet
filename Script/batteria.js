@@ -25,7 +25,11 @@ function init() {
     createjs.Sound.registerSound("Audio/AudioBatt/piatto-ride.mp3", 'piatto-ride');
     createjs.Sound.registerSound("Audio/AudioBatt/bacchette.mp3", 'bacchette');
 
-        
+    var prove = document.getElementsByTagName('area');
+    for (i = 0; i < prove.length; i++) {
+        prove[i].addEventListener('click', mousedown);
+    }
+
     document.addEventListener('keydown', premotasto);
     document.addEventListener('keyup', lasciotasto);
     document.getElementById('play').addEventListener('click', playNote);
@@ -53,6 +57,15 @@ var lasciotasto = function(e) {
     var nota = suoni[e.keyCode];
     if (!nota) return;
 };
+
+var mousedown= function(e) {
+    var nota= e.target.id;
+    alert(e.target.id);
+    if (recording) {
+        noteRegistrate.push(nota);
+    }
+    createjs.Sound.play(nota);
+}
 
 
 //Parte di registrazione
