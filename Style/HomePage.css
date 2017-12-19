@@ -105,6 +105,8 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 1%;margin-bott
     background-image: url("https://source.unsplash.com/1600x900/?music,sound");
     background-size: cover;
     background-position: center center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
 }
 .cover__text{
     display: table;
@@ -136,6 +138,7 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 1%;margin-bott
 .banner__whoami{ background-color:  rgba(245, 245, 245, 1); height: 40%; margin-top: 5%;}
 .banner__whoami__img{
     width:30%; 
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     float: left;
     height: 100%;
     background-color: black;
@@ -143,7 +146,8 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 1%;margin-bott
     background-size: cover;
     background-position: center center;
 }
-.banner__whoami__text{width:70%; float:left; height: 100%; text-align: center;}
+.banner__whoami__text{width:70%; float:left; height: 100%; text-align: center; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
 .banner__whoami__text h1{
     margin: 5px auto;
@@ -169,12 +173,14 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 1%;margin-bott
     width:30%; 
     float: left;
     height: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     background-color: black;
     background-image: url(".././Immagini/Contatti.jpg");
     background-size: cover;
     background-position: center center;
 }
-.banner__contacts__text{width:70%; float:left; height: 100%; text-align: center;}
+.banner__contacts__text{width:70%; float:left; height: 100%; text-align: center; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
 .banner__contacts__text h1{
     margin: 5 auto;
