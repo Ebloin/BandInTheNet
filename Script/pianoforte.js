@@ -22,12 +22,16 @@ var KEYMAP = {
     66: 'si5'
 };
 
-
+//Indica se si sta registrando
 var recording = false;
+//Array delle note registrate
 var noteRegistrate= [];
+//Indice globale del loop per riprodurre le canzoni
 var indiceLoop=0;
 var catcha= true;
+//Array delle note premute contemporaneamente
 var noteAttive= [];
+//Indice dell'utente attivo
 var userIndex;
 
 function init() {
@@ -56,7 +60,7 @@ function init() {
     createjs.Sound.registerSound("Audio/note/2ottave/la5d.wav", 'la#5');
     createjs.Sound.registerSound("Audio/note/2ottave/si5.wav", 'si5');
     
-    //Se sei loggato
+    //Se sei loggato visualizza il tasto 
     if (localStorage.utenteCorrente) {
         $('#mySongs').switchClass('nonVisibile', 'visibile');
         aggiornaElenco();
@@ -80,6 +84,7 @@ function init() {
     document.getElementById('mySongs').addEventListener('click', mostraTabella);
 }
 
+//Premo tasto del piano con tastiera
 var premotasto = function(e) {
     if (!catcha) return;
     //Premo un tasto per suonare
@@ -95,6 +100,7 @@ var premotasto = function(e) {
     createjs.Sound.play(nota);
 }
 
+//Rilascio del tasto del puano con tastiera
 var lasciotasto = function(e) {
     if (!catcha) return;
     //Lascio tasto per smettere di suonare
@@ -107,6 +113,7 @@ var lasciotasto = function(e) {
     document.getElementById(nota).classList.remove('active');
 }
 
+//Abbassa il tasto del piano e suona
 var mousedown= function(e) {
     var nota= e.target.id;
     e.target.classList.add('active');
@@ -116,10 +123,12 @@ var mousedown= function(e) {
     createjs.Sound.play(nota);
 }
 
+//Rialza il tasto del piano
 var mouseup= function(e) {
     e.target.classList.remove('active');
 }
 
+//Inizia a registrare
 var registra= function() {
     recording = true;
     //INSERIRE CONTROLLO SE VERAMENTE UOLE CANCELLARE
@@ -127,8 +136,10 @@ var registra= function() {
     $('#noteregistrate').text('');
 };
 
+//Smetti di registrare
 var stopRegistra= function() {recording = false};
 
+//Riproduci l'array di note registrate corrente
 var playNote= function() {
     if (noteRegistrate.length == 0) {
         alert('Spiacenti ma non hai ancora registrato nessuna melodia, prova con il pulsante rosso');
@@ -145,9 +156,12 @@ var playNote= function() {
     }, 500);
 }
 
+//Suona una nota
 var suona= function(nota) {
     createjs.Sound.play(nota);
 }
+
+//Gestore del pulsante animato REC
 var recHandler= function(e) {
     var button= e.target;
     var songBar= document.getElementById('registrata');
@@ -172,6 +186,7 @@ var recHandler= function(e) {
     }
 }
 
+//Resetta l'array della canzone che è stata registrata
 var resetRegistrata= function() {
     noteRegistrate= [];  
     if($('#recButton').hasClass('notRec')) {
@@ -185,6 +200,7 @@ var resetRegistrata= function() {
     }
 }
 
+//Salva una nuova canzone nel localStiorage relativo all'utente
 var salvaCanzone= function() {
     //Conrollo sul nome della canzone
     if ($('#nomeCanzone').val() == '') {
@@ -251,19 +267,23 @@ var salvaCanzone= function() {
     }
 }
 
+//Rimuovi dall'array l'ultima nota suonata
 var undo= function() {
     noteRegistrate.pop();
     document.getElementById('noteregistrate').innerHTML = noteRegistrate;
 }
 
+//Se sono dentro la casella di testo non suona
 var inText= function() {
     catcha= false;
 }
 
+//Se sono fuori dalla casella di testo suona
 var outText= function() {
     catcha= true;
 }
 
+//Cerca nel localStorage l'indice dell'utente relativo a un username
 var cercaIndiceUtente = function(nome) {
     var nomeUtente= nome;
     var arrayUsers= JSON.parse(localStorage.utenti);
@@ -277,6 +297,7 @@ var cercaIndiceUtente = function(nome) {
     return index;
 }
 
+//Listener del tasto Show mySongs che attiva e disattiva la visualizzazione della tabella, aggiornando eventualmente l'elenco delle canzoni
 var mostraTabella= function() {
     if($('#leMieCanzoni').hasClass('nonVisibile')) {
         $('#tabellaCanzoni').html('');
@@ -294,10 +315,13 @@ var mostraTabella= function() {
     }
 }
 
+//Listener del tasto play vicino a ogni canzone nella tabella delle mie canzoni
 var suonaCanzone= function(e) {
     var indice= e.target.id;
     playArray(JSON.parse(localStorage.utenti)[userIndex].Songs.pianoforte[indice].note);
 }
+
+//Riproduce un array di note
 var playArray= function(array) {
     var loop = setInterval(function() {
         nota= array[indiceLoop];
@@ -310,6 +334,7 @@ var playArray= function(array) {
     }, 500);
 }
 
+//Aggiorna la tabella relativa alle canzoni registrate nel tuo profilo
 var aggiornaElenco= function() {
     var storage= JSON.parse(localStorage.utenti);
 
