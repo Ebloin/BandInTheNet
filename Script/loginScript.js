@@ -31,13 +31,23 @@ var checkUser = function() {
         log.classList.replace("visibile", "nonVisibile");
         document.getElementById("nomeUtente").innerHTML = localStorage.utenteCorrente;
         document.getElementById("nomeUtente").classList.replace("nonVisibile", "visibile");
+        /*  var l=localStorage.length;
+        var index;
+        for(i=0;i<l;i++){
+            if(JSON.stringify(arrayUsers[i].Username)==localStorage.utenteCorrente){
+                index=i;
+            }
+        }
+        var storage=JSON.parse(localStorage.utenti);
+        var pianofortesongs=storage[index].Songs.pianoforte;
+        var batteriaSongs=storage[index].Songs.batteria;
+*/
         //$('Profile').html(localStorage.utenteCorrente);
         if ((localStorage.utenteCorrente) == 'admin') {
             var hide = document.getElementById("console");
             hide.classList.replace("nonVisibile", "visibile");
         }
-    } 
-    else {
+    } else {
         $('.Logout').switchClass('visibile', 'nonVisibile')
     }
 }
