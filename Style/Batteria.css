@@ -91,7 +91,11 @@ body{width:auto; margin:0 auto;}
 
 /*-------------DRUM-------------*/
 .drum{
+<<<<<<< HEAD
     padding: 0px;
+=======
+    padding: 0;
+>>>>>>> c8c02cace6ccc179b4f360a88e4fc326a780e428
     margin-left: 20%;
   }
 /*--------------END-------------*/
