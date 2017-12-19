@@ -471,3 +471,19 @@ p {
 .neri {
   width: 29.5px;
 }
+
+/*Tabellacanzoni*/
+.tabellaCanzoni {
+  color: white;
+}
+
+.tabellaCanzoni th{
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  padding: 10px 5px;
+  border-style: solid;
+  border-width: 1px;
+  overflow: hidden;
+  word-break: normal;
+}

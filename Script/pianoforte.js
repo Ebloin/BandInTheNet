@@ -54,6 +54,22 @@ function init() {
     createjs.Sound.registerSound("Audio/note/2ottave/la5.wav", 'la5');
     createjs.Sound.registerSound("Audio/note/2ottave/la5d.wav", 'la#5');
     createjs.Sound.registerSound("Audio/note/2ottave/si5.wav", 'si5');
+    
+    if (localStorage.utenteCorrente) {
+        $('#mySongs').switchClass('nonVisibile', 'visibile');
+        var storage= JSON.parse(localStorage.utenti);
+
+        var indice= cercaIndiceUtente(localStorage.utenteCorrente);
+        var canzoni= storage[indice].Songs.pianoforte;
+        for (i=0; i<canzoni.length; i++) {
+            var preTab= '<tr id="'+i+'">';
+            var endTab= '</tr>'
+            var thNome = '<th><p>'+JSON.stringify(canzoni[i].nome)+'</p></th>';
+            var thPlay = '<th><button id="riproduci">Play</button></th>';
+            var stringa= preTab+thNome+thPlay+endTab;
+            $('#tabellaCanzoni').append(stringa);
+        }
+    }
 
     document.addEventListener('keydown', premotasto);
     document.addEventListener('keyup', lasciotasto);
@@ -70,10 +86,8 @@ function init() {
     document.getElementById('undo').addEventListener('click', undo);
     document.getElementById('noTextArea').addEventListener('click', outText);
     document.getElementById('nomeCanzone').addEventListener('click', inText);
+    document.getElementById('mySongs').addEventListener('click', mostraTabella);
 
-    if (localStorage.utenteCorrente) {
-        $('#mySongs').switchClass('nonVisibile', 'visibile');
-    }
 }
 
 var premotasto = function(e) {
@@ -249,4 +263,28 @@ var inText= function() {
 
 var outText= function() {
     catcha= true;
+}
+
+var cercaIndiceUtente = function(nome) {
+    var nomeUtente= nome;
+    var arrayUsers= JSON.parse(localStorage.utenti);
+    //Calcolo indice utente
+    var index;
+    for (i=0; i<arrayUsers.length; i++) {
+        if (JSON.stringify(arrayUsers[i].Username) == JSON.stringify(nomeUtente)) {
+            index= i;
+        }
+    }
+    return index;
+}
+
+var mostraTabella= function() {
+    if($('#leMieCanzoni').hasClass('nonVisibile')) {
+        $('#leMieCanzoni').switchClass('nonVisibile', 'visibile');
+        $('#mySongs').html('Hide mySongs');
+    }
+    else {
+        $('#leMieCanzoni').switchClass('visibile', 'nonVisibile');
+        $('#mySongs').html('Show mySongs');
+    }
 }
