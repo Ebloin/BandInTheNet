@@ -1,69 +1,71 @@
 <html>
 
 <head>
-	<script src="./Script/loginScript.js"></script>
-	<link href="./Style/login.css" rel="stylesheet" type="text/css">
-	<script src="Script/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="./Script/loginScript.js"></script>
+    <link href="./Style/login.css" rel="stylesheet" type="text/css">
+    <script src="Script/jquery-ui.min.js" type="text/javascript"></script>
     <script src="Script/jquery-1.11.3.min.js" type="text/javascript"></script>
-	
+
 </head>
 <script>
-	
 </script>
-<body onload="inizializzaStorage(); checkUser()">
-	<header class="header clearfix">
 
-		<nav id="header__menu">
-			<ul id="Menu" style="background-color:white;">
-				<li class="header__menu__logo clearfix">
-					<h1 class="header__logo">BandInTheNet</h1>
-				</li>
-				<li class="header__menu__item" style="float:right">
-					<a href="Login.html" > <span id = "Profile">Accedi</span></a>                        
-				</li>
-				<li class="header__menu__item" style="float:right">
-					<a href="Play.html">Let's Play</a>
-				</li>
-				<li class="header__menu__item" style="float:right">
+<body onload="inizializzaStorage(); checkUser()">
+    <header class="header clearfix">
+
+        <nav id="header__menu">
+            <ul id="Menu" style="background-color:white;">
+                <li class="header__menu__logo clearfix">
+                    <h1 class="header__logo">BandInTheNet</h1>
+                </li>
+                <li class="header__menu__item" style="float:right">
+                    <a href="Login.html"> <span id="Profile">Accedi</span></a>
+                </li>
+                <li class="header__menu__item" style="float:right">
+                    <a href="Play.html">Let's Play</a>
+                </li>
+                <li class="header__menu__item" style="float:right">
                     <a href="HomePage.html #Info">Info</a>
                 </li>
-				<li class="header__menu__item" style="float:right">
-					<a href="HomePage.html">HomePage</a>
-				</li>
-			</ul>
-			<br>
-			<br>
-		</nav>
-		<hr class="header__hr">
-	</header>
-	<div class="LoginBox">
-		<form action="" method="POST" name="miaform">
-			<div class="insert">
-				<input type="button" value = "Torna Indietro" class = "back" onclick="goBack();">
-				<br>
-				<label>
+                <li class="header__menu__item" style="float:right">
+                    <a href="HomePage.html">HomePage</a>
+                </li>
+            </ul>
+            <br>
+            <br>
+        </nav>
+        <hr class="header__hr">
+    </header>
+    <div class="LoginBox">
+        <form action="" method="POST" name="miaform">
+            <div class="insert">
+                <input type="button" value="Torna Indietro" class="back" onclick="goBack();">
+                <br>
+                <div class="insert visibile" id="login">
+                    <label>
 					<b>Username</b>
 				</label>
-				<input id="UserName" type="text" placeholder="Inserisci Username" name="username">
-				<label>
+                    <input id="UserName" type="text" placeholder="Inserisci Username" name="username">
+                    <label>
 					<b>Password</b>
 				</label>
-				<input id="UserPsw" type="password" placeholder="Inserisci Password" name="password">
-				<input type="checkbox" checked = "checked"> Remember me
-				<button class="Login" onclick = "login();">Login</button>
-				<button class="Logout" onclick = "logout();">Logout</button>
-				<button type="submit" class="Register" onclick="return inserisciUtente();">Registrati</button>
-			</div>
-			<div class="insert storage" >
-			<div class ="nonVisibile" id = "console">
-				<input type="reset" class  = "console" value = "Reset">
-				<input type="button" class = "console" value = "Stamp" onclick="stampaStorage();">
-				<input type="button" class = "console" value = "Pown" onclick="resetStorage();">
-				<div id="Storage"></div>
-			</div>
-			</div>
-		</form>
-	</div>
+                    <input id="UserPsw" type="password" placeholder="Inserisci Password" name="password">
+                    <input type="checkbox" checked="checked"> Remember me
+                    <button class="Login" onclick="login();">Login</button>
+                </div>
+                <button class="Logout" onclick="logout();">Logout</button>
+                <button type="submit" class="Register" onclick="return inserisciUtente();">Registrati</button>
+            </div>
+            <div class="insert storage">
+                <div class="nonVisibile" id="console">
+                    <input type="reset" class="console" value="Reset">
+                    <input type="button" class="console" value="Stamp" onclick="stampaStorage();">
+                    <input type="button" class="console" value="Pown" onclick="resetStorage();">
+                    <div id="Storage"></div>
+                </div>
+            </div>
+        </form>
+    </div>
 
 </body>
 

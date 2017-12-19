@@ -24,18 +24,20 @@ function goBack() {
     return;
 }
 
-var checkUser = function () {
+var checkUser = function() {
     if (localStorage.utenteCorrente != '') {
         document.getElementById("Profile").innerHTML = localStorage.utenteCorrente;
+        var log = document.getElementById("login");
+        log.classList.replace("visibile", "nonVisibile");
         //$('Profile').html(localStorage.utenteCorrente);
-        if((localStorage.utenteCorrente) == 'admin'){
+        if ((localStorage.utenteCorrente) == 'admin') {
             var hide = document.getElementById("console");
-            hide.classList.replace("nonVisibile","visibile");
-        } 
+            hide.classList.replace("nonVisibile", "visibile");
+        }
 
-   
-    }
-    else return;
+
+
+    } else return;
 }
 
 function stampaStorage() {
@@ -66,6 +68,8 @@ function userInStorage(user) { //true if user is in localStorge
 
 function logout() {
     localStorage.utenteCorrente = "";
+    var out = localStorage.getElementById("login");
+    out.classList.replace("nonVisibile", "visibile");
     alert("Arrivederci");
 }
 
