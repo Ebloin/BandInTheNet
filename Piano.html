@@ -20,167 +20,245 @@
 </head>
 
 <body onload="init(); checkUser()">
-    <header class="header clearfix">
+    <div id="noTextArea">
+        <header class="header clearfix">
 
-        <nav id="header__menu">
-            <ul id="Menu" style="background-color:white;">
-                <li class="header__menu__logo" style="float:left">
-                    <h1 class="header__logo">BandInTheNet</h1>
-                </li>
-                <li class="header__menu__item" style="float:right">
-                    <a href="Login.html">
-                        <span id="Profile">Accedi</span>
-                    </a>
-                    <div class="header__menu__item__dropdown">
-                        <button>Canzoni</button>                        
-                        <button onclick="logout();">Logout</button>
-                    </div>
-                </li>
-                <li class="header__menu__item" style="float:right">
-                    <a href="Play.html">Let's Play</a>
-                    <div class="header__menu__item__dropdown" style="margin-left: 10px;">
-                        <a href="Batteria.html">Batteria</a>
-                    </div>
-                </li>
-                <li class="header__menu__item" style="float:right">
-                    <a href="HomePage.html #Info">Info</a>
-                </li>
-                <li class="header__menu__item" style="float:right">
-                    <a href="HomePage.html">HomePage</a>
-                </li>
-            </ul>
-            <br>
-            <br>
-        </nav>
-        <hr class="header__hr">
-    </header>
-    <div id="recordingBar">
-        <p>Clicca sul cerchio per iniziare a registrare, poi su play per riascoltare la tua composizione</p>
-        <button id="recButton" class="Rbutton notRec"></button>
-        <button id='play'>play</button>
+            <nav id="header__menu">
+                <ul id="Menu" style="background-color:white;">
+                    <li class="header__menu__logo" style="float:left">
+                        <h1 class="header__logo">BandInTheNet</h1>
+                    </li>
+                    <li class="header__menu__item" style="float:right">
+                        <a href="Login.html">
+                            <span id="Profile">Accedi</span>
+                        </a>
+                        <div class="header__menu__item__dropdown">
+                            <button>Canzoni</button>
+                            <button onclick="logout();">Logout</button>
+                        </div>
+                    </li>
+                    <li class="header__menu__item" style="float:right">
+                        <a href="Play.html">Let's Play</a>
+                        <div class="header__menu__item__dropdown" style="margin-left: 10px;">
+                            <a href="Batteria.html">Batteria</a>
+                        </div>
+                    </li>
+                    <li class="header__menu__item" style="float:right">
+                        <a href="HomePage.html #Info">Info</a>
+                    </li>
+                    <li class="header__menu__item" style="float:right">
+                        <a href="HomePage.html">HomePage</a>
+                    </li>
+                </ul>
+                <br>
+                <br>
+            </nav>
+            <hr class="header__hr">
+        </header>
+        <div id="recordingBar">
+            <p>Clicca sul cerchio per iniziare a registrare, poi su play per riascoltare la tua composizione</p>
+            <button id="recButton" class="Rbutton notRec"></button>
+            <button id='play'>play</button>
+        </div>
+        <table class="tabella">
+            <tr>
+                <th class="neri">
+                    <p></p>
+                </th>
+                <th class="neri">
+                    <p>w</p>
+                </th>
+                <th class="neri" style="width: 15px;">
+                    <p></p>
+                </th>
+                <th class="neri">
+                    <p>e</p>
+                </th>
+                <th class="neri">
+                    <p></p>
+                </th>
+                <th class="neri" style="width: 35px;">
+                    <p></p>
+                </th>
+                <th class="neri">
+                    <p>t</p>
+                </th>
+                <th class="neri" style="width: 12px;">
+                    <p></p>
+                </th>
+                <th class="neri">
+                    <p>y</p>
+                </th>
+                <th class="neri" style="width: 12px;">
+                    <p></p>
+                </th>
+                <th class="neri">
+                    <p>u</p>
+                </th>
+                <th class="neri">
+                    <p></p>
+                </th>
+                <th class="neri" style="width: 37px;">
+                    <p></p>
+                </th>
+                <th class="neri">
+                    <p>o</p>
+                </th>
+                <th class="neri" style="width: 13px;">
+                    <p></p>
+                </th>
+                <th class="neri">
+                    <p>p</p>
+                </th>
+                <th class="neri">
+                    <p></p>
+                </th>
+                <th class="neri" style="width: 35px;">
+                    <p></p>
+                </th>
+                <th class="neri">
+                    <p></p>
+                </th>
+                <th class="neri" style="width: 14px;">
+                    <p></p>
+                </th>
+                <th class="neri">
+                    <p></p>
+                </th>
+                <th class="neri" style="width: 14px;">
+                    <p></p>
+                </th>
+                <th class="neri">
+                    <p></p>
+                </th>
+                <th class="neri">
+                    <p></p>
+                </th>
+            </tr>
+        </table>
+        <div class="keys">
+            <div id='do4' class="key left white">
+                <div class="top"></div>
+
+            </div>
+            <div id='do#4' class="key black">
+                <div class="top"></div>
+            </div>
+            <div id='re4' class="key center white">
+                <div class="top"></div>
+            </div>
+            <div id='re#4' class="key black">
+                <div class="top"></div>
+            </div>
+            <div id='mi4' class="key right white">
+                <div class="top"></div>
+            </div>
+            <div id='fa4' class="key left white">
+                <div class="top"></div>
+            </div>
+            <div id='fa#4' class="key black">
+                <div class="top"></div>
+            </div>
+            <div id='sol4' class="key center white">
+                <div class="top"></div>
+            </div>
+            <div id='sol#4' class="key black">
+                <div class="top"></div>
+            </div>
+            <div id='la4' class="key center white">
+                <div class="top"></div>
+            </div>
+            <div id='la#4' class="key black">
+                <div class="top"></div>
+            </div>
+            <div id='si4' class="key right white">
+                <div class="top"></div>
+            </div>
+            <div id='do5' class="key left white">
+                <div class="top"></div>
+            </div>
+            <div id='do#5' class="key black">
+                <div class="top"></div>
+            </div>
+            <div id='re5' class="key center white">
+                <div class="top"></div>
+            </div>
+            <div id='re#5' class="key black">
+                <div class="top"></div>
+            </div>
+            <div id='mi5' class="key right white">
+                <div class="top"></div>
+            </div>
+            <div id='fa5' class="key left white">
+                <div class="top"></div>
+            </div>
+            <div id='fa#5' class="key black">
+                <div class="top"></div>
+            </div>
+            <div id='sol5' class="key center white">
+                <div class="top"></div>
+            </div>
+            <div id='sol#5' class="key black">
+                <div class="top"></div>
+            </div>
+            <div id='la5' class="key center white">
+                <div class="top"></div>
+            </div>
+            <div id='la#5' class="key black">
+                <div class="top"></div>
+            </div>
+            <div id='si5' class="key right white">
+                <div class="top"></div>
+            </div>
+        </div>
+
+        <table class="tabella">
+            <tr>
+                <th class="bianchi">
+                    <p>a</p>
+                </th>
+                <th class="bianchi">
+                    <p>s</p>
+                </th>
+                <th class="bianchi">
+                    <p>d</p>
+                </th>
+                <th class="bianchi">
+                    <p>f</p>
+                </th>
+                <th class="bianchi">
+                    <p>g</p>
+                </th>
+                <th class="bianchi">
+                    <p>h</p>
+                </th>
+                <th class="bianchi">
+                    <p>j</p>
+                </th>
+                <th class="bianchi">
+                    <p>k</p>
+                </th>
+                <th class="bianchi">
+                    <p>l</p>
+                </th>
+                <th class="bianchi">
+                    <p>z</p>
+                </th>
+                <th class="bianchi">
+                    <p>x</p>
+                </th>
+                <th class="bianchi">
+                    <p>c</p>
+                </th>
+                <th class="bianchi">
+                    <p>v</p>
+                </th>
+                <th class="bianchi">
+                    <p>b</p>
+                </th>
+            </tr>
+        </table>
     </div>
-    <table class="tabella">
-        <tr>
-            <th class="neri" ><p></p></th>
-            <th class="neri" ><p>w</p></th>
-            <th class="neri" style="width: 15px;"><p></p></th>
-            <th class="neri" ><p>e</p></th>
-            <th class="neri" ><p></p></th>
-            <th class="neri" style="width: 35px;"><p></p></th>
-            <th class="neri" ><p>t</p></th>
-            <th class="neri" style="width: 12px;"><p></p></th>
-            <th class="neri" ><p>y</p></th>
-            <th class="neri" style="width: 12px;"><p></p></th>
-            <th class="neri" ><p>u</p></th>
-            <th class="neri" ><p></p></th>
-            <th class="neri" style="width: 37px;"><p></p></th>
-            <th class="neri" ><p>o</p></th>
-            <th class="neri" style="width: 13px;"><p></p></th>
-            <th class="neri" ><p>p</p></th>
-            <th class="neri" ><p></p></th>
-            <th class="neri" style="width: 35px;"><p></p></th>
-            <th class="neri" ><p></p></th>
-            <th class="neri" style="width: 14px;"><p></p></th>
-            <th class="neri" ><p></p></th>
-            <th class="neri" style="width: 14px;"><p></p></th>
-            <th class="neri" ><p></p></th>
-            <th class="neri" ><p></p></th>
-        </tr>
-    </table>
-    <div class="keys">
-        <div id='do4' class="key left white">
-            <div class="top"></div>
-
-        </div>
-        <div id='do#4' class="key black">
-            <div class="top"></div>
-        </div>
-        <div id='re4' class="key center white">
-            <div class="top"></div>
-        </div>
-        <div id='re#4' class="key black">
-            <div class="top"></div>
-        </div>
-        <div id='mi4' class="key right white">
-            <div class="top"></div>
-        </div>
-        <div id='fa4' class="key left white">
-            <div class="top"></div>
-        </div>
-        <div id='fa#4' class="key black">
-            <div class="top"></div>
-        </div>
-        <div id='sol4' class="key center white">
-            <div class="top"></div>
-        </div>
-        <div id='sol#4' class="key black">
-            <div class="top"></div>
-        </div>
-        <div id='la4' class="key center white">
-            <div class="top"></div>
-        </div>
-        <div id='la#4' class="key black">
-            <div class="top"></div>
-        </div>
-        <div id='si4' class="key right white">
-            <div class="top"></div>
-        </div>
-        <div id='do5' class="key left white">
-            <div class="top"></div>
-        </div>
-        <div id='do#5' class="key black">
-            <div class="top"></div>
-        </div>
-        <div id='re5' class="key center white">
-            <div class="top"></div>
-        </div>
-        <div id='re#5' class="key black">
-            <div class="top"></div>
-        </div>
-        <div id='mi5' class="key right white">
-            <div class="top"></div>
-        </div>
-        <div id='fa5' class="key left white">
-            <div class="top"></div>
-        </div>
-        <div id='fa#5' class="key black">
-            <div class="top"></div>
-        </div>
-        <div id='sol5' class="key center white">
-            <div class="top"></div>
-        </div>
-        <div id='sol#5' class="key black">
-            <div class="top"></div>
-        </div>
-        <div id='la5' class="key center white">
-            <div class="top"></div>
-        </div>
-        <div id='la#5' class="key black">
-            <div class="top"></div>
-        </div>
-        <div id='si5' class="key right white">
-            <div class="top"></div>
-        </div>
-    </div>
-
-    <table class="tabella">
-        <tr>
-            <th class="bianchi" ><p>a</p></th>
-            <th class="bianchi" ><p>s</p></th>
-            <th class="bianchi" ><p>d</p></th>
-            <th class="bianchi" ><p>f</p></th>
-            <th class="bianchi" ><p>g</p></th>
-            <th class="bianchi" ><p>h</p></th>
-            <th class="bianchi" ><p>j</p></th>
-            <th class="bianchi" ><p>k</p></th>
-            <th class="bianchi" ><p>l</p></th>
-            <th class="bianchi" ><p>z</p></th>
-            <th class="bianchi" ><p>x</p></th>
-            <th class="bianchi" ><p>c</p></th>
-            <th class="bianchi" ><p>v</p></th>
-            <th class="bianchi" ><p>b</p></th>
-        </tr>
-    </table>
     <div id='registrata' class='nonVisibile'>
         <p id='noteregistrate'></p>
         <input type="text" placeholder="Nome canzone" id="nomeCanzone">
@@ -188,6 +266,8 @@
         <button id='reset' class="visibile">Reset</button>
         <button id='undo' class="visibile">Undo</button>
     </div>
+    <div id='leMieCanzoni'></div>
 </body>
+</html>
 
 </html>

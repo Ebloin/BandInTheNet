@@ -15,6 +15,7 @@ var recording = false;
 var noteRegistrate= [];
 var indiceLoop=0;
 var catcha= true;
+var noteAttive= [];
 
 function init() {
     createjs.Sound.registerSound("Audio/AudioBatt/hi-hat.mp3", 'hi-hat');
@@ -49,6 +50,8 @@ function init() {
 var premotasto = function(e) {
     if (!catcha) return;
     var nota = suoni[e.keyCode];
+    if (noteAttive.indexOf(nota) != -1) return;
+    noteAttive.push(nota);
     if (!nota) return;
     if (recording) {
         noteRegistrate.push(nota);
@@ -60,6 +63,10 @@ var premotasto = function(e) {
 var lasciotasto = function(e) {
     if (!catcha) return;
     var nota = suoni[e.keyCode];
+    var index= noteAttive.indexOf(nota);
+    if (index != -1) {
+        noteAttive.splice(index, 1);
+    }
     if (!nota) return;
 };
 
@@ -122,8 +129,8 @@ var recHandler= function(e) {
         recording = false;
         if (noteRegistrate.length == 0) {
             $('#registrata').switchClass('visibile', 'nonVisibile');
+            $('#nomeCanzone').val('');
         }
-        $('#nomeCanzone').val('');
     }
 }
 

@@ -26,6 +26,8 @@ var KEYMAP = {
 var recording = false;
 var noteRegistrate= [];
 var indiceLoop=0;
+var catcha= true;
+var noteAttive= [];
 
 function init() {
     createjs.Sound.registerSound("Audio/note/2ottave/do4.wav", 'do4');
@@ -66,6 +68,8 @@ function init() {
     document.getElementById('reset').addEventListener('click', resetRegistrata);
     document.getElementById('salvaCanzone').addEventListener('click', salvaCanzone);
     document.getElementById('undo').addEventListener('click', undo);
+    document.getElementById('noTextArea').addEventListener('click', outText);
+    document.getElementById('nomeCanzone').addEventListener('click', inText);
 
     if (localStorage.utenteCorrente) {
         $('#mySongs').switchClass('nonVisibile', 'visibile');
@@ -73,8 +77,11 @@ function init() {
 }
 
 var premotasto = function(e) {
+    if (!catcha) return;
     //Premo un tasto per suonare
     var nota = KEYMAP[e.keyCode];
+    if (noteAttive.indexOf(nota) != -1) return;
+    noteAttive.push(nota);
     if (!nota) return; //Se il tasto non è mappato
     document.getElementById(nota).classList.add('active');
     if (recording) {
@@ -85,8 +92,13 @@ var premotasto = function(e) {
 }
 
 var lasciotasto = function(e) {
+    if (!catcha) return;
     //Lascio tasto per smettere di suonare
     var nota = KEYMAP[e.keyCode];
+    var index= noteAttive.indexOf(nota);
+    if (index != -1) {
+        noteAttive.splice(index, 1);
+    }
     if (!nota) return; //Se il tasto non è mappato
     document.getElementById(nota).classList.remove('active');
 }
@@ -151,6 +163,7 @@ var recHandler= function(e) {
         recording = false;
         if (noteRegistrate.length == 0) {
             $('#registrata').switchClass('visibile', 'nonVisibile');
+            $('#nomeCanzone').val('');
         }
     }
 }
@@ -228,4 +241,12 @@ var salvaCanzone= function() {
 var undo= function() {
     noteRegistrate.pop();
     document.getElementById('noteregistrate').innerHTML = noteRegistrate;
+}
+
+var inText= function() {
+    catcha= false;
+}
+
+var outText= function() {
+    catcha= true;
 }
