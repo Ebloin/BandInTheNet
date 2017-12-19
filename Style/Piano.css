@@ -1,33 +1,45 @@
-body{width:auto;margin:0 auto; background-color: black;}
+body {
+  width: auto;
+  margin: 0 auto;
+  background-color: black;
+}
+
+
 /*-------------HEADER------------*/
-.header{
-  position: fixed; /* Set the navbar to fixed position */
-  top: 0; /* Position the navbar at the top of the page */
+
+.header {
+  position: fixed;
+  /* Set the navbar to fixed position */
+  top: 0;
+  /* Position the navbar at the top of the page */
   /*border: 1px solid blue;/* visualizza grandezza della cover*/
   width: 100%;
   background-color: white;
   z-index: 999;
 }
-.header__logo{ /*classe che modifica il logo a sinistra dell'header*/
+
+.header__logo {
+  /*classe che modifica il logo a sinistra dell'header*/
   text-align: center;
   font-size: 40px;
   font-family: 'Guns';
   margin: 0px;
   color: #8c8b8b;
-  float: left; 
+  float: left;
   height: 0px;
   margin-top: -10px;
 }
 
-.header__hr { /*classe che modifica HorizontalRow dell'header*/
-border: 0;
+.header__hr {
+  /*classe che modifica HorizontalRow dell'header*/
+  border: 0;
   box-shadow: 0 5px 5px -5px #8c8b8b inset;
   margin-top: -6px;
   margin-bottom: -5px;
   height: 5px;
 }
 
-.header__menu{
+.header__menu {
   font-family: Verdana, sans-serif;
   font-size: 11px;
   list-style-type: none;
@@ -36,35 +48,49 @@ border: 0;
   overflow: hidden;
   background-color: white;
 }
-.header__menu__item{
-  float: left; /* elementi su singola riga */
+
+.header__menu__item {
+  float: left;
+  /* elementi su singola riga */
   list-style-type: none;
 }
-.header__menu__item button{
+
+.header__menu__item button {
   border: none;
   background: none;
-  color:#8c8b8b;
-  font-family: "Times New Roman";  
+  color: #8c8b8b;
+  font-family: "Times New Roman";
   text-align: center;
   font-size: 16px;
   size: auto;
   transition: all 0.5s;
   cursor: pointer;
 }
-.header__menu__item button:hover{opacity: 0.75;}/*classe che modifica l'elemento di menu quando ci si passa sopra con il mouse*/
-  
-.header__menu__item a{
+
+.header__menu__item button:hover {
+  opacity: 0.75;
+}
+
+
+/*classe che modifica l'elemento di menu quando ci si passa sopra con il mouse*/
+
+.header__menu__item a {
   color: #8c8b8b;
   display: block;
   text-align: center;
   padding: 0px 16px;
   text-decoration: none;
 }
-.header__menu__item a:hover{opacity: 0.75;}
+
+.header__menu__item a:hover {
+  opacity: 0.75;
+}
 
 .header__menu__logo {
   list-style-type: none;
 }
+
+
 /*--------------END-------------*/
 
 .keys {
@@ -78,7 +104,9 @@ border: 0;
   background: black;
   user-select: none;
 }
-.keys:before, .keys:after {
+
+.keys:before,
+.keys:after {
   content: '';
   pointer-events: none;
   position: absolute;
@@ -86,21 +114,25 @@ border: 0;
   width: 100%;
   z-index: 2;
 }
+
 .keys:before {
   box-shadow: 0 4px 2px #d52, 0 4px 0 #a55;
   height: 4px;
   top: -4px;
 }
+
 .keys:after {
   top: 0;
   height: 100%;
   border-radius: 5px;
   box-shadow: 0 0 0 2px black inset, 0 0 0 4px black;
 }
+
 .keys .key {
   cursor: pointer;
   transform: translate3d(0, 0, 0);
 }
+
 .keys .black {
   position: relative;
   z-index: 0;
@@ -113,9 +145,11 @@ border: 0;
   margin: 0 -11px;
   transform: translate3d(0, -30px, 0);
 }
+
 .keys .black.active {
   transform: translate3d(0, -22.5px, 0);
 }
+
 .keys .black:before {
   content: '';
   position: absolute;
@@ -129,6 +163,7 @@ border: 0;
   transform-origin: 100% 0%;
   transform: rotate(15deg);
 }
+
 .keys .black:after {
   content: '';
   position: absolute;
@@ -142,6 +177,7 @@ border: 0;
   transform-origin: 0% 0%;
   transform: rotate(-15deg);
 }
+
 .keys .white {
   position: relative;
   z-index: 1;
@@ -156,13 +192,15 @@ border: 0;
   border-radius: 0 3px 3px 3px;
   margin: 150px 2px 22px;
 }
+
 .keys .white.active {
   height: 165px;
   transform: translate3d(0, 5px, 0);
-  background-size: 100% 100%,100% 100%,100% 100%, 300% 100%, 100% 100%;
+  background-size: 100% 100%, 100% 100%, 100% 100%, 300% 100%, 100% 100%;
   background-position: center center, center center, center center, 15px 50px, center center;
   background-image: linear-gradient(to bottom, white, rgba(255, 255, 255, 0.7)), linear-gradient(to right, rgba(0, 0, 0, 0.5), transparent 8px), linear-gradient(to left, rgba(0, 0, 0, 0.5), transparent 6px), radial-gradient(ellipse at center, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)), linear-gradient(to top, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)), linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.1));
 }
+
 .keys .white .top {
   height: 160px;
   position: absolute;
@@ -172,74 +210,96 @@ border: 0;
   border-radius: 3px 3px 0 0;
   margin-bottom: -1px;
 }
-.keys .white .top:before, .keys .white .top:after {
+
+.keys .white .top:before,
+.keys .white .top:after {
   position: absolute;
   bottom: 0;
   height: 6px;
   width: 6px;
   margin-bottom: 2px;
 }
+
 .keys .white .top:before {
   left: 100%;
   border-radius: 0 0 0 3px;
   margin-left: 1px;
   box-shadow: -1px 0 0 0 #b2b29a, 0 1px 0 0 #b2b29a, -3px 3px 0 #fff;
 }
+
 .keys .white .top:after {
   right: 100%;
   margin-right: 1px;
   border-radius: 0 0 3px 0;
   box-shadow: 1px 0 0 0 #b2b29a, 0 1px 0 0 #b2b29a, 3px 3px 0 #fff;
 }
+
 .keys .white.left .top {
   left: 0;
   width: 45px;
 }
+
 .keys .white.left .top:before {
   content: '';
 }
+
 .keys .white.right {
   border-radius: 3px 0 3px 3px;
 }
+
 .keys .white.right .top {
   right: 0;
   width: 45px;
 }
+
 .keys .white.right .top:after {
   content: '';
 }
+
 .keys .white.center {
   border-radius: 3px;
 }
+
 .keys .white.center .top {
   left: 15px;
   width: 20px;
   width: 30px;
 }
-.keys .white.center .top:before, .keys .white.center .top:after {
+
+.keys .white.center .top:before,
+.keys .white.center .top:after {
   content: '';
 }
+
 p {
   color: white;
+  margin: 0 auto;
+  margin-bottom: 5px;
 }
 
-.console{
-  
+.console {
   margin: 5px auto;
   justify-content: center;
   display: flex;
 }
 
+
 /*--------------Fonts-----------*/
+
 @font-face {
   font-family: 'Guns';
   src: url('../Font/guns.TTF');
 }
+
+
 /*--------------END-------------*/
+
 
 /*--------------FIX-------------*/
 
+
 /*fix del float si può ignorare tranquilli*/
+
 .clearfix:after {
   visibility: hidden;
   display: block;
@@ -248,44 +308,57 @@ p {
   clear: both;
   height: 0;
 }
-.clearfix { display: inline-block; }
+
+.clearfix {
+  display: inline-block;
+}
+
+
 /* start commented backslash hack \*/
-* html .clearfix { height: 1%; }
-.clearfix { display: block; }
+
+* html .clearfix {
+  height: 1%;
+}
+
+.clearfix {
+  display: block;
+}
+
+
 /* close commented backslash hack */
 
 .Rbutton {
-	width: 35px;
-	height: 35px;
-	font-size: 0;
-	background-color: red;
-	border: 0;
-	border-radius: 35px;
-	margin-top: auto;
-	outline: none;
+  width: 35px;
+  height: 35px;
+  font-size: 0;
+  background-color: red;
+  border: 0;
+  border-radius: 35px;
+  margin-top: auto;
+  outline: none;
 }
 
-.notRec{
-	background-color: darkred;
+.notRec {
+  background-color: darkred;
 }
 
-.Rec{
-	animation-name: pulse;
-	animation-duration: 1.5s;
-	animation-iteration-count: infinite;
-	animation-timing-function: linear;
+.Rec {
+  animation-name: pulse;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
 
-@keyframes pulse{
-	0%{
-		box-shadow: 0px 0px 5px 0px rgba(255, 6, 6, 0.92);
-	}
-	65%{
-		box-shadow: 0px 0px 5px 13px rgba(173, 0, 0, 0.69);
-	}
-	90%{
-		box-shadow: 0px 0px 5px 13px rgba(173, 0, 0, 0.44);
-	}
+@keyframes pulse {
+  0% {
+    box-shadow: 0px 0px 5px 0px rgba(255, 6, 6, 0.92);
+  }
+  65% {
+    box-shadow: 0px 0px 5px 13px rgba(173, 0, 0, 0.69);
+  }
+  90% {
+    box-shadow: 0px 0px 5px 13px rgba(173, 0, 0, 0.44);
+  }
 }
 
 #recordingBar {
@@ -298,4 +371,68 @@ p {
 
 .visibile {
   display: inherit;
+}
+
+
+/*Stile bottoni registrazione*/
+
+#nomeCanzone {
+  float: left;
+}
+
+#salvaCanzone {
+  float: left;
+}
+
+#reset {
+  float: left;
+}
+
+#undo {
+  float: left;
+}
+
+#mySongs {
+  float: right;
+}
+
+
+/*Stile tabella*/
+
+.tabella {
+  margin-left: 20%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+}
+
+
+
+.tabella td {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  padding: 10px 5px;
+  border-style: solid;
+  border-width: 1px;
+  overflow: hidden;
+  word-break: normal;
+}
+
+.tabella th {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  padding: 10px 5px;
+  border-style: solid;
+  border-width: 1px;
+  overflow: hidden;
+  word-break: normal;
+}
+
+.bianchi {
+  width: 53px;
+}
+
+.neri {
+  width: 29.5px;
 }

@@ -70,7 +70,7 @@ body{width:auto; margin:0 auto;}
 /*-------------DRUM-------------*/
 .drum{
     padding: 25px;
-    margin-left: 10%;
+    margin-left: 21%;
   }
 /*--------------END-------------*/
 
@@ -141,3 +141,24 @@ body{width:auto; margin:0 auto;}
   .visibile {
     display: inherit;
   }
+
+/*Stile bottoni registrazione*/
+#nomeCanzone {
+  float: left;
+}
+
+#salvaCanzone {
+  float: left;
+}
+
+#reset {
+  float: left;
+}
+
+#undo {
+  float: left;
+}
+
+#mySongs {
+  float: right;
+}
