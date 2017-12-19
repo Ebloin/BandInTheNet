@@ -34,10 +34,10 @@ var checkUser = function() {
             var hide = document.getElementById("console");
             hide.classList.replace("nonVisibile", "visibile");
         }
-
-
-
-    } else return;
+    } 
+    else {
+        $('.Logout').switchClass('visibile', 'nonVisibile');
+    }
 }
 
 function stampaStorage() {
@@ -68,7 +68,7 @@ function userInStorage(user) { //true if user is in localStorge
 
 function logout() {
     localStorage.utenteCorrente = "";
-    var out = localStorage.getElementById("login");
+    var out = document.getElementById("login");
     out.classList.replace("nonVisibile", "visibile");
     alert("Arrivederci");
 }

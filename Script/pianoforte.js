@@ -119,6 +119,7 @@ var mousedown= function(e) {
     e.target.classList.add('active');
     if (recording) {
         noteRegistrate.push(nota);
+        document.getElementById('noteregistrate').innerHTML = noteRegistrate;
     }
     createjs.Sound.play(nota);
 }
@@ -256,7 +257,7 @@ var salvaCanzone= function() {
         $('#recButton').switchClass('Rec', 'notRec');
         recording = false;
     }
-    
+    //Se la tabella è visibile aggiornala
     if($('#leMieCanzoni').hasClass('visibile')) {
         $('#tabellaCanzoni').html('');
         aggiornaElenco();
