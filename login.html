@@ -42,6 +42,8 @@
 	<div class="LoginBox">
 		<form action="" method="POST" name="miaform">
 			<div class="insert">
+				<input type="button" value = "Torna Indietro" class = "back" onclick="goBack();">
+				<br>
 				<label>
 					<b>Username</b>
 				</label>
@@ -57,10 +59,9 @@
 			</div>
 			<hr style="border-top: 1px solid #f1f1f1;">
 			<div class="insert storage">
-				<input type="reset" value="Reset">
-				<input type="button" value="Back" onclick="goBack();">				
-				<input type="button" value="Stamp" onclick="stampaStorage();">
-				<input type="button" value="Pown" onclick="resetStorage();">
+				<input type="reset" class = "console" value="Reset">
+				<input type="button" class = "console" value="Stamp" onclick="stampaStorage();">
+				<input type="button" class = "console" value="Pown" onclick="resetStorage();">
 				<div id="Storage"></div>
 			</div>
 		</form>

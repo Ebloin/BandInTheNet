@@ -131,10 +131,23 @@ input[type=text], input[type=password] {
 button:hover {
   opacity: 0.8;
 }
-.storage{
-  margin-left: 15%;
+
+input[type=button].back{
+  font-family: 'Guns';
+  margin: 0px;
+  font-size: 20px;
+  color: #8c8b8b;
+  border: none;
+  background: none;
+  float: right;
 }
-input[type=button] {
+input[type=button].back:hover{
+  color: red;
+}
+.storage{
+  margin-left: 25%;
+}
+input[type=button].console {
   width: 20%;
   background-color: black;
   color: white;
@@ -144,7 +157,7 @@ input[type=button] {
   border-radius: 4px;
   cursor: pointer;
 }
-input[type=reset] {
+input[type=reset].console {
   width: 20%;
   background-color: black;
   color: white;
@@ -155,10 +168,10 @@ input[type=reset] {
   cursor: pointer;
 }
 
-input[type=reset]:hover {
+input[type=reset].console:hover {
   background-color: #45a049;
 }
-input[type=button]:hover {
+input[type=button].console:hover {
   background-color: #45a049;
 }
 
