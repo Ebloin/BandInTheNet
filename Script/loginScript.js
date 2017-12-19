@@ -25,7 +25,7 @@ function goBack() {
 }
 
 var checkUser = function() {
-    if (localStorage.utenteCorrente != '') {
+    if (localStorage.utenteCorrente != '' && localStorage.utenteCorrente != undefined) {
         document.getElementById("Profile").innerHTML = localStorage.utenteCorrente;
         var log = document.getElementById("login");
         log.classList.replace("visibile", "nonVisibile");
@@ -36,7 +36,7 @@ var checkUser = function() {
         }
     } 
     else {
-        $('.Logout').switchClass('visibile', 'nonVisibile');
+        $('.Logout').switchClass('visibile', 'nonVisibile')
     }
 }
 

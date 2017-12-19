@@ -261,10 +261,6 @@ var salvaCanzone= function() {
     if($('#leMieCanzoni').hasClass('visibile')) {
         $('#tabellaCanzoni').html('');
         aggiornaElenco();
-        var prove = document.getElementsByName('playMiaCanzone');
-        for (i = 0; i < prove.length; i++) {
-            prove[i].addEventListener('click', suonaCanzone);
-        }
     }
 }
 
@@ -305,10 +301,6 @@ var mostraTabella= function() {
         aggiornaElenco();
         $('#leMieCanzoni').switchClass('nonVisibile', 'visibile');
         $('#mySongs').html('Hide mySongs');
-        var prove = document.getElementsByName('playMiaCanzone');
-        for (i = 0; i < prove.length; i++) {
-            prove[i].addEventListener('click', suonaCanzone);
-        }
     }
     else {
         $('#leMieCanzoni').switchClass('visibile', 'nonVisibile');
@@ -318,8 +310,19 @@ var mostraTabella= function() {
 
 //Listener del tasto play vicino a ogni canzone nella tabella delle mie canzoni
 var suonaCanzone= function(e) {
-    var indice= e.target.id;
-    playArray(JSON.parse(localStorage.utenti)[userIndex].Songs.pianoforte[indice].note);
+    var indiceCanzone= e.target.id;
+    playArray(JSON.parse(localStorage.utenti)[userIndex].Songs.pianoforte[indiceCanzone].note);
+}
+
+//NUOVOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+var rimuoviCanzone= function(e) {
+    var indiceCanzone= e.target.id;
+    var storage= JSON.parse(localStorage.utenti)
+    var utente= storage[userIndex];
+    utente.Songs.pianoforte.splice(indiceCanzone, 1);
+    localStorage.utenti= JSON.stringify(storage);
+    $('#tabellaCanzoni').html('');
+    aggiornaElenco();
 }
 
 //Riproduce un array di note
@@ -338,7 +341,6 @@ var playArray= function(array) {
 //Aggiorna la tabella relativa alle canzoni registrate nel tuo profilo
 var aggiornaElenco= function() {
     var storage= JSON.parse(localStorage.utenti);
-
     var indice= cercaIndiceUtente(localStorage.utenteCorrente);
     userIndex= indice;
     var canzoni= storage[indice].Songs.pianoforte;
@@ -347,7 +349,20 @@ var aggiornaElenco= function() {
         var endTab= '</tr>'
         var thNome = '<th><p>'+JSON.stringify(canzoni[i].nome)+'</p></th>';
         var thPlay = '<th><button name=playMiaCanzone id="'+i+'">Play</button></th>';
-        var stringa= preTab+thNome+thPlay+endTab;
+        var thRemove = '<th><button name=removeMiaCanzone id="'+i+'">Remove</button></th>';
+        var stringa= preTab+thNome+thPlay+thRemove+endTab;
         $('#tabellaCanzoni').append(stringa);
+    }
+    aggiungiListener();
+}
+
+var aggiungiListener = function() {
+    var play = document.getElementsByName('playMiaCanzone');
+    for (i = 0; i < play.length; i++) {
+        play[i].addEventListener('click', suonaCanzone);
+    }
+    var del = document.getElementsByName('removeMiaCanzone');
+    for (i = 0; i < del.length; i++) {
+        del[i].addEventListener('click', rimuoviCanzone);
     }
 }
