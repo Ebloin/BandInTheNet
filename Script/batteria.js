@@ -14,6 +14,7 @@ var suoni = {
 var recording = false;
 var noteRegistrate= [];
 var indiceLoop=0;
+var catcha= true;
 
 function init() {
     createjs.Sound.registerSound("Audio/AudioBatt/hi-hat.mp3", 'hi-hat');
@@ -37,6 +38,8 @@ function init() {
     document.getElementById('reset').addEventListener('click', resetRegistrata);
     document.getElementById('salvaCanzone').addEventListener('click', salvaCanzone);
     document.getElementById('undo').addEventListener('click', undo);
+    document.getElementById('noTextArea').addEventListener('click', outText);
+    document.getElementById('nomeCanzone').addEventListener('click', inText);
 
     if (localStorage.utenteCorrente) {
         $('#mySongs').switchClass('nonVisibile', 'visibile');
@@ -44,6 +47,7 @@ function init() {
 };
 
 var premotasto = function(e) {
+    if (!catcha) return;
     var nota = suoni[e.keyCode];
     if (!nota) return;
     if (recording) {
@@ -54,6 +58,7 @@ var premotasto = function(e) {
 };
 
 var lasciotasto = function(e) {
+    if (!catcha) return;
     var nota = suoni[e.keyCode];
     if (!nota) return;
 };
@@ -62,6 +67,7 @@ var mousedown= function(e) {
     var nota= e.target.id;
     if (recording) {
         noteRegistrate.push(nota);
+        document.getElementById('noteregistrate').innerHTML = noteRegistrate;
     }
     createjs.Sound.play(nota);
 }
@@ -117,6 +123,7 @@ var recHandler= function(e) {
         if (noteRegistrate.length == 0) {
             $('#registrata').switchClass('visibile', 'nonVisibile');
         }
+        $('#nomeCanzone').val('');
     }
 }
 
@@ -188,9 +195,18 @@ var salvaCanzone= function() {
         $('#recButton').switchClass('Rec', 'notRec');
         recording = false;
     }
+
 }
 
 var undo= function() {
     noteRegistrate.pop();
     document.getElementById('noteregistrate').innerHTML = noteRegistrate;
+}
+
+var inText= function() {
+    catcha= false;
+}
+
+var outText= function() {
+    catcha= true;
 }
