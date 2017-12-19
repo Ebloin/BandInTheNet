@@ -29,12 +29,15 @@
                         <span id="Profile">Accedi</span>
                     </a>
                     <div class="header__menu__item__dropdown">
-                            <a href="Piano.html">Piano</a>
-                            <a href="Batteria.html">Batteria</a>
+                        <button>Canzoni</button>                        
+                        <button onclick="logout();">Logout</button>
                     </div>
                 </li>
                 <li class="header__menu__item" style="float:right">
                     <a href="Play.html">Let's Play</a>
+                    <div class="header__menu__item__dropdown" style="margin-left: 10px;">
+                        <a href="Piano.html">Piano</a>
+                    </div>
                 </li>
                 <li class="header__menu__item" style="float:right">
                     <a href="HomePage.html #Info">Info</a>
@@ -53,7 +56,6 @@
         <p>Clicca sul cerchio per iniziare a registrare, poi su play per riascoltare la tua composizione</p>
         <button id="recButton" class="Rbutton notRec"></button>
         <button id='play'>play</button>
-        <button id='mySongs' class="nonVisibile">My Songs</button>
     </div>
 
     <img class="drum" src="Immagini/batteria.png" usemap="#mappa">
