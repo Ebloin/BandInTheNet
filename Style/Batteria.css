@@ -61,6 +61,28 @@ body{width:auto; margin:0 auto;}
     text-decoration: none;
   }
   .header__menu__item a:hover{opacity: 0.75;}
+  .header__menu__item__dropdown {
+    margin-left: 5px;
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 80px;
+    z-index: 1;
+}
+
+.header__menu__item__dropdown a{
+    color: #8c8b8b;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.header__menu__item__dropdown a:hover {color: green;}
+
+
+.header__menu__item:hover .header__menu__item__dropdown {
+    display: block;
+}
   
   .header__menu__logo {
     list-style-type: none;
@@ -69,8 +91,8 @@ body{width:auto; margin:0 auto;}
 
 /*-------------DRUM-------------*/
 .drum{
-    padding: 25px;
-    margin-left: 21%;
+    padding: 0px;
+    margin-left: 20%;
   }
 /*--------------END-------------*/
 
