@@ -24,6 +24,20 @@ function goBack() {
     return;
 }
 
+var checkUser = function () {
+    if (localStorage.utenteCorrente != '') {
+        document.getElementById("Profile").innerHTML = localStorage.utenteCorrente;
+        //$('Profile').html(localStorage.utenteCorrente);
+        if((localStorage.utenteCorrente) == 'admin'){
+            var hide = document.getElementById("console");
+            hide.classList.replace("nonVisibile","visibile");
+        } 
+
+   
+    }
+    else return;
+}
+
 function stampaStorage() {
     var storage = JSON.parse(localStorage.utenti);
     var l = storage.length;
