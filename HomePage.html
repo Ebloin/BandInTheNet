@@ -1,16 +1,16 @@
 <html>
+
 <head>
     <title>BandInTheNet</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
     <link href="./Style/HomePage.css" rel="stylesheet" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
-        var checkUser= function() {
+        var checkUser = function() {
             if (localStorage.utenteCorrente != '') {
                 document.getElementById("Profile").innerHTML = localStorage.utenteCorrente;
                 //$('Profile').html(localStorage.utenteCorrente);
-            }
-            else return;
+            } else return;
         }
     </script>
 </head>
@@ -24,13 +24,13 @@
                     <h1 class="header__logo">BandInTheNet</h1>
                 </li>
                 <li class="header__menu__item" style="float:right">
-                    <a href="Login.html" > <span id = "Profile">Accedi</span></a>                        
+                    <a href="Login.html"> <span id="Profile">Accedi</span></a>
                 </li>
                 <li class="header__menu__item" style="float:right">
                     <a href="Play.html">Let's Play</a>
                     <div class="header__menu__item__dropdown">
-                            <a href="Piano.html">Piano</a>
-                            <a href="Batteria.html">Batteria</a>
+                        <a href="Piano.html">Piano</a>
+                        <a href="Batteria.html">Batteria</a>
                     </div>
                 </li>
                 <li class="header__menu__item" style="float:right">
@@ -46,7 +46,7 @@
         <hr class="header__hr">
 
     </header>
-   
+
     <section class="cover">
         <!-- utilizzo 2 div per centrare il testo
              vedi codepen  -->
@@ -63,18 +63,19 @@
         </div>
     </section>
 
-    <section class="banner__whoami clearfix" id = "Info">
+    <section class="banner__whoami clearfix" id="Info">
         <div class="banner__whoami__img"></div>
         <div class="banner__whoami__text">
             <h1>Chi Siamo</h1>
-            <p>Siamo un gruppo di studenti di ingegneria informatica</p>
+            <p>Siamo Giorgia, Elia e Fabio, tre studenti di ingegneria informatica e automatica che hanno ideato questo progetto con l'idea di divertici insieme all'insegna della musica. E allora ...<br> Play Whit Us!!</p>
         </div>
     </section>
 
     <section class="banner__contacts clearfix">
         <div class="banner__contacts__text">
             <h1>Contatti</h1>
-            <p>Potete trovarci su:</p>
+            <p>Potete trovarci su Facebook: <br> Elia Boninsegna <br> Giorgia D'Angelo <br> Fabio Caputo</p>
+
         </div>
         <div class="banner__contacts__img"></div>
     </section>
