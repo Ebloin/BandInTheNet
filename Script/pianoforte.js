@@ -59,19 +59,7 @@ function init() {
     //Se sei loggato
     if (localStorage.utenteCorrente) {
         $('#mySongs').switchClass('nonVisibile', 'visibile');
-        var storage= JSON.parse(localStorage.utenti);
-
-        var indice= cercaIndiceUtente(localStorage.utenteCorrente);
-        userIndex= indice;
-        var canzoni= storage[indice].Songs.pianoforte;
-        for (i=0; i<canzoni.length; i++) {
-            var preTab= '<tr id=riga"'+i+'">';
-            var endTab= '</tr>'
-            var thNome = '<th><p>'+JSON.stringify(canzoni[i].nome)+'</p></th>';
-            var thPlay = '<th><button name=playMiaCanzone id="'+i+'">Play</button></th>';
-            var stringa= preTab+thNome+thPlay+endTab;
-            $('#tabellaCanzoni').append(stringa);
-        }
+        aggiornaElenco();
     }
 
     document.addEventListener('keydown', premotasto);
@@ -252,6 +240,15 @@ var salvaCanzone= function() {
         $('#recButton').switchClass('Rec', 'notRec');
         recording = false;
     }
+    
+    if($('#leMieCanzoni').hasClass('visibile')) {
+        $('#tabellaCanzoni').html('');
+        aggiornaElenco();
+        var prove = document.getElementsByName('playMiaCanzone');
+        for (i = 0; i < prove.length; i++) {
+            prove[i].addEventListener('click', suonaCanzone);
+        }
+    }
 }
 
 var undo= function() {
@@ -282,6 +279,8 @@ var cercaIndiceUtente = function(nome) {
 
 var mostraTabella= function() {
     if($('#leMieCanzoni').hasClass('nonVisibile')) {
+        $('#tabellaCanzoni').html('');
+        aggiornaElenco();
         $('#leMieCanzoni').switchClass('nonVisibile', 'visibile');
         $('#mySongs').html('Hide mySongs');
         var prove = document.getElementsByName('playMiaCanzone');
@@ -309,4 +308,20 @@ var playArray= function(array) {
             clearInterval(loop);
         }
     }, 500);
+}
+
+var aggiornaElenco= function() {
+    var storage= JSON.parse(localStorage.utenti);
+
+    var indice= cercaIndiceUtente(localStorage.utenteCorrente);
+    userIndex= indice;
+    var canzoni= storage[indice].Songs.pianoforte;
+    for (i=0; i<canzoni.length; i++) {
+        var preTab= '<tr id=riga"'+i+'">';
+        var endTab= '</tr>'
+        var thNome = '<th><p>'+JSON.stringify(canzoni[i].nome)+'</p></th>';
+        var thPlay = '<th><button name=playMiaCanzone id="'+i+'">Play</button></th>';
+        var stringa= preTab+thNome+thPlay+endTab;
+        $('#tabellaCanzoni').append(stringa);
+    }
 }
