@@ -3,8 +3,8 @@
 <head>
     <script src="./Script/loginScript.js"></script>
     <link href="./Style/login.css" rel="stylesheet" type="text/css">
-    <script src="Script/jquery-ui.min.js" type="text/javascript"></script>
     <script src="Script/jquery-1.11.3.min.js" type="text/javascript"></script>
+    <script src="Script/jquery-ui.min.js" type="text/javascript"></script>
 
 </head>
 <script>
@@ -41,6 +41,7 @@
             <div class="insert">
                 <input type="button" value="Torna Indietro" class="back" onclick="goBack();">
                 <br>
+                <div class="insert nonVisibile" id="nomeUtente">nomeUtente</div>
                 <div class="insert visibile" id="login" style="padding-bottom: 0px;padding-right: 0px;padding-left: 0px;">
                     <label>
 					<b>Username</b>
@@ -52,9 +53,9 @@
                     <input id="UserPsw" type="password" placeholder="Inserisci Password" name="password">
                     <input type="checkbox" checked="checked"> Remember me
                     <button class="Login" onclick="login();">Login</button>
+                    <button type="submit" class="Register" onclick="return inserisciUtente();">Registrati</button>
                 </div>
-                <button class="Logout" onclick="logout();">Logout</button>
-                <button type="submit" class="Register" onclick="return inserisciUtente();">Registrati</button>
+                <button class="Logout visibile" onclick="logout();">Logout</button>
             </div>
             <div class="insert storage">
                 <div class="nonVisibile" id="console">
@@ -66,7 +67,17 @@
             </div>
         </form>
     </div>
-
+    <div id='hubUtente' class="visibile">
+        <h1>Le mie canzoni</h1>
+        <h2>Pianoforte</h2>
+        <div id='elencoPiano'>
+            <table id='tabellaCanzoniPiano'></table>
+        </div>
+        <h2>Batteria</h2>
+        <div id='elencoBatteria'>
+            <table id='tabellaCanzoniBatteria'></table>
+        </div>
+    </div>
 </body>
 
 </html>

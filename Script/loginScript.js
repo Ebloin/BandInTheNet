@@ -1,3 +1,4 @@
+var userIndex;
 function inizializzaStorage() {
     if (typeof(localStorage.utenti) == "undefined") localStorage.utenti = "[]";
     if (typeof(localStorage.utenteCorrente) == "undefined") localStorage.utenteCorrente = "";
@@ -25,19 +26,37 @@ function goBack() {
 }
 
 var checkUser = function() {
-    if (localStorage.utenteCorrente != '') {
+    //Se l'utente è loggato
+    if (localStorage.utenteCorrente != '' && localStorage.utenteCorrente != undefined) {
+        userIndex= cercaIndiceUtente(localStorage.utenteCorrente);
         document.getElementById("Profile").innerHTML = localStorage.utenteCorrente;
         var log = document.getElementById("login");
         log.classList.replace("visibile", "nonVisibile");
+        document.getElementById("nomeUtente").innerHTML = localStorage.utenteCorrente;
+        document.getElementById("nomeUtente").classList.replace("nonVisibile", "visibile");
+        /*  var l=localStorage.length;
+        var index;
+        for(i=0;i<l;i++){
+            if(JSON.stringify(arrayUsers[i].Username)==localStorage.utenteCorrente){
+                index=i;
+            }
+        }
+        var storage=JSON.parse(localStorage.utenti);
+        var pianofortesongs=storage[index].Songs.pianoforte;
+        var batteriaSongs=storage[index].Songs.batteria;
+*/
         //$('Profile').html(localStorage.utenteCorrente);
         if ((localStorage.utenteCorrente) == 'admin') {
             var hide = document.getElementById("console");
             hide.classList.replace("nonVisibile", "visibile");
         }
-
-
-
-    } else return;
+        aggiornaElenco();
+        $('#hubUtente').switchClass('nonVisibile', 'Visibile');
+    } 
+    else {
+        $('.Logout').switchClass('visibile', 'nonVisibile');
+        if ($('#hubUtente').hasClass('visibile')) $('#hubUtente').switchClass('visibile', 'nonVisibile');
+    }
 }
 
 function stampaStorage() {
@@ -68,8 +87,9 @@ function userInStorage(user) { //true if user is in localStorge
 
 function logout() {
     localStorage.utenteCorrente = "";
-    var out = localStorage.getElementById("login");
+    var out = document.getElementById("login");
     out.classList.replace("nonVisibile", "visibile");
+    userIndex = undefined;
     alert("Arrivederci");
 }
 
@@ -112,4 +132,93 @@ function inserisciUtente() {
     alert("Dati inseriti");
     localStorage.utenti = JSON.stringify(storage);
     return true;
+}
+
+//FUNZIONI RELATIVE ALLA GESTIONE DELL'HUB UTENTE
+//Aggiorna la tabella relativa alle canzoni registrate nel tuo profilo
+var aggiornaElenco= function() {
+    var utente= JSON.parse(localStorage.utenti)[cercaIndiceUtente(localStorage.utenteCorrente)];
+    //Aggiungo canzoni piano
+    var canzoniPiano= utente.Songs.pianoforte;
+    for (i=0; i<canzoniPiano.length; i++) {
+        var preTab= '<tr id=riga"'+i+'">';
+        var endTab= '</tr>'
+        var thNome = '<th><p>'+JSON.stringify(canzoniPiano[i].nome)+'</p></th>';
+        var thPlay = '<th><button name=playMiaCanzonePiano id="'+i+'">Play</button></th>';
+        var thRemove = '<th><button name=removeMiaCanzonePiano id="'+i+'">Remove</button></th>';
+        var stringa= preTab+thNome+thPlay+thRemove+endTab;
+        $('#tabellaCanzoniPiano').append(stringa);
+    }
+    //Aggiungo canzoni batteria
+    var canzoniBatteria= utente.Songs.batteria;
+    for (i=0; i<canzoniBatteria.length; i++) {
+        var preTab= '<tr id=riga"'+i+'">';
+        var endTab= '</tr>'
+        var thNome = '<th><p>'+JSON.stringify(canzoniBatteria[i].nome)+'</p></th>';
+        var thPlay = '<th><button name=playMiaCanzoneBatteria id="'+i+'">Play</button></th>';
+        var thRemove = '<th><button name=removeMiaCanzoneBatteria id="'+i+'">Remove</button></th>';
+        var stringa= preTab+thNome+thPlay+thRemove+endTab;
+        $('#tabellaCanzoniBatteria').append(stringa);
+    }
+    aggiungiListener();
+}
+
+var aggiungiListener = function() {
+    var playPiano = document.getElementsByName('playMiaCanzonePiano');
+    for (i = 0; i < playPiano.length; i++) {
+        //playPiano[i].addEventListener('click', suonaCanzone);
+    }
+    var delPiano = document.getElementsByName('removeMiaCanzonePiano');
+    for (i = 0; i < delPiano.length; i++) {
+        delPiano[i].addEventListener('click', checkRimuovi);
+    }
+    var playBatt = document.getElementsByName('playMiaCanzoneBatteria');
+    for (i = 0; i < playBatt.length; i++) {
+        //playBatt[i].addEventListener('click', suonaCanzone);
+    }
+    var delBatt = document.getElementsByName('removeMiaCanzoneBatteria');
+    for (i = 0; i < delBatt.length; i++) {
+        delBatt[i].addEventListener('click', checkRimuovi);
+    }
+}
+
+var cercaIndiceUtente = function(nome) {
+    var nomeUtente= nome;
+    var arrayUsers= JSON.parse(localStorage.utenti);
+    //Calcolo indice utente
+    var index;
+    for (i=0; i<arrayUsers.length; i++) {
+        if (JSON.stringify(arrayUsers[i].Username) == JSON.stringify(nomeUtente)) {
+            index= i;
+        }
+    }
+    return index;
+}
+
+checkRimuovi= function(e) {
+    if(confirm('Vuoi veramete eliminare la canzone?')) rimuoviCanzone(e);
+    else return;
+}
+
+var rimuoviCanzone= function(e) {
+    var indiceCanzone= e.target.id;
+    var nomeStrumento= e.target.name;
+    if (nomeStrumento == 'removeMiaCanzonePiano') {
+        var storage= JSON.parse(localStorage.utenti)
+        var utente= storage[userIndex];
+        utente.Songs.pianoforte.splice(indiceCanzone, 1);
+        localStorage.utenti= JSON.stringify(storage);
+        $('#tabellaCanzoniPiano').html('');
+        $('#tabellaCanzoniBatteria').html('');
+        aggiornaElenco();
+    }
+    else if (nomeStrumento == 'removeMiaCanzoneBatteria') {
+        var storage= JSON.parse(localStorage.utenti)
+        var utente= storage[userIndex];
+        utente.Songs.batteria.splice(indiceCanzone, 1);
+        localStorage.utenti= JSON.stringify(storage);
+        $('#tabellaCanzoniBatteria').html('');
+        $('#tabellaCanzoniPiano').html('');
+        aggiornaElenco();
+    }
 }

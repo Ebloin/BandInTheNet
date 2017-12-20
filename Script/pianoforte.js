@@ -22,12 +22,16 @@ var KEYMAP = {
     66: 'si5'
 };
 
-
+//Indica se si sta registrando
 var recording = false;
+//Array delle note registrate
 var noteRegistrate= [];
+//Indice globale del loop per riprodurre le canzoni
 var indiceLoop=0;
 var catcha= true;
+//Array delle note premute contemporaneamente
 var noteAttive= [];
+//Indice dell'utente attivo
 var userIndex;
 
 function init() {
@@ -56,22 +60,10 @@ function init() {
     createjs.Sound.registerSound("Audio/note/2ottave/la5d.wav", 'la#5');
     createjs.Sound.registerSound("Audio/note/2ottave/si5.wav", 'si5');
     
-    //Se sei loggato
+    //Se sei loggato visualizza il tasto 
     if (localStorage.utenteCorrente) {
         $('#mySongs').switchClass('nonVisibile', 'visibile');
-        var storage= JSON.parse(localStorage.utenti);
-
-        var indice= cercaIndiceUtente(localStorage.utenteCorrente);
-        userIndex= indice;
-        var canzoni= storage[indice].Songs.pianoforte;
-        for (i=0; i<canzoni.length; i++) {
-            var preTab= '<tr id=riga"'+i+'">';
-            var endTab= '</tr>'
-            var thNome = '<th><p>'+JSON.stringify(canzoni[i].nome)+'</p></th>';
-            var thPlay = '<th><button name=playMiaCanzone id="'+i+'">Play</button></th>';
-            var stringa= preTab+thNome+thPlay+endTab;
-            $('#tabellaCanzoni').append(stringa);
-        }
+        aggiornaElenco();
     }
 
     document.addEventListener('keydown', premotasto);
@@ -92,6 +84,7 @@ function init() {
     document.getElementById('mySongs').addEventListener('click', mostraTabella);
 }
 
+//Premo tasto del piano con tastiera
 var premotasto = function(e) {
     if (!catcha) return;
     //Premo un tasto per suonare
@@ -107,6 +100,7 @@ var premotasto = function(e) {
     createjs.Sound.play(nota);
 }
 
+//Rilascio del tasto del puano con tastiera
 var lasciotasto = function(e) {
     if (!catcha) return;
     //Lascio tasto per smettere di suonare
@@ -119,19 +113,23 @@ var lasciotasto = function(e) {
     document.getElementById(nota).classList.remove('active');
 }
 
+//Abbassa il tasto del piano e suona
 var mousedown= function(e) {
     var nota= e.target.id;
     e.target.classList.add('active');
     if (recording) {
         noteRegistrate.push(nota);
+        document.getElementById('noteregistrate').innerHTML = noteRegistrate;
     }
     createjs.Sound.play(nota);
 }
 
+//Rialza il tasto del piano
 var mouseup= function(e) {
     e.target.classList.remove('active');
 }
 
+//Inizia a registrare
 var registra= function() {
     recording = true;
     //INSERIRE CONTROLLO SE VERAMENTE UOLE CANCELLARE
@@ -139,8 +137,10 @@ var registra= function() {
     $('#noteregistrate').text('');
 };
 
+//Smetti di registrare
 var stopRegistra= function() {recording = false};
 
+//Riproduci l'array di note registrate corrente
 var playNote= function() {
     if (noteRegistrate.length == 0) {
         alert('Spiacenti ma non hai ancora registrato nessuna melodia, prova con il pulsante rosso');
@@ -157,9 +157,12 @@ var playNote= function() {
     }, 500);
 }
 
+//Suona una nota
 var suona= function(nota) {
     createjs.Sound.play(nota);
 }
+
+//Gestore del pulsante animato REC
 var recHandler= function(e) {
     var button= e.target;
     var songBar= document.getElementById('registrata');
@@ -184,6 +187,7 @@ var recHandler= function(e) {
     }
 }
 
+//Resetta l'array della canzone che è stata registrata
 var resetRegistrata= function() {
     noteRegistrate= [];  
     if($('#recButton').hasClass('notRec')) {
@@ -197,10 +201,16 @@ var resetRegistrata= function() {
     }
 }
 
+//Salva una nuova canzone nel localStiorage relativo all'utente
 var salvaCanzone= function() {
+    //Controllo sulla presenza delle note
+    if (noteRegistrate.length == 0) {
+        alert("Non c'è nessuna nota registrata da salvare, suona qualcosa");
+        return;
+    }
     //Conrollo sul nome della canzone
     if ($('#nomeCanzone').val() == '') {
-        alert('Non hai suonato nessuna nota, non puoi salvare una canzone vuota');
+        alert('Devi dare un nome alla tua canzone');
         return;
     }
     //Controllo utente loggato
@@ -252,21 +262,30 @@ var salvaCanzone= function() {
         $('#recButton').switchClass('Rec', 'notRec');
         recording = false;
     }
+    //Se la tabella è visibile aggiornala
+    if($('#leMieCanzoni').hasClass('visibile')) {
+        $('#tabellaCanzoni').html('');
+        aggiornaElenco();
+    }
 }
 
+//Rimuovi dall'array l'ultima nota suonata
 var undo= function() {
     noteRegistrate.pop();
     document.getElementById('noteregistrate').innerHTML = noteRegistrate;
 }
 
+//Se sono dentro la casella di testo non suona
 var inText= function() {
     catcha= false;
 }
 
+//Se sono fuori dalla casella di testo suona
 var outText= function() {
     catcha= true;
 }
 
+//Cerca nel localStorage l'indice dell'utente relativo a un username
 var cercaIndiceUtente = function(nome) {
     var nomeUtente= nome;
     var arrayUsers= JSON.parse(localStorage.utenti);
@@ -280,14 +299,13 @@ var cercaIndiceUtente = function(nome) {
     return index;
 }
 
+//Listener del tasto Show mySongs che attiva e disattiva la visualizzazione della tabella, aggiornando eventualmente l'elenco delle canzoni
 var mostraTabella= function() {
     if($('#leMieCanzoni').hasClass('nonVisibile')) {
+        $('#tabellaCanzoni').html('');
+        aggiornaElenco();
         $('#leMieCanzoni').switchClass('nonVisibile', 'visibile');
         $('#mySongs').html('Hide mySongs');
-        var prove = document.getElementsByName('playMiaCanzone');
-        for (i = 0; i < prove.length; i++) {
-            prove[i].addEventListener('click', suonaCanzone);
-        }
     }
     else {
         $('#leMieCanzoni').switchClass('visibile', 'nonVisibile');
@@ -295,10 +313,24 @@ var mostraTabella= function() {
     }
 }
 
+//Listener del tasto play vicino a ogni canzone nella tabella delle mie canzoni
 var suonaCanzone= function(e) {
-    var indice= e.target.id;
-    playArray(JSON.parse(localStorage.utenti)[userIndex].Songs.pianoforte[indice].note);
+    var indiceCanzone= e.target.id;
+    playArray(JSON.parse(localStorage.utenti)[userIndex].Songs.pianoforte[indiceCanzone].note);
 }
+
+//NUOVOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+var rimuoviCanzone= function(e) {
+    var indiceCanzone= e.target.id;
+    var storage= JSON.parse(localStorage.utenti)
+    var utente= storage[userIndex];
+    utente.Songs.pianoforte.splice(indiceCanzone, 1);
+    localStorage.utenti= JSON.stringify(storage);
+    $('#tabellaCanzoni').html('');
+    aggiornaElenco();
+}
+
+//Riproduce un array di note
 var playArray= function(array) {
     var loop = setInterval(function() {
         nota= array[indiceLoop];
@@ -309,4 +341,33 @@ var playArray= function(array) {
             clearInterval(loop);
         }
     }, 500);
+}
+
+//Aggiorna la tabella relativa alle canzoni registrate nel tuo profilo
+var aggiornaElenco= function() {
+    var storage= JSON.parse(localStorage.utenti);
+    var indice= cercaIndiceUtente(localStorage.utenteCorrente);
+    userIndex= indice;
+    var canzoni= storage[indice].Songs.pianoforte;
+    for (i=0; i<canzoni.length; i++) {
+        var preTab= '<tr id=riga"'+i+'">';
+        var endTab= '</tr>'
+        var thNome = '<th><p>'+JSON.stringify(canzoni[i].nome)+'</p></th>';
+        var thPlay = '<th><button name=playMiaCanzone id="'+i+'">Play</button></th>';
+        var thRemove = '<th><button name=removeMiaCanzone id="'+i+'">Remove</button></th>';
+        var stringa= preTab+thNome+thPlay+thRemove+endTab;
+        $('#tabellaCanzoni').append(stringa);
+    }
+    aggiungiListener();
+}
+
+var aggiungiListener = function() {
+    var play = document.getElementsByName('playMiaCanzone');
+    for (i = 0; i < play.length; i++) {
+        play[i].addEventListener('click', suonaCanzone);
+    }
+    var del = document.getElementsByName('removeMiaCanzone');
+    for (i = 0; i < del.length; i++) {
+        del[i].addEventListener('click', rimuoviCanzone);
+    }
 }

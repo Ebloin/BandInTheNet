@@ -16,6 +16,7 @@ var noteRegistrate= [];
 var indiceLoop=0;
 var catcha= true;
 var noteAttive= [];
+var userIndex;
 
 function init() {
     createjs.Sound.registerSound("Audio/AudioBatt/hi-hat.mp3", 'hi-hat');
@@ -27,13 +28,20 @@ function init() {
     createjs.Sound.registerSound("Audio/AudioBatt/piatto-ride.mp3", 'piatto-ride');
     createjs.Sound.registerSound("Audio/AudioBatt/bacchette.mp3", 'bacchette');
 
+    //Se sei loggato visualizza il tasto
+    if (localStorage.utenteCorrente) {
+        $('#mySongs').switchClass('nonVisibile', 'visibile');
+        aggiornaElenco();
+    }
+
+    document.addEventListener('keydown', premotasto);
+    document.addEventListener('keyup', lasciotasto);
+
     var prove = document.getElementsByTagName('area');
     for (i = 0; i < prove.length; i++) {
         prove[i].addEventListener('click', mousedown);
     }
 
-    document.addEventListener('keydown', premotasto);
-    document.addEventListener('keyup', lasciotasto);
     document.getElementById('play').addEventListener('click', playNote);
     document.getElementById('recButton').addEventListener('click', recHandler);
     document.getElementById('reset').addEventListener('click', resetRegistrata);
@@ -41,10 +49,7 @@ function init() {
     document.getElementById('undo').addEventListener('click', undo);
     document.getElementById('noTextArea').addEventListener('click', outText);
     document.getElementById('nomeCanzone').addEventListener('click', inText);
-
-    if (localStorage.utenteCorrente) {
-        $('#mySongs').switchClass('nonVisibile', 'visibile');
-    }
+    document.getElementById('mySongs').addEventListener('click', mostraTabella);
 };
 
 var premotasto = function(e) {
@@ -59,6 +64,7 @@ var premotasto = function(e) {
     }
     createjs.Sound.play(nota);
 };
+
 
 var lasciotasto = function(e) {
     if (!catcha) return;
@@ -148,6 +154,11 @@ var resetRegistrata= function() {
 }
 
 var salvaCanzone= function() {
+    //Controllo sulla presenza delle note
+    if (noteRegistrate.length == 0) {
+        alert("Non c'è nessuna nota registrata da salvare, suona qualcosa");
+        return;
+    }
     //Conrollo sul nome della canzone
     if ($('#nomeCanzone').val() == '') {
         alert('Non hai suonato nessuna nota, non puoi salvare una canzone vuota');
@@ -202,7 +213,10 @@ var salvaCanzone= function() {
         $('#recButton').switchClass('Rec', 'notRec');
         recording = false;
     }
-
+    if($('#leMieCanzoni').hasClass('visibile')) {
+        $('#tabellaCanzoni').html('');
+        aggiornaElenco();
+    }
 }
 
 var undo= function() {
@@ -216,4 +230,86 @@ var inText= function() {
 
 var outText= function() {
     catcha= true;
+}
+
+var cercaIndiceUtente = function(nome) {
+    var nomeUtente= nome;
+    var arrayUsers= JSON.parse(localStorage.utenti);
+    //Calcolo indice utente
+    var index;
+    for (i=0; i<arrayUsers.length; i++) {
+        if (JSON.stringify(arrayUsers[i].Username) == JSON.stringify(nomeUtente)) {
+            index= i;
+        }
+    }
+    return index;
+}
+
+var mostraTabella= function() {
+    if($('#leMieCanzoni').hasClass('nonVisibile')) {
+        $('#tabellaCanzoni').html('');
+        aggiornaElenco();
+        $('#leMieCanzoni').switchClass('nonVisibile', 'visibile');
+        $('#mySongs').html('Hide mySongs');
+    }
+    else {
+        $('#leMieCanzoni').switchClass('visibile', 'nonVisibile');
+        $('#mySongs').html('Show mySongs');
+    }
+}
+
+var suonaCanzone= function(e) {
+    var indice= e.target.id;
+    playArray(JSON.parse(localStorage.utenti)[userIndex].Songs.batteria[indice].note);
+}
+
+var rimuoviCanzone= function(e) {
+    var indiceCanzone= e.target.id;
+    var storage= JSON.parse(localStorage.utenti)
+    var utente= storage[userIndex];
+    utente.Songs.batteria.splice(indiceCanzone, 1);
+    localStorage.utenti= JSON.stringify(storage);
+    $('#tabellaCanzoni').html('');
+    aggiornaElenco();
+}
+
+var playArray= function(array) {
+    var loop = setInterval(function() {
+        nota= array[indiceLoop];
+        indiceLoop++;    
+        suona(nota);
+        if (indiceLoop == array.length) {
+            indiceLoop=0;
+            clearInterval(loop);
+        }
+    }, 500);
+}
+
+var aggiornaElenco= function() {
+    var storage= JSON.parse(localStorage.utenti);
+
+    var indice= cercaIndiceUtente(localStorage.utenteCorrente);
+    userIndex= indice;
+    var canzoni= storage[indice].Songs.batteria;
+    for (i=0; i<canzoni.length; i++) {
+        var preTab= '<tr id=riga"'+i+'">';
+        var endTab= '</tr>'
+        var thNome = '<th><p>'+JSON.stringify(canzoni[i].nome)+'</p></th>';
+        var thPlay = '<th><button name=playMiaCanzone id="'+i+'">Play</button></th>';
+        var thRemove = '<th><button name=removeMiaCanzone id="'+i+'">Remove</button></th>';
+        var stringa= preTab+thNome+thPlay+thRemove+endTab;
+        $('#tabellaCanzoni').append(stringa);
+    }
+    aggiungiListener();
+}
+
+var aggiungiListener = function() {
+    var play = document.getElementsByName('playMiaCanzone');
+    for (i = 0; i < play.length; i++) {
+        play[i].addEventListener('click', suonaCanzone);
+    }
+    var del = document.getElementsByName('removeMiaCanzone');
+    for (i = 0; i < del.length; i++) {
+        del[i].addEventListener('click', rimuoviCanzone);
+    }
 }
