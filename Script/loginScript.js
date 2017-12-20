@@ -101,7 +101,6 @@ function login() {
     var userPsw = document.miaform.password.value;
     for (i = 0; i < l; i++) {
         if ((storage[i].Username == userName) && (storage[i].Password == userPsw)) {
-            //storage[i].Online = true;
             utente = storage[i].Username;
             localStorage.utenteCorrente = utente;
             alert("Utente trovato\nBentornato " + utente + "!");
