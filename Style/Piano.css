@@ -371,6 +371,8 @@ p {
   border-radius: 35px;
   margin-top: auto;
   outline: none;
+  margin-left: 20px;
+  margin-right: 10px;
 }
 
 .notRec {
@@ -382,6 +384,7 @@ p {
   animation-duration: 1.5s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
+ 
 }
 
 @keyframes pulse {
@@ -473,20 +476,51 @@ p {
 }
 
 /*Tabellacanzoni*/
-.tabellaCanzoni {
-  color: white;
+/*------------STORAGE-----------*/
+#leMieCanzoni{
+  margin: 0 auto;
+}
+#tabellaCanzoni td,
+#tabellaCanzoni th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    border-radius: 4px;
+    background-color: whitesmoke;
+    color: black;
+}
+#tabellaCanzoni button{
+  background: none;
+  border: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
 }
 
-.tabellaCanzoni th{
-  font-family: Arial, sans-serif;
-  font-size: 14px;
-  font-weight: normal;
-  padding: 10px 5px;
-  border-style: solid;
-  border-width: 1px;
-  overflow: hidden;
-  word-break: normal;
+#tabellaCanzoni p{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: black;
+  text-align: center;
 }
+
+#tabellaCanzoni tr:hover {
+    background-color: #ddd;
+    border-radius: 4px;
+    
+}
+
+#tabellaCanzoni th {
+    text-align: center;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.storage h1 {
+    color: #4CAF50;
+    text-shadow: 1px 1px #45a049;
+}
+
+
+/*--------------END-------------*/
+
 
 /*Pulsanti*/
 .button3d {
