@@ -33,7 +33,7 @@ body {
 .header__hr {
   /*classe che modifica HorizontalRow dell'header*/
   border: 0;
-  box-shadow: 0 5px 5px -5px #8c8b8b inset;
+  box-shadow: 0 5px 5px -5px whitesmoke inset;
   margin-top: -6px;
   margin-bottom: -5px;
   height: 5px;
@@ -128,6 +128,7 @@ body {
 
 
 /*--------------END-------------*/
+
 
 .keys {
   margin: 0 auto;
@@ -413,6 +414,13 @@ p {
 
 
 /*Stile bottoni registrazione*/
+#registrata{
+  margin-left: 30%;
+}
+#noteregistrate p{
+  text-align: center;
+  margin: 0 auto;
+}
 
 #nomeCanzone {
   float: left;
@@ -479,6 +487,7 @@ p {
 /*------------STORAGE-----------*/
 #leMieCanzoni{
   margin: 0 auto;
+  margin-left: 40%;
 }
 #tabellaCanzoni td,
 #tabellaCanzoni th {

@@ -99,6 +99,39 @@ body {
 .header__menu__item a:hover {
     opacity: 0.75;
 }
+.header__menu__item__dropdown {
+    margin-left: 5px;
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 80px;
+    z-index: 1;
+}
+
+.header__menu__item__dropdown a{
+    color: #8c8b8b;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.header__menu__item__dropdown a:hover {color: green;}
+
+.header__menu__item__dropdown button{
+    color: #8c8b8b;
+    padding: 12px 16px;
+    text-decoration: none;
+    background: none;
+    border: none;
+    display: block;
+    text-align: left;
+  }
+  .header__menu__item__dropdown button:hover {color: green;}
+  
+.header__menu__item:hover .header__menu__item__dropdown {
+    display: block;
+}
+
 
 .header__menu__logo {
     list-style-type: none;
@@ -221,7 +254,38 @@ input[type=button].console:hover {
     background-color: #45a049;
 }
 
+#nomeUtente{
+    font-family: "Guns";
+    color: #8c8b8b;
+    font-size: 20px;
+    text-align: left;
+    margin-top: -7%;
+}
+#nomeUtente:hover{
+    color: red;
+}
+#hubUtente h1{
+    text-align: center;
+    font-family: "Guns";
+    color: rgb(8, 61, 8);
+}
+#hubUtente h2{
+    text-align: center;
+    font-family: "Guns";
+}
 
+#hubUtente h2:hover{
+    color: red;
+}
+#hubUtente table{
+    text-align: center;
+    margin-left: 28%;
+}
+#hubUtente button{
+    background: none;
+    border: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 /*--------------END-------------*/
 
 
@@ -258,8 +322,6 @@ input[type=button].console:hover {
 img #drum {
     margin-left: 20%
 }
-
-
 /*--------------END-------------*/
 
 

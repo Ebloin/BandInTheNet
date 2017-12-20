@@ -23,6 +23,10 @@
                 </li>
                 <li class="header__menu__item" style="float:right">
                     <a href="Play.html">Let's Play</a>
+                    <div class="header__menu__item__dropdown">
+                        <a href="Piano.html">Piano</a>
+                        <a href="Batteria.html">Batteria</a>
+                    </div>
                 </li>
                 <li class="header__menu__item" style="float:right">
                     <a href="HomePage.html #Info">Info</a>
@@ -56,6 +60,17 @@
                     <button type="submit" class="Register" onclick="return inserisciUtente();">Registrati</button>
                 </div>
                 <button class="Logout visibile" onclick="logout();">Logout</button>
+                <div id='hubUtente' class="visibile">
+                    <h1>Le mie canzoni</h1>
+                    <h2>Pianoforte</h2>
+                    <div id='elencoPiano'>
+                        <table id='tabellaCanzoniPiano'></table>
+                    </div>
+                    <h2>Batteria</h2>
+                    <div id='elencoBatteria'>
+                        <table id='tabellaCanzoniBatteria'></table>
+                    </div>
+                </div>
             </div>
             <div class="insert storage">
                 <div class="nonVisibile" id="console">
@@ -67,17 +82,7 @@
             </div>
         </form>
     </div>
-    <div id='hubUtente' class="visibile">
-        <h1>Le mie canzoni</h1>
-        <h2>Pianoforte</h2>
-        <div id='elencoPiano'>
-            <table id='tabellaCanzoniPiano'></table>
-        </div>
-        <h2>Batteria</h2>
-        <div id='elencoBatteria'>
-            <table id='tabellaCanzoniBatteria'></table>
-        </div>
-    </div>
+    
 </body>
 
 </html>
