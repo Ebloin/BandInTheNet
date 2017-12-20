@@ -294,9 +294,9 @@ var aggiornaElenco= function() {
     for (i=0; i<canzoni.length; i++) {
         var preTab= '<tr id=riga"'+i+'">';
         var endTab= '</tr>'
-        var thNome = '<th><p>'+JSON.stringify(canzoni[i].nome)+'</p></th>';
-        var thPlay = '<th><button name=playMiaCanzone id="'+i+'">Play</button></th>';
-        var thRemove = '<th><button name=removeMiaCanzone id="'+i+'">Remove</button></th>';
+        var thNome = '<td><p>'+JSON.stringify(canzoni[i].nome)+'</p></td>';
+        var thPlay = '<td><button name=playMiaCanzone id="'+i+'">Play</button></td>';
+        var thRemove = '<td><button name=removeMiaCanzone id="'+i+'">Remove</button></td>';
         var stringa= preTab+thNome+thPlay+thRemove+endTab;
         $('#tabellaCanzoni').append(stringa);
     }

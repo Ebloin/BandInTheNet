@@ -109,12 +109,63 @@ body{width:auto; margin:0 auto;}
   }
 /*--------------END-------------*/
 
+/*Tabellacanzoni*/
+/*------------STORAGE-----------*/
+#leMieCanzoni{
+  margin: 0 auto;
+  margin-left: 40%;
+}
+#tabellaCanzoni td,
+#tabellaCanzoni th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    border-radius: 4px;
+    background-color: black;
+    color: whitesmoke;
+}
+#tabellaCanzoni button{
+  background: none;
+  border: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: white;
+
+}
+
+#tabellaCanzoni p{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: whitesmoke;
+  text-align: center;
+}
+
+#tabellaCanzoni tr:hover {
+    background-color: #ddd;
+    border-radius: 4px;
+    
+}
+
+#tabellaCanzoni th {
+    text-align: center;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.storage h1 {
+    color: #4CAF50;
+    text-shadow: 1px 1px #45a049;
+}
+/*--------------END-------------*/
+
+
 /*--------------Fonts-----------*/
 @font-face {
     font-family: 'Guns';
     src: url('../Font/guns.TTF');
   }
 /*--------------END-------------*/
+
+#registrata{
+  margin-left: 30%;
+}
 
 /*--------------FIX-------------*/
 .clearfix:after {
