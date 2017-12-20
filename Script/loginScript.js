@@ -156,7 +156,7 @@ var aggiornaElenco = function() {
 var aggiungiListener = function() {
     var playPiano = document.getElementsByName('playMiaCanzonePiano');
     for (i = 0; i < playPiano.length; i++) {
-        //playPiano[i].addEventListener('click', suonaCanzone);
+        playPiano[i].addEventListener('click', suonaCanzone);
     }
     var delPiano = document.getElementsByName('removeMiaCanzonePiano');
     for (i = 0; i < delPiano.length; i++) {
@@ -164,7 +164,7 @@ var aggiungiListener = function() {
     }
     var playBatt = document.getElementsByName('playMiaCanzoneBatteria');
     for (i = 0; i < playBatt.length; i++) {
-        //playBatt[i].addEventListener('click', suonaCanzone);
+        playBatt[i].addEventListener('click', suonaCanzone);
     }
     var delBatt = document.getElementsByName('removeMiaCanzoneBatteria');
     for (i = 0; i < delBatt.length; i++) {
@@ -210,4 +210,44 @@ var rimuoviCanzone = function(e) {
         $('#tabellaCanzoniPiano').html('');
         aggiornaElenco();
     }
+};
+
+function notePiano() {
+    createjs.Sound.registerSound("Audio/note/2ottave/do4.wav", 'do4');
+    createjs.Sound.registerSound("Audio/note/2ottave/do4d.wav", 'do#4');
+    createjs.Sound.registerSound("Audio/note/2ottave/re4.wav", 're4');
+    createjs.Sound.registerSound("Audio/note/2ottave/re4d.wav", 're#4');
+    createjs.Sound.registerSound("Audio/note/2ottave/mi4.wav", 'mi4');
+    createjs.Sound.registerSound("Audio/note/2ottave/fa4.wav", 'fa4');
+    createjs.Sound.registerSound("Audio/note/2ottave/fa4d.wav", 'fa#4');
+    createjs.Sound.registerSound("Audio/note/2ottave/sol4.wav", 'sol4');
+    createjs.Sound.registerSound("Audio/note/2ottave/sol4d.wav", 'sol#4');
+    createjs.Sound.registerSound("Audio/note/2ottave/la4.wav", 'la4');
+    createjs.Sound.registerSound("Audio/note/2ottave/la4d.wav", 'la#4');
+    createjs.Sound.registerSound("Audio/note/2ottave/si4.wav", 'si4');
+    createjs.Sound.registerSound("Audio/note/2ottave/do5.wav", 'do5');
+    createjs.Sound.registerSound("Audio/note/2ottave/do5d.wav", 'do#5');
+    createjs.Sound.registerSound("Audio/note/2ottave/re5.wav", 're5');
+    createjs.Sound.registerSound("Audio/note/2ottave/re5d.wav", 're#5');
+    createjs.Sound.registerSound("Audio/note/2ottave/mi5.wav", 'mi5');
+    createjs.Sound.registerSound("Audio/note/2ottave/fa5.wav", 'fa5');
+    createjs.Sound.registerSound("Audio/note/2ottave/fa5d.wav", 'fa#5');
+    createjs.Sound.registerSound("Audio/note/2ottave/sol5.wav", 'sol5');
+    createjs.Sound.registerSound("Audio/note/2ottave/sol5d.wav", 'sol#5');
+    createjs.Sound.registerSound("Audio/note/2ottave/la5.wav", 'la5');
+    createjs.Sound.registerSound("Audio/note/2ottave/la5d.wav", 'la#5');
+    createjs.Sound.registerSound("Audio/note/2ottave/si5.wav", 'si5');
+
+}
+
+function noteBatteria() {
+    createjs.Sound.registerSound("Audio/AudioBatt/hi-hat.mp3", 'hi-hat');
+    createjs.Sound.registerSound("Audio/AudioBatt/tom-tom.mp3", 'tom-tom');
+    createjs.Sound.registerSound("Audio/AudioBatt/rullante.mp3", 'rullante');
+    createjs.Sound.registerSound("Audio/AudioBatt/bass-drum.mp3", 'bass-drum');
+    createjs.Sound.registerSound("Audio/AudioBatt/tom.mp3", 'tom');
+    createjs.Sound.registerSound("Audio/AudioBatt/crash.mp3", 'crash');
+    createjs.Sound.registerSound("Audio/AudioBatt/piatto-ride.mp3", 'piatto-ride');
+    createjs.Sound.registerSound("Audio/AudioBatt/bacchette.mp3", 'bacchette');
+
 }

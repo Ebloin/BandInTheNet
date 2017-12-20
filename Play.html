@@ -4,19 +4,20 @@
     <title>BandInTheNet</title>
     <link href="./Style/Play.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/javascript" href="Script/Play.js"></link>
+    <script src="Script/Play.js" type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <script>
-    var checkUser = function () {
+    var checkUser = function() {
         if (localStorage.utenteCorrente != '') {
             document.getElementById("Profile").innerHTML = localStorage.utenteCorrente;
             //$('Profile').html(localStorage.utenteCorrente);
-        }
-        else return;
+        } else return;
+
     }
 </script>
 
-<body onload = "checkUser();">
+<body onload="checkUser();">
     <header class="header clearfix">
 
         <nav id="header__menu">
@@ -27,8 +28,8 @@
                 <li class="header__menu__item" style="float:right">
                     <a href="Login.html"><span id="Profile">Accedi</span></a>
                     <div class="header__menu__item__dropdown" style="margin-left: -3px;">
-                        <button>Canzoni</button>                        
-                        <button onclick="logout();">Logout</button>
+                        <button>Canzoni</button>
+                        <button onclick="logout()">Logout</button>
                     </div>
                 </li>
                 <li class="header__menu__item" style="float:right">
@@ -62,11 +63,9 @@
             <img class="instruments__choose__img" src="./Immagini/pianoforte.jpg">
             <div class="instruments__choose__text">
                 <h3>Pianoforte</h3>
-                <p>Il pianoforte &egrave; uno strumento musicale a corde percosse mediante martelletti azionati da una tastiera.
-                    La tastiera &egrave; composta da 88 tasti, 52 di colore bianco e 36 di colore nero. I tasti bianchi rappresentano
-                    le note: do, re, mi, fa, sol, la, si. I tasti neri, invece, individuano le alterazioni (note bemolli
-                    o diesis). Il pianoforte &egrave; il pi&ugrave; diffuso strumento appartenente ai cordofoni a corde percosse;
-                    altri membri sono il clavicordo, oggi ancora utilizzato per l'esecuzione di musica d'epoca, e il fortepiano.</p>
+                <p>Il pianoforte &egrave; uno strumento musicale a corde percosse mediante martelletti azionati da una tastiera. La tastiera &egrave; composta da 88 tasti, 52 di colore bianco e 36 di colore nero. I tasti bianchi rappresentano le note: do,
+                    re, mi, fa, sol, la, si. I tasti neri, invece, individuano le alterazioni (note bemolli o diesis). Il pianoforte &egrave; il pi&ugrave; diffuso strumento appartenente ai cordofoni a corde percosse; altri membri sono il clavicordo,
+                    oggi ancora utilizzato per l'esecuzione di musica d'epoca, e il fortepiano.</p>
                 <a href="Piano.html">
                     <button class="button" style="vertical-align:middle">
                         <span>Play</span>
@@ -78,11 +77,9 @@
             <img class="instruments__choose__img" src="./Immagini/drum.jpg">
             <div class="instruments__choose__text">
                 <h3>Batteria</h3>
-                <p>La batteria &egrave; uno strumento musicale composto da tamburi, piatti e altri strumenti a percussione disposti
-                    in modo tale che possano essere suonati da un solo musicista. I tamburi che compongono una batteria sono:
-                    la cassa (comandata generalmente dal piede destro), il rullante, due tom uno pi&ugrave; acuto e un altro
-                    grave, e uno o pi&ugrave; floor tom (chiamati "timpani", sebbene diversi dai timpani dell'orchestra sinfonica).
-                    I piatti che possono essere annessi a una batteria sono: ride, hi-hat (charleston), crash, splash, china.</p>
+                <p>La batteria &egrave; uno strumento musicale composto da tamburi, piatti e altri strumenti a percussione disposti in modo tale che possano essere suonati da un solo musicista. I tamburi che compongono una batteria sono: la cassa (comandata
+                    generalmente dal piede destro), il rullante, due tom uno pi&ugrave; acuto e un altro grave, e uno o pi&ugrave; floor tom (chiamati "timpani", sebbene diversi dai timpani dell'orchestra sinfonica). I piatti che possono essere annessi
+                    a una batteria sono: ride, hi-hat (charleston), crash, splash, china.</p>
                 <a href="batteria.html">
                     <button class="button" style="vertical-align:middle">
                         <span>Play</span>
@@ -91,11 +88,11 @@
             </div>
         </div>
         <div class="instruments__choose clearfix">
-                <img class="instruments__choose__img" src="./Immagini/Guitar.jpg">
-                <div class="instruments__choose__text">
-                    <h3>Le Mie Canzoni</h3>
-                    <p><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
-                </div>
+            <img class="instruments__choose__img" src="./Immagini/Guitar.jpg">
+            <div class="instruments__choose__text">
+                <h3>Le Mie Canzoni</h3>
+                <p><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
             </div>
+        </div>
     </section>
 </body>
