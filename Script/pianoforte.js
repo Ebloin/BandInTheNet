@@ -203,9 +203,14 @@ var resetRegistrata= function() {
 
 //Salva una nuova canzone nel localStiorage relativo all'utente
 var salvaCanzone= function() {
+    //Controllo sulla presenza delle note
+    if (noteRegistrate.length == 0) {
+        alert("Non c'è nessuna nota registrata da salvare, suona qualcosa");
+        return;
+    }
     //Conrollo sul nome della canzone
     if ($('#nomeCanzone').val() == '') {
-        alert('Non hai suonato nessuna nota, non puoi salvare una canzone vuota');
+        alert('Devi dare un nome alla tua canzone');
         return;
     }
     //Controllo utente loggato

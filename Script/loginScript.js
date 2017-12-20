@@ -124,6 +124,7 @@ function inserisciUtente() {
     return true;
 }
 
+//FUNZIONI RELATIVE ALLA GESTIONE DELL'HUB UTENTE
 //Aggiorna la tabella relativa alle canzoni registrate nel tuo profilo
 var aggiornaElenco= function() {
     var utente= JSON.parse(localStorage.utenti)[cercaIndiceUtente(localStorage.utenteCorrente)];
