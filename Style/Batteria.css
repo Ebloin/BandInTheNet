@@ -116,37 +116,53 @@ body{width:auto; margin:0 auto;}
   margin-left: 40%;
 }
 #tabellaCanzoni td,
-#tabellaCanzoni th {
+#tabellaCanzoni th,
+#tabellaCanzoniPianoforte td,
+#tabellaCanzoniPianoforte th {
     border: 1px solid #ddd;
     padding: 8px;
     border-radius: 4px;
+<<<<<<< HEAD
     background-color: black;
     opacity: 0.8;
     color: whitesmoke;
+=======
+    background-color: whitesmoke;
+    color: black;
+>>>>>>> c308da392bd6a8eb6584475e87132cf1b39017aa
 }
-#tabellaCanzoni button{
+#tabellaCanzoni button,
+#tabellaCanzoniPianoforte button{
   background: none;
   border: none;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: white;
 
 }
 .rp__button:hover{
   background-color: 
 }
 
-#tabellaCanzoni p{
+#tabellaCanzoni p,
+#tabellaCanzoniPianoforte p{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: whitesmoke;
+  color: black;
   text-align: center;
 }
 
+<<<<<<< HEAD
 #tabellaCanzoni tr:hover {
   border-radius: 4px;
+=======
+#tabellaCanzoni tr:hover,
+#tabellaCanzoniPianoforte tr:hover {
+    background-color: #ddd;
+    border-radius: 4px;
+>>>>>>> c308da392bd6a8eb6584475e87132cf1b39017aa
     
 }
 
-#tabellaCanzoni th {
+#tabellaCanzoni th,
+#tabellaCanzoniPianoforte th {
     text-align: center;
     background-color: #4CAF50;
     color: white;
