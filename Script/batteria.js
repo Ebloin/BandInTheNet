@@ -350,7 +350,7 @@ var aggiornaElenco= function() {
         var preTab = '<tr id=riga"' + i + '">';
         var endTab = '</tr>'
         var thNome = '<td><p>' + canzoniPianoforte[i].nome + '</p></td>';
-        var thPlay = '<td><button name=playMiaCanzone class="button3d" id="'+i+'">&#9658;</button></td>';
+        var thPlay = '<td><button name=playMiaCanzonePianoforte class="button3d" id="'+i+'">&#9658;</button></td>';
         var stringa = preTab + thNome + thPlay + endTab;
         $('#tabellaCanzoniPianoforte').append(stringa);
     }
