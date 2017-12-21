@@ -1,0 +1,10 @@
+button {
+    background: black;
+    font-size: 50%;
+}
+
+#tom-tom {
+    position: absolute;
+    left: 50px;
+    font-size: 50%;
+}

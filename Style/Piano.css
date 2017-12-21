@@ -1,0 +1,646 @@
+body {
+  width: auto;
+  margin: 0 auto;
+  background-color: black;
+}
+
+
+/*-------------HEADER------------*/
+
+.header {
+  position: fixed;
+  /* Set the navbar to fixed position */
+  top: 0;
+  /* Position the navbar at the top of the page */
+  /*border: 1px solid blue;/* visualizza grandezza della cover*/
+  width: 100%;
+  background-color: white;
+  z-index: 999;
+}
+
+.header__logo {
+  /*classe che modifica il logo a sinistra dell'header*/
+  text-align: center;
+  font-size: 40px;
+  font-family: 'Guns';
+  margin: 0px;
+  color: #8c8b8b;
+  float: left;
+  height: 0px;
+  margin-top: -10px;
+}
+
+.header__hr {
+  /*classe che modifica HorizontalRow dell'header*/
+  border: 0;
+  box-shadow: 0 5px 5px -5px whitesmoke inset;
+  margin-top: -6px;
+  margin-bottom: -5px;
+  height: 5px;
+}
+
+.header__menu {
+  font-family: Verdana, sans-serif;
+  font-size: 11px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: white;
+}
+
+.header__menu__item {
+  float: left;
+  /* elementi su singola riga */
+  list-style-type: none;
+}
+
+.header__menu__item button {
+  border: none;
+  background: none;
+  color: #8c8b8b;
+  font-family: "Times New Roman";
+  text-align: center;
+  font-size: 16px;
+  size: auto;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.header__menu__item button:hover {
+  opacity: 0.75;
+}
+
+
+/*classe che modifica l'elemento di menu quando ci si passa sopra con il mouse*/
+
+.header__menu__item a {
+  color: #8c8b8b;
+  display: block;
+  text-align: center;
+  padding: 0px 16px;
+  text-decoration: none;
+}
+
+.header__menu__item a:hover {
+  opacity: 0.75;
+}
+
+/* Dropdown Start*/
+.header__menu__item__dropdown {
+  margin-left: -5px;
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  min-width: 80px;
+  z-index: 1;
+}
+
+.header__menu__item__dropdown button{
+  color: #8c8b8b;
+  padding: 12px 16px;
+  text-decoration: none;
+  background: none;
+  border: none;
+  display: block;
+  text-align: left;
+}
+.header__menu__item__dropdown button:hover {color: green;}
+
+
+.header__menu__item:hover .header__menu__item__dropdown {
+  display: block;
+}
+
+.header__menu__item__dropdown a{
+  color: #8c8b8b;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+.header__menu__item__dropdown a:hover {color: green;}
+
+/* Dropdown End*/
+.header__menu__logo {
+  list-style-type: none;
+}
+
+
+/*--------------END-------------*/
+
+
+.keys {
+  margin: 0 auto;
+  margin-left: 20%;
+  position: relative;
+  display: inline-flex;
+  overflow: hidden;
+  height: 332px;
+  background: black;
+  user-select: none;
+}
+
+.keys:before,
+.keys:after {
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.keys:before {
+  box-shadow: 0 4px 2px #d52, 0 4px 0 #a55;
+  height: 4px;
+  top: -4px;
+}
+
+.keys:after {
+  top: 0;
+  height: 100%;
+  border-radius: 5px;
+  box-shadow: 0 0 0 2px black inset, 0 0 0 4px black;
+}
+
+.keys .key {
+  cursor: pointer;
+  transform: translate3d(0, 0, 0);
+}
+
+.keys .black {
+  position: relative;
+  z-index: 0;
+  height: 160px;
+  width: 22px;
+  flex: 0 0 22px;
+  background-color: #111;
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.2)), radial-gradient(ellipse at center, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1)), linear-gradient(to top, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)), linear-gradient(to right, rgba(0, 0, 0, 0.3) 0px, rgba(255, 255, 255, 0.3) 1px, transparent 6px), linear-gradient(to left, rgba(0, 0, 0, 0.3) 0px, rgba(255, 255, 255, 0.3) 1px, transparent 6px);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1) inset, 1px 0 0 0 #333333 inset, 0 1px 2px rgba(178, 178, 154, 0.4), 0 0 0 2px #000, 0 40px 0 2px #333;
+  margin: 0 -11px;
+  transform: translate3d(0, -30px, 0);
+}
+
+.keys .black.active {
+  transform: translate3d(0, -22.5px, 0);
+}
+
+.keys .black:before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  right: 100%;
+  border-radius: 3px;
+  margin-right: -1px;
+  border: 10px solid transparent;
+  border-bottom-color: #000;
+  border-right-color: #000;
+  transform-origin: 100% 0%;
+  transform: rotate(15deg);
+}
+
+.keys .black:after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 100%;
+  border-radius: 3px;
+  margin-left: -1px;
+  border: 10px solid transparent;
+  border-bottom-color: #000;
+  border-left-color: #000;
+  transform-origin: 0% 0%;
+  transform: rotate(-15deg);
+}
+
+.keys .white {
+  position: relative;
+  z-index: 1;
+  height: 160px;
+  width: 60px;
+  flex: 0 0 60px;
+  background-color: #EDED68;
+  background-image: linear-gradient(to bottom, white, rgba(255, 255, 255, 0.8)), radial-gradient(ellipse at center, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)), linear-gradient(to top, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)), linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.1));
+  background-position: center center, 15px 50px, center center;
+  background-size: 100% 100%, 300% 100%, 100% 100%;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1) inset, 1px 0 0 0 white inset, 0 0 0 1px #b2b29a, 0 20px 0 -1px #a9a999, 0 20px 0 0 #c1c1ae, 0 20px 0 1px #b2b29a;
+  border-radius: 0 3px 3px 3px;
+  margin: 150px 2px 22px;
+}
+
+.keys .white.active {
+  height: 165px;
+  transform: translate3d(0, 5px, 0);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 300% 100%, 100% 100%;
+  background-position: center center, center center, center center, 15px 50px, center center;
+  background-image: linear-gradient(to bottom, white, rgba(255, 255, 255, 0.7)), linear-gradient(to right, rgba(0, 0, 0, 0.5), transparent 8px), linear-gradient(to left, rgba(0, 0, 0, 0.5), transparent 6px), radial-gradient(ellipse at center, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)), linear-gradient(to top, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)), linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.1));
+}
+
+.keys .white .top {
+  height: 160px;
+  position: absolute;
+  bottom: 100%;
+  background-color: white;
+  box-shadow: 1px 0 0 0 rgba(0, 0, 0, 0.1) inset, 1px 0 0 0 white inset, 0 -1px 0 0 white, 0 -1px 0 1px #b2b29a;
+  border-radius: 3px 3px 0 0;
+  margin-bottom: -1px;
+}
+
+.keys .white .top:before,
+.keys .white .top:after {
+  position: absolute;
+  bottom: 0;
+  height: 6px;
+  width: 6px;
+  margin-bottom: 2px;
+}
+
+.keys .white .top:before {
+  left: 100%;
+  border-radius: 0 0 0 3px;
+  margin-left: 1px;
+  box-shadow: -1px 0 0 0 #b2b29a, 0 1px 0 0 #b2b29a, -3px 3px 0 #fff;
+}
+
+.keys .white .top:after {
+  right: 100%;
+  margin-right: 1px;
+  border-radius: 0 0 3px 0;
+  box-shadow: 1px 0 0 0 #b2b29a, 0 1px 0 0 #b2b29a, 3px 3px 0 #fff;
+}
+
+.keys .white.left .top {
+  left: 0;
+  width: 45px;
+}
+
+.keys .white.left .top:before {
+  content: '';
+}
+
+.keys .white.right {
+  border-radius: 3px 0 3px 3px;
+}
+
+.keys .white.right .top {
+  right: 0;
+  width: 45px;
+}
+
+.keys .white.right .top:after {
+  content: '';
+}
+
+.keys .white.center {
+  border-radius: 3px;
+}
+
+.keys .white.center .top {
+  left: 15px;
+  width: 20px;
+  width: 30px;
+}
+
+.keys .white.center .top:before,
+.keys .white.center .top:after {
+  content: '';
+}
+
+sp {
+  color: white;
+  margin: 0 auto;
+  margin-bottom: 5px;
+}
+
+.console {
+  margin: 5px auto;
+  justify-content: center;
+  display: flex;
+}
+
+
+/*--------------Fonts-----------*/
+
+@font-face {
+  font-family: 'Guns';
+  src: url('../Font/guns.TTF');
+}
+
+
+/*--------------END-------------*/
+
+
+/*--------------FIX-------------*/
+
+
+/*fix del float si può ignorare tranquilli*/
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+.clearfix {
+  display: inline-block;
+}
+
+
+/* start commented backslash hack \*/
+
+* html .clearfix {
+  height: 1%;
+}
+
+.clearfix {
+  display: block;
+}
+
+
+/* close commented backslash hack */
+
+.Rbutton {
+  width: 35px;
+  height: 35px;
+  font-size: 0;
+  background-color: red;
+  border: 0;
+  border-radius: 35px;
+  margin-top: auto;
+  outline: none;
+  margin-left: 20px;
+  margin-right: 10px;
+}
+
+.notRec {
+  background-color: darkred;
+}
+
+.Rec {
+  animation-name: pulse;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+ 
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0px 0px 5px 0px rgba(255, 6, 6, 0.92);
+  }
+  65% {
+    box-shadow: 0px 0px 5px 13px rgba(173, 0, 0, 0.69);
+  }
+  90% {
+    box-shadow: 0px 0px 5px 13px rgba(173, 0, 0, 0.44);
+  }
+}
+
+#recordingBar {
+  margin-top: 3.4%;
+}
+
+.nonVisibile {
+  display: none;
+}
+
+.visibile {
+  display: inherit;
+}
+
+
+/*Stile bottoni registrazione*/
+#registrata{
+  margin-left: 30%;
+}
+#noteregistrate p{
+  text-align: center;
+  margin: 0 auto;
+}
+
+#nomeCanzone {
+  float: left;
+}
+
+#salvaCanzone {
+  float: left;
+}
+
+#reset {
+  float: left;
+}
+
+#undo {
+  float: left;
+}
+
+#mySongs {
+  float: right;
+}
+
+
+/*Stile tabella*/
+
+.tabella {
+  margin-left: 20%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+}
+
+
+
+.tabella td {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  padding: 10px 5px;
+  border-style: solid;
+  border-width: 1px;
+  overflow: hidden;
+  word-break: normal;
+}
+
+.tabella th {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  padding: 10px 5px;
+  border-style: solid;
+  border-width: 1px;
+  overflow: hidden;
+  word-break: normal;
+}
+
+.bianchi {
+  width: 53px;
+}
+
+.neri {
+  width: 29.5px;
+}
+
+/*Tabellacanzoni*/
+/*------------STORAGE-----------*/
+#leMieCanzoni{
+  margin: 0 auto;
+  margin-left: 40%;
+}
+#tabellaCanzoni td,
+#tabellaCanzoni th,
+#tabellaCanzoniBatteria td,
+#tabellaCanzoniBatteria th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    border-radius: 4px;
+    background-color: whitesmoke;
+    color: black;
+}
+#tabellaCanzoni button,
+#tabellaCanzoniBatteria button{
+  background: none;
+  border: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+#tabellaCanzoni p,
+#tabellaCanzoniBatteria p{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: black;
+  text-align: center;
+}
+
+#tabellaCanzoni tr:hover,
+#tabellaCanzoniBatteria tr:hover {
+    background-color: #ddd;
+    border-radius: 4px;
+    
+}
+
+#tabellaCanzoni th,
+#tabellaCanzoniBatteria th {
+    text-align: center;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.storage h1 {
+    color: #4CAF50;
+    text-shadow: 1px 1px #45a049;
+}
+
+
+/*--------------END-------------*/
+
+
+/*Pulsanti*/
+.button3d {
+  margin-right: 4px;
+  display: inline-block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  cursor: pointer;
+  padding: 0 20px;
+  border: none;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  font: normal normal bold 20px/40px "Baumans", Helvetica, sans-serif;
+  color: black;
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  background: rgb(221, 221, 221);
+  -webkit-box-shadow: 0 1px 0 0 rgb(119,119,119) , 0 2px 0 0 rgb(119,119,119) , 0 3px 0 0 rgb(119,119,119) , 0 4px 0 0 rgb(119,119,119) , 0 5px 0 0 rgb(119,119,119) , 0 6px 0 0 rgb(119,119,119) , 0 0 5px 0 rgba(0,0,0,0.0980392) , 0 1px 3px 0 rgba(0,0,0,0.298039) , 0 3px 5px 0 rgba(0,0,0,0.2) , 0 5px 10px 0 rgba(0,0,0,0.247059) , 0 10px 10px 0 rgba(0,0,0,0.2) , 0 20px 20px 0 rgba(0,0,0,0.14902) ;
+  box-shadow: 0 1px 0 0 rgb(119,119,119) , 0 2px 0 0 rgb(119,119,119) , 0 3px 0 0 rgb(119,119,119) , 0 4px 0 0 rgb(119,119,119) , 0 5px 0 0 rgb(119,119,119) , 0 6px 0 0 rgb(119,119,119) , 0 0 5px 0 rgba(0,0,0,0.0980392) , 0 1px 3px 0 rgba(0,0,0,0.298039) , 0 3px 5px 0 rgba(0,0,0,0.2) , 0 5px 10px 0 rgba(0,0,0,0.247059) , 0 10px 10px 0 rgba(0,0,0,0.2) , 0 20px 20px 0 rgba(0,0,0,0.14902) ;
+  text-shadow: 0 1px 0 #FFFFFF ;
+}
+
+.button3d:hover {
+  background: #FFFFFF;
+}
+
+.button3d:active {
+  margin: 6px 0 0;
+  background: rgb(221, 221, 221);
+  -webkit-box-shadow: 0 -1px 10px 0 rgba(0,0,0,0.247059) , 0 4px 10px 0 rgba(0,0,0,0.2) , 0 14px 20px 0 rgba(0,0,0,0.14902) ;
+  box-shadow: 0 -1px 10px 0 rgba(0,0,0,0.247059) , 0 4px 10px 0 rgba(0,0,0,0.2) , 0 14px 20px 0 rgba(0,0,0,0.14902) ;
+}
+
+.button3d:focus {
+  background: rgb(221, 221, 221);
+}
+
+/*TEXT FIELD*/
+.tField {
+  display: inline-block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  padding: 6px 20px;
+  border: none;
+  -webkit-border-radius: 32px / 54px;
+  border-radius: 32px / 54px;
+  font: normal 18px/normal "Coda", Helvetica, sans-serif;
+  color: rgb(70, 70, 70);
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  background: rgba(252,252,252,1);
+  -webkit-box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2) inset;
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2) inset;
+  text-shadow: 1px 1px 0 rgba(255,255,255,0.66) ;
+  -webkit-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  -moz-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  -o-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  margin-top: 6px;
+  margin-right: 10px;
+}
+
+.tField:hover {
+  background: rgba(232,249,255,1);
+  -webkit-box-shadow: 0 2px 2px 0 rgba(90,90,90,0.2) inset;
+  box-shadow: 0 2px 2px 0 rgba(90,90,90,0.2) inset;
+}
+
+.tField:focus {
+  background: rgba(255,253,232,1);
+}
+
+/*PLAY BUTTON*/
+.play-button {
+  height: 35px;
+  width: 35px;    
+  background-color: darkred;
+  border-radius: 35px;
+  position: relative;
+}
+
+.play-button:hover {
+  background-color: red;
+}
+
+.play-button:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 7px;
+  left: 10px;
+  margin: 0 auto;
+  border-style: solid;
+  border-width: 9.5px 0 9.5px 17px;
+  border-color: transparent transparent transparent rgba(255, 255, 255, 1);
+}
+
+/*PROVAAAAAAA*/
+
+p {
+  color: white;
+}
+
+h1, h2 {
+  color: white;
+}
