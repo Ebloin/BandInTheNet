@@ -149,7 +149,7 @@ var recHandler= function(e) {
     //non sto registrando, inizia a registrare
     if (button.classList.contains('notRec')){
         button.classList.replace('notRec', 'Rec');
-        songBar.classList.replace('nonVisibile', 'visibile');
+        songBar.classList.replace('nonVisibile', 'visibileTable');
         recording = true;
         //INSERIRE CONTROLLO SE VERAMENTE UOLE CANCELLARE
         noteRegistrate = [];
@@ -161,7 +161,7 @@ var recHandler= function(e) {
         button.classList.replace('Rec', 'notRec');
         recording = false;
         if (noteRegistrate.length == 0) {
-            $('#registrata').switchClass('visibile', 'nonVisibile');
+            $('#registrata').switchClass('visibileTable', 'nonVisibile');
             $('#nomeCanzone').val('');
         }
     }
@@ -170,7 +170,7 @@ var recHandler= function(e) {
 var resetRegistrata= function() {
     noteRegistrate= [];  
     if($('#recButton').hasClass('notRec')) {
-        $('#registrata').switchClass('visibile', 'nonVisibile');        
+        $('#registrata').switchClass('visibileTable', 'nonVisibile');        
         $('#noteregistrate').html(noteRegistrate);
         alert('Le note registrate sono state resettate');
     }
@@ -216,7 +216,7 @@ var salvaCanzone= function() {
         arrayUsers[index].Songs.batteria[indiceCanzone].note = noteRegistrate;
         alert('"'+ $('#nomeCanzone').val() +'" aggiornata con successo');
         $('#nomeCanzone').val('');
-        $('#registrata').switchClass('visibile', 'nonVisibile');
+        $('#registrata').switchClass('visibileTable', 'nonVisibile');
         if ($('#recButton').hasClass('Rec')) {
             $('#recButton').switchClass('Rec', 'notRec');
             recording = false;
@@ -235,12 +235,12 @@ var salvaCanzone= function() {
     localStorage.utenti= JSON.stringify(arrayUsers);
     alert('Canzone aggiunta al tuo profilo');
     $('#nomeCanzone').val('');
-    $('#registrata').switchClass('visibile', 'nonVisibile');
+    $('#registrata').switchClass('visibileTable', 'nonVisibile');
     if ($('#recButton').hasClass('Rec')) {
         $('#recButton').switchClass('Rec', 'notRec');
         recording = false;
     }
-    if($('#leMieCanzoni').hasClass('visibile')) {
+    if($('#leMieCanzoni').hasClass('visibileTable')) {
         $('#tabellaCanzoni').html('');
         $('#tabellaCanzoniPianoforte').html('');
         aggiornaElenco();
@@ -278,11 +278,11 @@ var mostraTabella= function() {
         $('#tabellaCanzoni').html('');
         $('#tabellaCanzoniPianoforte').html('');
         aggiornaElenco();
-        $('#leMieCanzoni').switchClass('nonVisibile', 'visibile');
+        $('#leMieCanzoni').switchClass('nonVisibile', 'visibileTable');
         $('#mySongs button').html('Hide mySongs');
     }
     else {
-        $('#leMieCanzoni').switchClass('visibile', 'nonVisibile');
+        $('#leMieCanzoni').switchClass('visibileTable', 'nonVisibile');
         $('#mySongs button').html('Show mySongs');
     }
 }

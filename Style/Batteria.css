@@ -112,7 +112,7 @@ body{width:auto; margin:0 auto;}
 /*Tabellacanzoni*/
 /*------------STORAGE-----------*/
 #leMieCanzoni{
-  display: table;
+  /*display: table;*/
   margin: 0 auto;
 }
 #tabellaCanzoni td,
@@ -180,7 +180,7 @@ body{width:auto; margin:0 auto;}
 /*--------------END-------------*/
 
 #registrata{
-  display: table;
+  /*display: table;*/
   margin: 0 auto;
 }
 
