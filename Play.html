@@ -8,13 +8,25 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <script>
-    var checkUser = function() {
+    var checkUser = function () {
         if (localStorage.utenteCorrente != '') {
             document.getElementById("Profile").innerHTML = localStorage.utenteCorrente;
-            //$('Profile').html(localStorage.utenteCorrente);
-        } else return;
-
-    }
+            document.getElementById("profiledrop").innerHTML = "Logout";
+        }
+        else{
+            document.getElementById("profiledrop").innerHTML = "Offline";
+        }
+    };
+    var logout = function() {
+            if(localStorage.utenteCorrente != '') {
+                localStorage.utenteCorrente = "";
+                alert("Arrivederci"); 
+                location.reload();
+            }
+            else{
+                location.assign("Login.html");
+            }
+        };
 </script>
 
 <body onload="checkUser();">
@@ -28,8 +40,7 @@
                 <li class="header__menu__item" style="float:right">
                     <a href="Login.html"><span id="Profile">Accedi</span></a>
                     <div class="header__menu__item__dropdown" style="margin-left: -3px;">
-                        <button>Canzoni</button>
-                        <button onclick="logout()">Logout</button>
+                        <button onclick="logout();"><span id = "profiledrop">Logout</span></button>
                     </div>
                 </li>
                 <li class="header__menu__item" style="float:right">

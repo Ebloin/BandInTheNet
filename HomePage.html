@@ -6,12 +6,25 @@
     <link href="./Style/HomePage.css" rel="stylesheet" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
-        var checkUser = function() {
+        var checkUser = function () {
             if (localStorage.utenteCorrente != '') {
                 document.getElementById("Profile").innerHTML = localStorage.utenteCorrente;
-                //$('Profile').html(localStorage.utenteCorrente);
-            } else return;
-        }
+                document.getElementById("profiledrop").innerHTML = "Logout";
+            }
+            else{
+                document.getElementById("profiledrop").innerHTML = "Offline";
+            }
+        };
+        var logout = function() {
+            if(localStorage.utenteCorrente != '') {
+                localStorage.utenteCorrente = "";
+                alert("Arrivederci"); 
+                location.reload();
+            }
+            else{
+                location.assign("Login.html");
+            }
+        };
     </script>
 </head>
 
@@ -24,10 +37,11 @@
                     <h1 class="header__logo">BandInTheNet</h1>
                 </li>
                 <li class="header__menu__item" style="float:right">
-                    <a href="Login.html"> <span id="Profile">Accedi</span></a>
+                    <a href="Login.html">
+                        <span id="Profile">Accedi</span>
+                    </a>
                     <div class="header__menu__item__dropdown" style="margin-left: -5px;">
-                        <button>Canzoni</button>                        
-                        <button onclick="logout();">Logout</button>
+                        <button onclick="logout();"><span id = "profiledrop">Logout</span></button>
                     </div>
                 </li>
                 <li class="header__menu__item" style="float:right">
@@ -70,23 +84,40 @@
     <section class="banner__whoami clearfix" id="Info">
         <div class="banner__whoami__img"></div>
         <div class="banner__whoami__text">
-            <h1 class="chisiamotext" >Chi Siamo</h1>
-            <p>Siamo un gruppo di studenti di ingegneria informatica uniti dalla passione per la musica e la tecnologia.<br><br>
-               La nostra filosofia si basa sulla semplicit&agrave;  di stile grafico e compattezza negli script.<br><br>
-               questo sito nasce come progetto del corso di <a href="http://www.dis.uniroma1.it/~rosati/lw/">Linguaggi e Tecnologie per il Web A.A. 2017/2018</a>.<br><br></p>
+            <h1 class="chisiamotext">Chi Siamo</h1>
+            <p>Siamo un gruppo di studenti di ingegneria informatica uniti dalla passione per la musica e la tecnologia.
+                <br>
+                <br> La nostra filosofia si basa sulla semplicit&agrave; di stile grafico e compattezza negli script.
+                <br>
+                <br> questo sito nasce come progetto del corso di
+                <a href="http://www.dis.uniroma1.it/~rosati/lw/">Linguaggi e Tecnologie per il Web A.A. 2017/2018</a>.
+                <br>
+                <br>
+            </p>
         </div>
     </section>
 
     <section class="banner__contacts clearfix">
         <div class="banner__contacts__text">
             <h1 class="contattitext">Contatti</h1>
-            <p>Per chiarimenti e informazioni non esitate a contattarci.<br>
-            Potete trovarci sui maggiori social:<br><br>
-            <span class = "facebook" ><a href="https://www.facebook.com/">Facebook</a></span><br>
-            <span class = "twitter" ><a href="https://twitter.com/">Twitter</a></span><br>
-            <span class = "instagram" ><a href="https://instagram.com/">Instagram</a></span><br>
-            
-        </p>
+            <p>Per chiarimenti e informazioni non esitate a contattarci.
+                <br> Potete trovarci sui maggiori social:
+                <br>
+                <br>
+                <span class="facebook">
+                    <a href="https://www.facebook.com/">Facebook</a>
+                </span>
+                <br>
+                <span class="twitter">
+                    <a href="https://twitter.com/">Twitter</a>
+                </span>
+                <br>
+                <span class="instagram">
+                    <a href="https://instagram.com/">Instagram</a>
+                </span>
+                <br>
+
+            </p>
 
         </div>
         <div class="banner__contacts__img"></div>
