@@ -250,11 +250,11 @@ var mostraTabella= function() {
         $('#tabellaCanzoni').html('');
         aggiornaElenco();
         $('#leMieCanzoni').switchClass('nonVisibile', 'visibile');
-        $('#mySongs').html('Hide mySongs');
+        $('#mySongs button').html('Hide mySongs');
     }
     else {
         $('#leMieCanzoni').switchClass('visibile', 'nonVisibile');
-        $('#mySongs').html('Show mySongs');
+        $('#mySongs button').html('Show mySongs');
     }
 }
 
@@ -291,12 +291,14 @@ var aggiornaElenco= function() {
     var indice= cercaIndiceUtente(localStorage.utenteCorrente);
     userIndex= indice;
     var canzoni= storage[indice].Songs.batteria;
+    var head= "<tr class='primariga'><td>Nome canzone</td><td>Riproduci</td><td>Rimuovi</td></tr>";
+    $('#tabellaCanzoni').append(head);
     for (i=0; i<canzoni.length; i++) {
         var preTab= '<tr id=riga"'+i+'">';
         var endTab= '</tr>'
         var thNome = '<td><p>'+JSON.stringify(canzoni[i].nome)+'</p></td>';
-        var thPlay = '<td><button name=playMiaCanzone id="'+i+'">Play</button></td>';
-        var thRemove = '<td><button name=removeMiaCanzone id="'+i+'">Remove</button></td>';
+        var thPlay = '<td><button name=playMiaCanzone class="button3d" id="'+i+'">Play</button></td>';
+        var thRemove = '<td><button name=removeMiaCanzone class="button3d" id="'+i+'">Remove</button></td>';
         var stringa= preTab+thNome+thPlay+thRemove+endTab;
         $('#tabellaCanzoni').append(stringa);
     }
