@@ -340,10 +340,7 @@ var suonaCanzone= function(e) {
     } 
     else if (nomeStrumento == 'playMiaCanzoneBatteria') {
         //SUONA BATTERIA
-        do {
-            playArray(JSON.parse(localStorage.utenti)[userIndex].Songs.batteria[indiceCanzone].note);
-        }
-        while($('input[type=checkbox]').prop('checked'))
+        playArray(JSON.parse(localStorage.utenti)[userIndex].Songs.batteria[indiceCanzone].note);
     }
 }
 
