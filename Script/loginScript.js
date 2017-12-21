@@ -1,4 +1,5 @@
 var userIndex;
+var indiceLoop=0;
 
 function inizializzaStorage() {
     if (typeof(localStorage.utenti) == "undefined") localStorage.utenti = "[]";
@@ -15,6 +16,8 @@ function inizializzaStorage() {
         storage[l] = Admin;
         localStorage.utenti = JSON.stringify(storage);
     }
+    notePiano();
+    noteBatteria();
 }
 
 function resetStorage() {
@@ -80,7 +83,7 @@ function logout() {
     var out = document.getElementById("login");
     out.classList.replace("nonVisibile", "visibile");
     userIndex = undefined;
-    alert("Arrivederci");
+    var x= alert("Arrivederci");
 }
 
 function login() {
@@ -250,4 +253,38 @@ function noteBatteria() {
     createjs.Sound.registerSound("Audio/AudioBatt/piatto-ride.mp3", 'piatto-ride');
     createjs.Sound.registerSound("Audio/AudioBatt/bacchette.mp3", 'bacchette');
 
+}
+
+var suonaCanzone = function(e) {
+    var indiceCanzone = e.target.id;
+    var nomeStrumento = e.target.name;
+    if (nomeStrumento == 'playMiaCanzonePiano') {
+        //SUONA PIANO
+        playArray(JSON.parse(localStorage.utenti)[userIndex].Songs.pianoforte[indiceCanzone].note);
+    } 
+    else if (nomeStrumento == 'playMiaCanzoneBatteria') {
+        //SUONA BATTERIA
+        playArray(JSON.parse(localStorage.utenti)[userIndex].Songs.batteria[indiceCanzone].note);
+    }
+}
+
+var playArray= function(array) {
+    alert('entro');
+    alert(JSON.stringify(array));
+    alert(indiceLoop);
+    var loop = setInterval(function() {
+        alert(indiceLoop);
+        nota= array[indiceLoop];
+        indiceLoop++;   
+        alert (nota); 
+        suona(nota);
+        if (indiceLoop == array.length) {
+            indiceLoop=0;
+            clearInterval(loop);
+        }
+    }, 500);
+}
+
+var suona= function(nota) {
+    createjs.Sound.play(nota);
 }

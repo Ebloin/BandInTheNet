@@ -35,6 +35,7 @@ var noteAttive= [];
 var userIndex;
 
 function init() {
+    //PIANOFORTE
     createjs.Sound.registerSound("Audio/note/2ottave/do4.wav", 'do4');
     createjs.Sound.registerSound("Audio/note/2ottave/do4d.wav", 'do#4');
     createjs.Sound.registerSound("Audio/note/2ottave/re4.wav", 're4');
@@ -59,6 +60,17 @@ function init() {
     createjs.Sound.registerSound("Audio/note/2ottave/la5.wav", 'la5');
     createjs.Sound.registerSound("Audio/note/2ottave/la5d.wav", 'la#5');
     createjs.Sound.registerSound("Audio/note/2ottave/si5.wav", 'si5');
+
+    //BATTERIA
+    createjs.Sound.registerSound("Audio/AudioBatt/hi-hat.mp3", 'hi-hat');
+    createjs.Sound.registerSound("Audio/AudioBatt/tom-tom.mp3", 'tom-tom');
+    createjs.Sound.registerSound("Audio/AudioBatt/rullante.mp3", 'rullante');
+    createjs.Sound.registerSound("Audio/AudioBatt/bass-drum.mp3", 'bass-drum');
+    createjs.Sound.registerSound("Audio/AudioBatt/tom.mp3", 'tom');
+    createjs.Sound.registerSound("Audio/AudioBatt/crash.mp3", 'crash');
+    createjs.Sound.registerSound("Audio/AudioBatt/piatto-ride.mp3", 'piatto-ride');
+    createjs.Sound.registerSound("Audio/AudioBatt/bacchette.mp3", 'bacchette');
+
     
     //Se sei loggato visualizza il tasto 
     if (localStorage.utenteCorrente) {
@@ -265,6 +277,7 @@ var salvaCanzone= function() {
     //Se la tabella è visibile aggiornala
     if($('#leMieCanzoni').hasClass('visibile')) {
         $('#tabellaCanzoni').html('');
+        $('#tabellaCanzoniBatteria').html('');
         aggiornaElenco();
     }
 }
@@ -303,6 +316,7 @@ var cercaIndiceUtente = function(nome) {
 var mostraTabella= function() {
     if($('#leMieCanzoni').hasClass('nonVisibile')) {
         $('#tabellaCanzoni').html('');
+        $('#tabellaCanzoniBatteria').html('');
         aggiornaElenco();
         $('#leMieCanzoni').switchClass('nonVisibile', 'visibile');
         $('#mySongs button').html('Hide mySongs');
@@ -315,8 +329,19 @@ var mostraTabella= function() {
 
 //Listener del tasto play vicino a ogni canzone nella tabella delle mie canzoni
 var suonaCanzone= function(e) {
-    var indiceCanzone= e.target.id;
+    /*var indiceCanzone= e.target.id;
     playArray(JSON.parse(localStorage.utenti)[userIndex].Songs.pianoforte[indiceCanzone].note);
+    */
+    var indiceCanzone = e.target.id;
+    var nomeStrumento = e.target.name;
+    if (nomeStrumento == 'playMiaCanzone') {
+        //SUONA PIANO
+        playArray(JSON.parse(localStorage.utenti)[userIndex].Songs.pianoforte[indiceCanzone].note);
+    } 
+    else if (nomeStrumento == 'playMiaCanzoneBatteria') {
+        //SUONA BATTERIA
+        playArray(JSON.parse(localStorage.utenti)[userIndex].Songs.batteria[indiceCanzone].note);
+    }
 }
 
 //NUOVOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
@@ -327,6 +352,7 @@ var rimuoviCanzone= function(e) {
     utente.Songs.pianoforte.splice(indiceCanzone, 1);
     localStorage.utenti= JSON.stringify(storage);
     $('#tabellaCanzoni').html('');
+    $('#tabellaCanzoniBatteria').html('');
     aggiornaElenco();
 }
 
@@ -360,6 +386,18 @@ var aggiornaElenco= function() {
         var stringa= preTab+thNome+thPlay+thRemove+endTab;
         $('#tabellaCanzoni').append(stringa);
     }
+
+    var head= "<tr><th>Nome canzone</th><th>Riproduci</th></tr>";
+    $('#tabellaCanzoniBatteria').append(head);
+    var canzoniBatteria = storage[indice].Songs.batteria;
+    for (i = 0; i < canzoniBatteria.length; i++) {
+        var preTab = '<tr id=riga"' + i + '">';
+        var endTab = '</tr>'
+        var thNome = '<td><p>' + JSON.stringify(canzoniBatteria[i].nome) + '</p></td>';
+        var thPlay = '<td><button name=playMiaCanzoneBatteria id="' + i + '">Play</button></td>';
+        var stringa = preTab + thNome + thPlay + endTab;
+        $('#tabellaCanzoniBatteria').append(stringa);
+    }
     aggiungiListener();
 }
 
@@ -372,4 +410,12 @@ var aggiungiListener = function() {
     for (i = 0; i < del.length; i++) {
         del[i].addEventListener('click', rimuoviCanzone);
     }
+    var playBatt = document.getElementsByName('playMiaCanzoneBatteria');
+    for (i = 0; i < playBatt.length; i++) {
+        playBatt[i].addEventListener('click', suonaCanzone);
+    }
+}
+checkRimuovi = function(e) {
+    if (confirm('Vuoi veramete eliminare la canzone?')) rimuoviCanzone(e);
+    else return;
 }

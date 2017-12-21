@@ -20,45 +20,47 @@
     <div id="noTextArea">
         <header class="header clearfix">
 
-        <nav id="header__menu">
-            <ul id="Menu" style="background-color:white;">
-                <li class="header__menu__logo clearfix">
-                    <h1 class="header__logo">BandInTheNet</h1>
-                </li>
-                <li class="header__menu__item" style="float:right">
-                    <a href="Login.html">
-                        <span id="Profile">Accedi</span>
-                    </a>
-                    <div class="header__menu__item__dropdown">
-                        <button>Canzoni</button>                        
-                        <button onclick="logout();">Logout</button>
-                    </div>
-                </li>
-                <li class="header__menu__item" style="float:right">
-                    <a href="Play.html">Let's Play</a>
-                    <div class="header__menu__item__dropdown" style="margin-left: 10px;">
-                        <a href="Piano.html">Piano</a>
-                    </div>
-                </li>
-                <li class="header__menu__item" style="float:right">
-                    <a href="HomePage.html #Info">Info</a>
-                </li>
-                <li class="header__menu__item" style="float:right">
-                    <a href="HomePage.html">HomePage</a>
-                </li>
-            </ul>
-            <br>
-            <br>
-        </nav>
-        <hr class="header__hr">
-    </header>
+            <nav id="header__menu">
+                <ul id="Menu" style="background-color:white;">
+                    <li class="header__menu__logo clearfix">
+                        <h1 class="header__logo">BandInTheNet</h1>
+                    </li>
+                    <li class="header__menu__item" style="float:right">
+                        <a href="Login.html">
+                            <span id="Profile">Accedi</span>
+                        </a>
+                        <div class="header__menu__item__dropdown">
+                            <button>Canzoni</button>
+                            <button onclick="logout();">Logout</button>
+                        </div>
+                    </li>
+                    <li class="header__menu__item" style="float:right">
+                        <a href="Play.html">Let's Play</a>
+                        <div class="header__menu__item__dropdown" style="margin-left: 10px;">
+                            <a href="Piano.html">Piano</a>
+                        </div>
+                    </li>
+                    <li class="header__menu__item" style="float:right">
+                        <a href="HomePage.html #Info">Info</a>
+                    </li>
+                    <li class="header__menu__item" style="float:right">
+                        <a href="HomePage.html">HomePage</a>
+                    </li>
+                </ul>
+                <br>
+                <br>
+            </nav>
+            <hr class="header__hr">
+        </header>
 
-    <div id="recordingBar">
-        <p>Clicca sul cerchio per iniziare a registrare, poi su play per riascoltare la tua composizione</p>
-        <button id="recButton" class="Rbutton notRec">REC</button>
-        <button id='play' class="play-button"></button>
-        <span id="mySongs" class="nonVisibile"><button id="mySongs" class="button3d">Show mySongs</button></span>
-    </div>
+        <div id="recordingBar">
+            <p>Clicca sul cerchio per iniziare a registrare, poi su play per riascoltare la tua composizione</p>
+            <button id="recButton" class="Rbutton notRec">REC</button>
+            <button id='play' class="play-button"></button>
+            <span id="mySongs" class="nonVisibile">
+                <button id="mySongs" class="button3d">Show mySongs</button>
+            </span>
+        </div>
 
         <img class="drum" src="Immagini/batteria.png" usemap="#mappa">
 
@@ -92,9 +94,14 @@
     <br>
     <br>
     <div id='leMieCanzoni' class="nonVisibile">
+        <h1>Le mie canzoni</h1>
+        <h2>Batteria</h2>
         <table id="tabellaCanzoni" class="tabellaCanzoni">
-
         </table>
+        <h2>Pianoforte</h2>
+        <div id='elencoBatteria'>
+            <table id='tabellaCanzoniPianoforte' class="tabellaCanzoni"></table>
+        </div>
     </div>
 </body>
 

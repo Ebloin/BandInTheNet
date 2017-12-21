@@ -5,6 +5,7 @@
     <link href="./Style/login.css" rel="stylesheet" type="text/css">
     <script src="Script/jquery-1.11.3.min.js" type="text/javascript"></script>
     <script src="Script/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="Script/soundjs-0.6.2.min.js"></script>
 
 </head>
 <script>
@@ -57,7 +58,7 @@
                     <input id="UserPsw" type="password" placeholder="Inserisci Password" name="password">
                     <input type="checkbox" checked="checked"> Remember me
                     <button class="Login" onclick="login();">Login</button>
-                    <button type="submit" class="Register" onclick="return inserisciUtente();">Registrati</button>
+                    <button type="submit" class="Register" onclick="inserisciUtente();">Registrati</button>
                 </div>
                 <button class="Logout visibile" onclick="logout();">Logout</button>
                 <div id='hubUtente' class="visibile">

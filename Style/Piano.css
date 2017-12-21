@@ -490,33 +490,39 @@ sp {
   margin-left: 40%;
 }
 #tabellaCanzoni td,
-#tabellaCanzoni th {
+#tabellaCanzoni th,
+#tabellaCanzoniBatteria td,
+#tabellaCanzoniBatteria th {
     border: 1px solid #ddd;
     padding: 8px;
     border-radius: 4px;
     background-color: whitesmoke;
     color: black;
 }
-#tabellaCanzoni button{
+#tabellaCanzoni button,
+#tabellaCanzoniBatteria button{
   background: none;
   border: none;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 
 }
 
-#tabellaCanzoni p{
+#tabellaCanzoni p,
+#tabellaCanzoniBatteria p{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: black;
   text-align: center;
 }
 
-#tabellaCanzoni tr:hover {
+#tabellaCanzoni tr:hover,
+#tabellaCanzoniBatteria tr:hover {
     background-color: #ddd;
     border-radius: 4px;
     
 }
 
-#tabellaCanzoni th {
+#tabellaCanzoni th,
+#tabellaCanzoniBatteria th {
     text-align: center;
     background-color: #4CAF50;
     color: white;
@@ -631,3 +637,10 @@ sp {
 
 /*PROVAAAAAAA*/
 
+p {
+  color: white;
+}
+
+h1, h2 {
+  color: white;
+}
