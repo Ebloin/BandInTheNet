@@ -112,8 +112,8 @@ body{width:auto; margin:0 auto;}
 /*Tabellacanzoni*/
 /*------------STORAGE-----------*/
 #leMieCanzoni{
+  display: table;
   margin: 0 auto;
-  margin-left: 40%;
 }
 #tabellaCanzoni td,
 #tabellaCanzoni th,
@@ -158,6 +158,17 @@ body{width:auto; margin:0 auto;}
     color: #4CAF50;
     text-shadow: 1px 1px #45a049;
 }
+
+.MySongsText{
+  font-family: "Guns";
+  text-align: center;
+}
+
+#elencoBatteria{
+  display: table;
+  margin: 0 auto;
+}
+
 /*--------------END-------------*/
 
 
@@ -169,7 +180,8 @@ body{width:auto; margin:0 auto;}
 /*--------------END-------------*/
 
 #registrata{
-  margin-left: 30%;
+  display: table;
+  margin: 0 auto;
 }
 
 /*--------------FIX-------------*/

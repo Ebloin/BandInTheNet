@@ -381,7 +381,7 @@ var aggiornaElenco= function() {
     for (i=0; i<canzoni.length; i++) {
         var preTab= '<tr id=riga"'+i+'">';
         var endTab= '</tr>'
-        var thNome = '<td><p>'+JSON.stringify(canzoni[i].nome)+'</p></td>';
+        var thNome = '<td><p>'+canzoni[i].nome+'</p></td>';
         var thPlay = '<td><button name=playMiaCanzone class="button3dWhite" id="'+i+'">&#9658;</button></td>';
         var thRemove = '<td><button name=removeMiaCanzone class="button3dWhite" id="'+i+'"><span style =" color:brown;">X</span></button></td>';
         var stringa= preTab+thNome+thPlay+thRemove+endTab;
@@ -394,7 +394,7 @@ var aggiornaElenco= function() {
     for (i = 0; i < canzoniBatteria.length; i++) {
         var preTab = '<tr id=riga"' + i + '">';
         var endTab = '</tr>';
-        var thNome = '<td><p>' + JSON.stringify(canzoniBatteria[i].nome) + '</p></td>';
+        var thNome = '<td><p>' + canzoniBatteria[i].nome + '</p></td>';
         var thPlay = '<td><button name=playMiaCanzone class="button3dWhite" id="'+i+'">&#9658;</button></td>';
         var stringa = preTab + thNome + thPlay + endTab;
         $('#tabellaCanzoniBatteria').append(stringa);

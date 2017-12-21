@@ -486,8 +486,8 @@ sp {
 /*Tabellacanzoni*/
 /*------------STORAGE-----------*/
 #leMieCanzoni{
+  display: table;
   margin: 0 auto;
-  margin-left: 40%;
 }
 #tabellaCanzoni td,
 #tabellaCanzoni th,
@@ -533,6 +533,10 @@ sp {
     text-shadow: 1px 1px #45a049;
 }
 
+.MySongsText{
+  font-family: "Guns";
+  text-align: center;
+}
 
 /*--------------END-------------*/
 
