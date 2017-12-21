@@ -122,7 +122,8 @@ body{width:auto; margin:0 auto;}
     border: 1px solid #ddd;
     padding: 8px;
     border-radius: 4px;
-    background-color: whitesmoke;
+    background:none;
+    border: none;
     color: black;
 }
 #tabellaCanzoni button,
@@ -142,7 +143,6 @@ body{width:auto; margin:0 auto;}
 
 #tabellaCanzoni tr:hover,
 #tabellaCanzoniPianoforte tr:hover {
-    background-color: #ddd;
     border-radius: 4px;
     
 }

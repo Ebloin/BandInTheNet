@@ -375,26 +375,27 @@ var aggiornaElenco= function() {
     var indice= cercaIndiceUtente(localStorage.utenteCorrente);
     userIndex= indice;
     var canzoni= storage[indice].Songs.pianoforte;
+    /*
     var head= "<tr><th>Nome canzone</th><th>Riproduci</th><th>Rimuovi</th></tr>";
-    $('#tabellaCanzoni').append(head);
+    $('#tabellaCanzoni').append(head);*/
     for (i=0; i<canzoni.length; i++) {
         var preTab= '<tr id=riga"'+i+'">';
         var endTab= '</tr>'
         var thNome = '<td><p>'+JSON.stringify(canzoni[i].nome)+'</p></td>';
-        var thPlay = '<td><button name=playMiaCanzone class="button3d" id="'+i+'">Play</button></td>';
-        var thRemove = '<td><button name=removeMiaCanzone class="button3d" id="'+i+'">Remove</button></td>';
+        var thPlay = '<td><button name=playMiaCanzone class="button3dWhite" id="'+i+'">&#9658;</button></td>';
+        var thRemove = '<td><button name=removeMiaCanzone class="button3dWhite" id="'+i+'"><span style =" color:brown;">X</span></button></td>';
         var stringa= preTab+thNome+thPlay+thRemove+endTab;
         $('#tabellaCanzoni').append(stringa);
     }
-
+    /*
     var head= "<tr><th>Nome canzone</th><th>Riproduci</th></tr>";
-    $('#tabellaCanzoniBatteria').append(head);
+    $('#tabellaCanzoniBatteria').append(head);*/
     var canzoniBatteria = storage[indice].Songs.batteria;
     for (i = 0; i < canzoniBatteria.length; i++) {
         var preTab = '<tr id=riga"' + i + '">';
-        var endTab = '</tr>'
+        var endTab = '</tr>';
         var thNome = '<td><p>' + JSON.stringify(canzoniBatteria[i].nome) + '</p></td>';
-        var thPlay = '<td><button name=playMiaCanzoneBatteria id="' + i + '">Play</button></td>';
+        var thPlay = '<td><button name=playMiaCanzone class="button3dWhite" id="'+i+'">&#9658;</button></td>';
         var stringa = preTab + thNome + thPlay + endTab;
         $('#tabellaCanzoniBatteria').append(stringa);
     }
