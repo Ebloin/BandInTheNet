@@ -245,6 +245,10 @@ body{width:auto; margin:0 auto;}
     display: inherit;
   }
 
+  .visibileTable {
+    display: table;
+  }
+
 /*Stile bottoni registrazione*/
 #nomeCanzone {
   float: left;
