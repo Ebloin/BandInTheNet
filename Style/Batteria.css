@@ -121,6 +121,7 @@ body{width:auto; margin:0 auto;}
     padding: 8px;
     border-radius: 4px;
     background-color: black;
+    opacity: 0.8;
     color: whitesmoke;
 }
 #tabellaCanzoni button{
@@ -130,6 +131,9 @@ body{width:auto; margin:0 auto;}
   color: white;
 
 }
+.rp__button:hover{
+  background-color: 
+}
 
 #tabellaCanzoni p{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -138,8 +142,7 @@ body{width:auto; margin:0 auto;}
 }
 
 #tabellaCanzoni tr:hover {
-    background-color: #ddd;
-    border-radius: 4px;
+  border-radius: 4px;
     
 }
 
