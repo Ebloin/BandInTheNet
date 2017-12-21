@@ -116,7 +116,6 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 1%;margin-bott
     background-size: cover;
     background-position: center center;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    
 }
 .cover__text{
     display: table;
@@ -206,6 +205,51 @@ body{height: 100%; margin-left: 0px;margin-right: 0px;margin-top: 1%;margin-bott
     font-size: 15px;
     list-style-type: none;
     color:#8c8b8b;
+}
+
+.chisiamotext:hover{
+    color: green;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    
+}
+.contattitext:hover{
+    color: rgb(255, 255, 4);
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+.facebook{
+    font-family: "Guns";
+    font-size: 25;
+}
+.twitter{
+    font-family: "Guns";
+    font-size: 25;
+}
+.instagram{
+    font-family: "Guns";
+    font-size: 25;
+}
+
+.facebook:hover{
+    color: rgb(22, 22, 112);
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    
+}
+
+.twitter:hover{
+    color: skyblue;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    
+}
+
+.instagram:hover{
+    color: rgb(109, 26, 81);
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    
 }
 /*--------------END-------------*/
 
