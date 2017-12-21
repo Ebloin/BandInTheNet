@@ -412,6 +412,11 @@ sp {
   display: inherit;
 }
 
+.visibileTable {
+  display: inherit;
+}
+
+
 
 /*Stile bottoni registrazione*/
 #registrata{
@@ -486,7 +491,8 @@ sp {
 /*Tabellacanzoni*/
 /*------------STORAGE-----------*/
 #leMieCanzoni{
-  display: table;
+  /*display: table;
+  lo tolgo perchè ho inserito la classe visibiletable*/
   margin: 0 auto;
 }
 #tabellaCanzoni td,

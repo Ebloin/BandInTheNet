@@ -275,7 +275,7 @@ var salvaCanzone= function() {
         recording = false;
     }
     //Se la tabella è visibile aggiornala
-    if($('#leMieCanzoni').hasClass('visibile')) {
+    if($('#leMieCanzoni').hasClass('visibileTable')) {
         $('#tabellaCanzoni').html('');
         $('#tabellaCanzoniBatteria').html('');
         aggiornaElenco();
@@ -318,11 +318,11 @@ var mostraTabella= function() {
         $('#tabellaCanzoni').html('');
         $('#tabellaCanzoniBatteria').html('');
         aggiornaElenco();
-        $('#leMieCanzoni').switchClass('nonVisibile', 'visibile');
+        $('#leMieCanzoni').switchClass('nonVisibile', 'visibileTable');
         $('#mySongs button').html('Hide mySongs');
     }
     else {
-        $('#leMieCanzoni').switchClass('visibile', 'nonVisibile');
+        $('#leMieCanzoni').switchClass('visibileTable', 'nonVisibile');
         $('#mySongs button').html('Show mySongs');
     }
 }
