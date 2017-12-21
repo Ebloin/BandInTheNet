@@ -4,6 +4,10 @@ body {
   background-color: black;
 }
 
+p{
+  color: white;
+}
+
 
 /*-------------HEADER------------*/
 
@@ -70,9 +74,6 @@ body {
 .header__menu__item button:hover {
   opacity: 0.75;
 }
-
-
-/*classe che modifica l'elemento di menu quando ci si passa sopra con il mouse*/
 
 .header__menu__item a {
   color: #8c8b8b;
@@ -494,13 +495,21 @@ sp {
 #tabellaCanzoniBatteria td,
 #tabellaCanzoniBatteria th {
     border: 1px solid #ddd;
-    padding: 8px;
+    padding: 4px;
     border-radius: 4px;
     background-color: whitesmoke;
     color: black;
 }
+<<<<<<< HEAD
+.rp__button:hover{
+  opacity: 0.5;
+}
+
+#tabellaCanzoni button{
+=======
 #tabellaCanzoni button,
 #tabellaCanzoniBatteria button{
+>>>>>>> c308da392bd6a8eb6584475e87132cf1b39017aa
   background: none;
   border: none;
   font-family: Verdana, Geneva, Tahoma, sans-serif;

@@ -122,8 +122,14 @@ body{width:auto; margin:0 auto;}
     border: 1px solid #ddd;
     padding: 8px;
     border-radius: 4px;
+<<<<<<< HEAD
+    background-color: black;
+    opacity: 0.8;
+    color: whitesmoke;
+=======
     background-color: whitesmoke;
     color: black;
+>>>>>>> c308da392bd6a8eb6584475e87132cf1b39017aa
 }
 #tabellaCanzoni button,
 #tabellaCanzoniPianoforte button{
@@ -131,6 +137,9 @@ body{width:auto; margin:0 auto;}
   border: none;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 
+}
+.rp__button:hover{
+  background-color: 
 }
 
 #tabellaCanzoni p,
@@ -140,10 +149,15 @@ body{width:auto; margin:0 auto;}
   text-align: center;
 }
 
+<<<<<<< HEAD
+#tabellaCanzoni tr:hover {
+  border-radius: 4px;
+=======
 #tabellaCanzoni tr:hover,
 #tabellaCanzoniPianoforte tr:hover {
     background-color: #ddd;
     border-radius: 4px;
+>>>>>>> c308da392bd6a8eb6584475e87132cf1b39017aa
     
 }
 

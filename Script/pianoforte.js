@@ -375,14 +375,16 @@ var aggiornaElenco= function() {
     var indice= cercaIndiceUtente(localStorage.utenteCorrente);
     userIndex= indice;
     var canzoni= storage[indice].Songs.pianoforte;
+    /*
     var head= "<tr><th>Nome canzone</th><th>Riproduci</th><th>Rimuovi</th></tr>";
     $('#tabellaCanzoni').append(head);
+    */
     for (i=0; i<canzoni.length; i++) {
         var preTab= '<tr id=riga"'+i+'">';
         var endTab= '</tr>'
         var thNome = '<td><p>'+JSON.stringify(canzoni[i].nome)+'</p></td>';
-        var thPlay = '<td><button name=playMiaCanzone class="button3d" id="'+i+'">Play</button></td>';
-        var thRemove = '<td><button name=removeMiaCanzone class="button3d" id="'+i+'">Remove</button></td>';
+        var thPlay = '<td  class = "rp__button"><button name=playMiaCanzone " id="'+i+'">Play</button></td>';
+        var thRemove = '<td class = "rp__button"><button name=removeMiaCanzone id="'+i+'">Remove</button></td>';
         var stringa= preTab+thNome+thPlay+thRemove+endTab;
         $('#tabellaCanzoni').append(stringa);
     }
