@@ -15,6 +15,17 @@ body {
     margin-bottom: auto;
 }
 
+#elencoPiano{
+    display: table;
+    margin: 0 auto;
+    width: 35%;
+}
+
+#elencoBatteria{
+    display: table;
+    margin: 0 auto;
+    width: 35%;
+}
 
 /*--------------END-------------*/
 
@@ -279,7 +290,6 @@ input[type=button].console:hover {
 }
 #hubUtente table{
     text-align: center;
-    margin-left: 28%;
 }
 #hubUtente button{
     background: none;
