@@ -340,7 +340,10 @@ var suonaCanzone= function(e) {
     } 
     else if (nomeStrumento == 'playMiaCanzoneBatteria') {
         //SUONA BATTERIA
-        playArray(JSON.parse(localStorage.utenti)[userIndex].Songs.batteria[indiceCanzone].note);
+        do {
+            playArray(JSON.parse(localStorage.utenti)[userIndex].Songs.batteria[indiceCanzone].note);
+        }
+        while($('input[type=checkbox]').prop('checked'))
     }
 }
 
@@ -395,8 +398,9 @@ var aggiornaElenco= function() {
         var preTab = '<tr id=riga"' + i + '">';
         var endTab = '</tr>';
         var thNome = '<td><p>' + canzoniBatteria[i].nome + '</p></td>';
-        var thPlay = '<td><button name=playMiaCanzone class="button3dWhite" id="'+i+'">&#9658;</button></td>';
-        var stringa = preTab + thNome + thPlay + endTab;
+        var thPlay = '<td><button name=playMiaCanzoneBatteria class="button3dWhite" id="'+i+'">&#9658;</button></td>';        
+        var thRepeat = '<td><input type="checkbox" id="repeat">REPEAT</input></td>'
+        var stringa = preTab + thNome + thPlay + thRepeat+ endTab;
         $('#tabellaCanzoniBatteria').append(stringa);
     }
     aggiungiListener();
