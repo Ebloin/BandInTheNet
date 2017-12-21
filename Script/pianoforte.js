@@ -408,7 +408,7 @@ var aggiungiListener = function() {
     }
     var del = document.getElementsByName('removeMiaCanzone');
     for (i = 0; i < del.length; i++) {
-        del[i].addEventListener('click', rimuoviCanzone);
+        del[i].addEventListener('click', checkRimuovi);
     }
     var playBatt = document.getElementsByName('playMiaCanzoneBatteria');
     for (i = 0; i < playBatt.length; i++) {
