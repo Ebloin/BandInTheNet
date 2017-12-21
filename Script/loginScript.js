@@ -84,12 +84,12 @@ function logout() {
     var x= alert("Arrivederci");
 }
 
-function login() {
+function login() {    
+    var userName = document.miaform.username.value;
+    var userPsw = document.miaform.password.value;
     var storage = JSON.parse(localStorage.utenti);
     var utente = localStorage.utenteCorrente; //il parse non è necessario qui
     var l = storage.length;
-    var userName = document.miaform.username.value;
-    var userPsw = document.miaform.password.value;
     for (i = 0; i < l; i++) {
         if ((storage[i].Username == userName) && (storage[i].Password == userPsw)) {
             utente = storage[i].Username;
@@ -106,6 +106,13 @@ function inserisciUtente() {
     var storage = JSON.parse(localStorage.utenti);
     var next = storage.length;
     var username = document.miaform.username.value;
+    var password = document.miaform.password.value;
+    
+    if (username.length < 6 || password.length < 6) {
+        alert('Inserisci un username con almeno 6 caratteri di lunghezza');
+        return;
+    }
+
     var songs = {
         pianoforte: [],
         batteria: []
@@ -115,7 +122,7 @@ function inserisciUtente() {
 
     var o = {
         Username: username,
-        Password: document.miaform.password.value,
+        Password: password,
         Songs: songs,
         Admin: false
     };
