@@ -3,7 +3,7 @@
 body {
     width: auto;
     height: auto;
-    /*background-image: url("https://source.unsplash.com/1600x900/?music,sound");*/
+    background-image: url("https://source.unsplash.com/1600x900/?music,sound");
     margin: 0 auto;
     background-size: cover;
 }
