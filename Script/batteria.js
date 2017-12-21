@@ -329,6 +329,7 @@ var aggiornaElenco= function() {
     var indice= cercaIndiceUtente(localStorage.utenteCorrente);
     userIndex= indice;
     var canzoni= storage[indice].Songs.batteria;
+<<<<<<< HEAD
    /* var head= "<tr class='primariga'><td>Nome canzone</td><td>Riproduci</td><td>Rimuovi</td></tr>";
     $('#tabellaCanzoni').append(head);*/
     for (i=0; i<canzoni.length; i++) {
